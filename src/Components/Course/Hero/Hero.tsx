@@ -1,6 +1,7 @@
 import React from "react";
 import BreadCrumbs from "../../Global/BreadCrumbs/BreadCrumbs";
 import Header from "../../Global/Header/Header";
+// @ts-ignore
 import ReactStars from "react-rating-stars-component";
 import {
     Container,
