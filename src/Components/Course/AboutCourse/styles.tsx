@@ -66,13 +66,29 @@ export const Right = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+    position: relative;
+    &:after {
+        content: "";
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 13rem;
+        width: 30rem;
+        position: absolute;
+        height: 48rem;
+        background: linear-gradient(
+            94.6deg,
+            rgba(239, 250, 247, 0.9) 6.09%,
+            rgba(239, 250, 247, 0) 96.38%
+        );
+    }
 `;
 
 export const AboutCourseCard = styled.div`
     padding: 2.8rem 2.4rem;
-    background: #effaf7;
-    box-shadow: 4px 4px 4px rgba(227, 196, 196, 0.65);
-    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0px 15px 60px rgba(5, 9, 13, 0.04);
+    border-radius: 16px;
 `;
 
 export const AboutCourseCardHeading = styled.div`

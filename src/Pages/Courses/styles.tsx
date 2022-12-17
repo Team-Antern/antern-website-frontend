@@ -7,5 +7,5 @@ export const Content = styled.div`
     background: url("/assets/coursesbg.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0;
+    background-position: 0px 0px;
 `;

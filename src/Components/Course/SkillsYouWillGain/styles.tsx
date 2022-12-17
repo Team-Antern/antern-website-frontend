@@ -27,6 +27,6 @@ export const Skill = styled.div`
     line-height: 150%;
     color: #252d3a;
     background: #effaf7;
-    border: 0.1rem solid #4df3a3;
+    box-shadow: 0px 8px 16px #eaeeef;
     border-radius: 1rem;
 `;
