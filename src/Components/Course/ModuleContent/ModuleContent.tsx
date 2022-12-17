@@ -24,6 +24,7 @@ import { RxDotFilled } from "react-icons/rx";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { BsPlayCircleFill } from "react-icons/bs";
 import formatDuration from "format-duration";
+// @ts-ignore
 import * as simpleDuration from "simple-duration";
 import SmoothCollapse from "react-smooth-collapse";
 import Button from "../../Global/Button/Button";
