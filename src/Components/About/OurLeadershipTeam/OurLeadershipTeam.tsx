@@ -16,7 +16,7 @@ import { FaDiscord, FaTwitter } from "react-icons/fa";
 
 const teamMembers = [
     {
-        name: "priyanshu bhattacharjee",
+        name: "tushar vaswani",
         socials: [
             {
                 icon: <FaDiscord />,
@@ -27,8 +27,23 @@ const teamMembers = [
                 link: "https://twitter.com/",
             },
         ],
-        profilePic: "/assets/priyanshubhattacharjee.png",
-        position: "co-founder & ceo",
+        profilePic: "/assets/tusharvaswani.png",
+        position: "co-founder & engineering manager",
+    },
+    {
+        name: "ayush singh",
+        socials: [
+            {
+                icon: <FaDiscord />,
+                link: "https://discord.com/",
+            },
+            {
+                icon: <FaTwitter />,
+                link: "https://twitter.com/",
+            },
+        ],
+        profilePic: "/assets/ayushsingh.png",
+        position: "co-founder & CEO",
     },
     {
         name: "priyanshu bhattacharjee",
@@ -43,22 +58,7 @@ const teamMembers = [
             },
         ],
         profilePic: "/assets/priyanshubhattacharjee.png",
-        position: "co-founder & ceo",
-    },
-    {
-        name: "priyanshu bhattacharjee",
-        socials: [
-            {
-                icon: <FaDiscord />,
-                link: "https://discord.com/",
-            },
-            {
-                icon: <FaTwitter />,
-                link: "https://twitter.com/",
-            },
-        ],
-        profilePic: "/assets/priyanshubhattacharjee.png",
-        position: "co-founder & ceo",
+        position: "co-founder & CTO",
     },
 ];
 
