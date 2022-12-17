@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface ContainerProps {
     transparentBg: boolean;
+    hoverStyle: string;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -11,10 +12,11 @@ export const Container = styled.div<ContainerProps>`
     cursor: pointer;
     border: 1px solid #4df3a3;
     border-radius: 8px;
+    text-align: center;
     background: ${({ transparentBg }) =>
         transparentBg ? "transparent" : "#4df3a3"};
     color: ${({ transparentBg }) => (transparentBg ? "#fff" : "#101c26")};
-    ${({ transparentBg }) =>
+    ${({ transparentBg, hoverStyle }) =>
         transparentBg
             ? `
                 transition: 0.2s all;
@@ -23,5 +25,9 @@ export const Container = styled.div<ContainerProps>`
                     color: #101c26;
                 }
             `
-            : ``}
+            : `
+                &:hover {
+                    ${hoverStyle}
+                }
+            `}
 `;
