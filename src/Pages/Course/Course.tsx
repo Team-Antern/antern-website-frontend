@@ -7,6 +7,7 @@ import SkillsYouWillGain from "../../Components/Course/SkillsYouWillGain/SkillsY
 import JoinOurCommunity from "../../Components/Courses/JoinOurCommunity/JoinOurCommunity";
 import { Container, Content } from "./styles";
 import Instructors from "../../Components/Course/Instructors/Instructors";
+import ModuleContent from "../../Components/Course/ModuleContent/ModuleContent";
 
 const Course = () => {
     return (
@@ -35,6 +36,7 @@ const Course = () => {
             <Content>
                 <AboutCourse />
                 <SkillsYouWillGain />
+                <ModuleContent />
                 <Instructors />
                 <Reviews />
                 <JoinOurCommunity />
