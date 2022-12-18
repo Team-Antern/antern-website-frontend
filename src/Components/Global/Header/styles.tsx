@@ -26,6 +26,8 @@ export const Container = styled.div`
 export const Logo = styled.img`
     width: 10rem;
     height: 2.5rem;
+    position: relative;
+    z-index: 1;
 `;
 
 export const Links = styled.div`

@@ -29,7 +29,9 @@ const headerLinks = [
 const Header = () => {
     return (
         <Container>
-            <Logo src={logo} />
+            <NavLink to="/">
+                <Logo src={logo} />
+            </NavLink>
             <Links>
                 {headerLinks.map(({ to, text }, index) => (
                     <NavLink key={index} to={to}>

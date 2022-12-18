@@ -13,36 +13,6 @@ export const Container = styled.div`
     align-items: center;
 `;
 
-interface SlideControlProps {
-    isDisabled: boolean;
-}
-
-export const SlideControl = styled.div<SlideControlProps>`
-    width: 6rem;
-    height: 6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.16rem solid #5d6c83;
-    border-radius: 50%;
-    font-size: 3.5rem;
-    color: #798291;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: all 0.2s;
-    opacity: ${({ isDisabled }) => (isDisabled ? "0.2" : `1`)};
-    ${({ isDisabled }) =>
-        isDisabled
-            ? ``
-            : `
-                &:hover {
-                    color: #101c26;
-                    background: #40f59b;
-                    border-color: #40f59b;
-                }
-            `}
-`;
-
 export const Instructor = styled.div`
     text-align: center;
     width: 100%;

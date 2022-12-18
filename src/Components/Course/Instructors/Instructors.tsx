@@ -6,11 +6,11 @@ import {
     InstructorName,
     InstructorPosition,
     InstructorProfilePic,
-    SlideControl,
 } from "./styles";
 import { RxTriangleLeft, RxTriangleRight } from "react-icons/rx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { default as sw } from "swiper";
+import { SlideControl } from "../../../globalStyles";
 
 const instructors = [
     {

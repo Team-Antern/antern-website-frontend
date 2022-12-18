@@ -84,7 +84,9 @@ const Footer = () => {
             <Content>
                 <AboutCompanyLinkSections>
                     <AboutCompany>
-                        <CompanyLogo src="/assets/logo-white.svg" />
+                        <NavLink to="/">
+                            <CompanyLogo src="/assets/logo-white.svg" />
+                        </NavLink>
                         <CompanyDesc>
                             Antern is where lifelong learners come to learn the
                             skills they need, to land the jobs they want, to
