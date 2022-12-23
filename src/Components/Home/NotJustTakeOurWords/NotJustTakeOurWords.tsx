@@ -3,36 +3,172 @@ import { Container, Content, Heading, SlideControls } from "./styles";
 import { SlideControl } from "../../../globalStyles";
 import { RxTriangleLeft, RxTriangleRight } from "react-icons/rx";
 import NotJustTakeOurWordsCard from "../NotJustTakeOurWordsCard/NotJustTakeOurWordsCard";
-import { Swiper } from "swiper/react";
-// import swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { default as sw } from "swiper";
+import { AiFillLinkedin, AiFillTwitterCircle } from "react-icons/ai";
+
+const notJustTakeOurWordsCards = [
+    {
+        profilePic:
+            "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
+        name: "Ayush Singh",
+        company: "./assets/amazon.png",
+        review: "I found Priyanshu's course to be the foundation for my knowledge of Unity's platform and C# scripting as it was the first one I followed.",
+        socials: [
+            {
+                icon: <AiFillTwitterCircle />,
+                link: "https://twitter.com/",
+            },
+            {
+                icon: <AiFillLinkedin />,
+                link: "https://linkedin.com/",
+            },
+        ],
+    },
+    {
+        profilePic:
+            "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
+        name: "Ayush Singh",
+        company: "./assets/amazon.png",
+        review: "I found Priyanshu's course to be the foundation for my knowledge of Unity's platform and C# scripting as it was the first one I followed.",
+        socials: [
+            {
+                icon: <AiFillTwitterCircle />,
+                link: "https://twitter.com/",
+            },
+            {
+                icon: <AiFillLinkedin />,
+                link: "https://linkedin.com/",
+            },
+        ],
+    },
+    {
+        profilePic:
+            "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
+        name: "Ayush Singh",
+        company: "./assets/amazon.png",
+        review: "I found Priyanshu's course to be the foundation for my knowledge of Unity's platform and C# scripting as it was the first one I followed.",
+        socials: [
+            {
+                icon: <AiFillTwitterCircle />,
+                link: "https://twitter.com/",
+            },
+            {
+                icon: <AiFillLinkedin />,
+                link: "https://linkedin.com/",
+            },
+        ],
+    },
+    {
+        profilePic:
+            "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
+        name: "Ayush Singh",
+        company: "./assets/amazon.png",
+        review: "I found Priyanshu's course to be the foundation for my knowledge of Unity's platform and C# scripting as it was the first one I followed.",
+        socials: [
+            {
+                icon: <AiFillTwitterCircle />,
+                link: "https://twitter.com/",
+            },
+            {
+                icon: <AiFillLinkedin />,
+                link: "https://linkedin.com/",
+            },
+        ],
+    },
+    {
+        profilePic:
+            "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
+        name: "Ayush Singh",
+        company: "./assets/amazon.png",
+        review: "I found Priyanshu's course to be the foundation for my knowledge of Unity's platform and C# scripting as it was the first one I followed.",
+        socials: [
+            {
+                icon: <AiFillTwitterCircle />,
+                link: "https://twitter.com/",
+            },
+            {
+                icon: <AiFillLinkedin />,
+                link: "https://linkedin.com/",
+            },
+        ],
+    },
+    {
+        profilePic:
+            "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
+        name: "Ayush Singh",
+        company: "./assets/amazon.png",
+        review: "I found Priyanshu's course to be the foundation for my knowledge of Unity's platform and C# scripting as it was the first one I followed.",
+        socials: [
+            {
+                icon: <AiFillTwitterCircle />,
+                link: "https://twitter.com/",
+            },
+            {
+                icon: <AiFillLinkedin />,
+                link: "https://linkedin.com/",
+            },
+        ],
+    },
+    {
+        profilePic:
+            "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
+        name: "Ayush Singh",
+        company: "./assets/amazon.png",
+        review: "I found Priyanshu's course to be the foundation for my knowledge of Unity's platform and C# scripting as it was the first one I followed.",
+        socials: [
+            {
+                icon: <AiFillTwitterCircle />,
+                link: "https://twitter.com/",
+            },
+            {
+                icon: <AiFillLinkedin />,
+                link: "https://linkedin.com/",
+            },
+        ],
+    },
+];
 
 const NotJustTakeOurWords = () => {
-    // const [swiper, setSwiper] = useState({
-    //     isBeginning: true,
-    //     isEnd: true,
-    //     slidePrev: () => {},
-    //     slideNext: () => {},
-    // });
-    // const onSwiperAndIndexChange = (swiper: sw) => {
-    //     const { isBeginning, isEnd, slidePrev, slideNext } = swiper;
-    //     setSwiper({
-    //         isBeginning,
-    //         isEnd,
-    //         slidePrev: slidePrev.bind(swiper),
-    //         slideNext: slideNext.bind(swiper),
-    //     });
-    // };
+    const [swiper, setSwiper] = useState({
+        isBeginning: true,
+        isEnd: true,
+        slidePrev: () => {},
+        slideNext: () => {},
+    });
+    const onSwiperAndIndexChange = (swiper: sw) => {
+        const { isBeginning, isEnd, slidePrev, slideNext } = swiper;
+        setSwiper({
+            isBeginning,
+            isEnd,
+            slidePrev: slidePrev.bind(swiper),
+            slideNext: slideNext.bind(swiper),
+        });
+    };
     return (
         <Container>
-            {/* <Heading>not just take our words</Heading>
+            <Heading>not just take our words</Heading>
             <Content>
-                <Swiper onSwiper={onSwiperAndIndexChange}>
-                    <NotJustTakeOurWordsCard />
+                <Swiper
+                    onSwiper={onSwiperAndIndexChange}
+                    onActiveIndexChange={onSwiperAndIndexChange}
+                    slidesPerView={3}
+                    spaceBetween={40}
+                >
+                    {notJustTakeOurWordsCards.map(
+                        (notJustTakeOurWordsCard, index) => (
+                            <SwiperSlide key={index}>
+                                <NotJustTakeOurWordsCard
+                                    {...notJustTakeOurWordsCard}
+                                />
+                            </SwiperSlide>
+                        )
+                    )}
                 </Swiper>
             </Content>
             <SlideControls>
                 <SlideControl
-                    isDisabled={swiper.isEnd}
+                    isDisabled={swiper.isBeginning}
                     onClick={() => swiper.slidePrev()}
                 >
                     <RxTriangleLeft />
@@ -43,7 +179,7 @@ const NotJustTakeOurWords = () => {
                 >
                     <RxTriangleRight />
                 </SlideControl>
-            </SlideControls> */}
+            </SlideControls>
         </Container>
     );
 };

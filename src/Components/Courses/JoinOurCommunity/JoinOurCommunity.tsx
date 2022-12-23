@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import Button from "../../Global/Button/Button";
 import TransparentBgInput from "../../Global/TransparentBgInput/TransparentBgInput";
 import { Container, Desc, Heading, InputGroup } from "./styles";

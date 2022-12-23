@@ -38,3 +38,10 @@ select:focus-visible {
     display: flex !important;
     align-items: center;
 }
+
+table,
+th,
+td {
+    border: 0;
+    border-spacing: 0;
+}

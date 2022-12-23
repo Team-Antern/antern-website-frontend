@@ -10,6 +10,7 @@ export const Container = styled.input`
     padding: 1.8rem 2rem;
     border: 0.1rem solid #4df3a3;
     border-radius: 0.8rem;
+    background: transparent;
     ${inputTextStyles}
     &::-webkit-input-placeholder {
         ${inputTextStyles}

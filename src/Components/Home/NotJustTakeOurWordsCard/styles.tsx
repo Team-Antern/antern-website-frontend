@@ -1,20 +1,82 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding: 2.4rem;
+    padding: 2.6rem 2.4rem;
     background: #192a36;
     border-radius: 1.6rem;
-    width: 35rem;
+    max-width: 35rem;
+    margin: auto;
+    text-align: center;
+    user-select: none;
 `;
 
-export const ProfilePic = styled.div``;
+const profilePicWrapperAfterBeforeStyles = `
+    content: "";
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+    width: 9rem;
+    height: 5.5rem;
+    background: url("./assets/profile-pic-ellipse.png");
+`;
 
-export const Name = styled.div``;
+export const ProfilePicWrapper = styled.div`
+    width: 10.5rem;
+    height: 10.5rem;
+    position: relative;
+    margin: 0 auto 2.6rem;
+    &:after {
+        ${profilePicWrapperAfterBeforeStyles}
+        transform: translateX(-50%);
+        top: -0.4rem;
+    }
+    &:before {
+        ${profilePicWrapperAfterBeforeStyles}
+        transform: translateX(-50%) rotate(180deg);
+        bottom: -0.4rem;
+    }
+`;
 
-export const Comapny = styled.img``;
+interface ProfilePicProps {
+    src: string;
+}
 
-export const Review = styled.div``;
+export const ProfilePic = styled.div<ProfilePicProps>`
+    height: 100%;
+    border-radius: 50%;
+    background: url(${({ src }) => src});
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+`;
 
-export const Socials = styled.div``;
+export const Name = styled.div`
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 150%;
+    color: #e8e8e8;
+`;
 
-export const Social = styled.div``;
+export const Company = styled.img`
+    margin: 1.6rem 0;
+`;
+
+export const Review = styled.div`
+    margin-bottom: 2.4rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: #eaebed;
+    opacity: 0.8;
+`;
+
+export const Socials = styled.div`
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+`;
+
+export const Social = styled.div`
+    color: #ecedf3;
+    font-size: 3.2rem;
+`;
