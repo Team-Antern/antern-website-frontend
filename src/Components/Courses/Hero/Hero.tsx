@@ -17,7 +17,12 @@ import {
 } from "./styles";
 import { FiSearch } from "react-icons/fi";
 
-const CoursesHero = () => {
+interface CoursesHeroProps {
+    searchValue: string;
+    setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const CoursesHero = ({ searchValue, setSearchValue }: CoursesHeroProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
     return (
         <Container>
@@ -40,6 +45,8 @@ const CoursesHero = () => {
                     <InputContainer onClick={() => inputRef.current?.focus()}>
                         <Input
                             ref={inputRef}
+                            value={searchValue}
+                            onChange={(e) => setSearchValue(e.target.value)}
                             placeholder="What do you want to learn today?"
                         />
                         <InputIcon>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Course from "../Course/Course";
 import {
     Container,
@@ -10,23 +10,34 @@ import {
     PaginationPages,
 } from "./styles";
 import { BsFillTriangleFill } from "react-icons/bs";
+import { Course as CourseInterface } from "../../../Pages/Courses/Courses";
 
-const CoursesPagination = () => {
-    const [totalPages, setTotalPages] = useState(5);
+interface CoursesPaginationProps {
+    courses: CourseInterface[];
+}
+
+const CoursesPagination = ({ courses }: CoursesPaginationProps) => {
+    const [totalPages, setTotalPages] = useState(0);
     const [activePage, setActivePage] = useState(0);
+    useEffect(() => setTotalPages(Math.ceil(courses.length / 6)), [courses]);
     return (
         <Container>
             <Heading>Courses By Antern</Heading>
             <Content>
-                <Course />
-                <Course />
-                <Course />
-                <Course />
-                <Course />
-                <Course />
+                {courses
+                    .slice(activePage * 6, (activePage + 1) * 6)
+                    .map((course, index) => {
+                        return <Course key={index} {...course} />;
+                    })}
             </Content>
             <Pagination>
-                <PaginationBackwardForward backward>
+                <PaginationBackwardForward
+                    backward
+                    isDisabled={activePage === 0}
+                    onClick={() =>
+                        activePage !== 0 && setActivePage((prev) => prev - 1)
+                    }
+                >
                     <BsFillTriangleFill />
                 </PaginationBackwardForward>
                 <PaginationPages>
@@ -48,7 +59,14 @@ const CoursesPagination = () => {
                         return paginationPages;
                     })()}
                 </PaginationPages>
-                <PaginationBackwardForward backward={false}>
+                <PaginationBackwardForward
+                    backward={false}
+                    isDisabled={activePage === totalPages - 1}
+                    onClick={() =>
+                        activePage !== totalPages - 1 &&
+                        setActivePage((prev) => prev + 1)
+                    }
+                >
                     <BsFillTriangleFill />
                 </PaginationBackwardForward>
             </Pagination>

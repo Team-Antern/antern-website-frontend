@@ -43,6 +43,7 @@ export const CourseTitle = styled.div`
     font-size: 2.5rem;
     line-height: 140%;
     color: #252d3a;
+    text-transform: capitalize;
 `;
 
 export const CourseInstructorRating = styled.div`
@@ -77,6 +78,7 @@ export const CourseInstructorName = styled.div`
     font-weight: 500;
     line-height: 150%;
     color: #232d3d;
+    text-transform: capitalize;
 `;
 
 export const CourseInstructorPosition = styled.div`

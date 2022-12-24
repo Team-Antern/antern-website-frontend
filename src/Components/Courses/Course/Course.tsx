@@ -23,19 +23,30 @@ import { AiFillStar } from "react-icons/ai";
 import { IoIosTimer } from "react-icons/io";
 import Button from "../../Global/Button/Button";
 import { BsCameraVideo, BsFileEarmarkPdf } from "react-icons/bs";
+import { Course as CourseInterface } from "../../../Pages/Courses/Courses";
 
-const Course = () => {
+const Course = ({
+    id,
+    isLive,
+    title,
+    instructor,
+    courseBanner,
+    rating,
+    duration,
+}: CourseInterface) => {
     return (
         <Container>
-            <CourseImage src="https://i.ytimg.com/vi/hjh1ikznScg/maxresdefault.jpg" />
+            <CourseImage src={courseBanner} />
             <CourseDetails>
-                <CourseTitle>Core Machine Learning</CourseTitle>
+                <CourseTitle>{title}</CourseTitle>
                 <CourseInstructorRating>
                     <CourseInstructor>
-                        <CourseInstructorProfilePic src="https://bit.ly/3iFDcYj" />
+                        <CourseInstructorProfilePic
+                            src={instructor.profilePic}
+                        />
                         <CourseInstructorNamePosition>
                             <CourseInstructorName>
-                                By Ayush Singh
+                                by {instructor.name}
                             </CourseInstructorName>
                             <CourseInstructorPosition>
                                 Mentor
@@ -46,7 +57,7 @@ const Course = () => {
                         <CourseRatingStarIcon>
                             <AiFillStar />
                         </CourseRatingStarIcon>
-                        <CourseRatingContent>(4.9)</CourseRatingContent>
+                        <CourseRatingContent>({rating})</CourseRatingContent>
                     </CourseRating>
                 </CourseInstructorRating>
                 <CourseFeatures>
@@ -63,17 +74,17 @@ const Course = () => {
                             <BsCameraVideo />
                         </CourseFeatureIcon>
                         <CourseFeatureContent>
-                            recorded course
+                            {isLive ? "live" : "recorded"} course
                         </CourseFeatureContent>
                     </CourseFeature>
                 </CourseFeatures>
                 <ViewMoreCourseLength>
-                    <Button>View more</Button>
+                    <Button to={`/courses/${id}`}>View more</Button>
                     <CourseFeature>
                         <CourseFeatureIcon>
                             <IoIosTimer />
                         </CourseFeatureIcon>
-                        <CourseFeatureContent>2 months</CourseFeatureContent>
+                        <CourseFeatureContent>{duration}</CourseFeatureContent>
                     </CourseFeature>
                 </ViewMoreCourseLength>
             </CourseDetails>

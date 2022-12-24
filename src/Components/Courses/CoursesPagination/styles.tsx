@@ -30,6 +30,7 @@ export const Pagination = styled.div`
 
 interface PaginationBackwardForwardProps {
     backward: boolean;
+    isDisabled: boolean;
 }
 
 export const PaginationBackwardForward = styled.div<PaginationBackwardForwardProps>`
@@ -43,6 +44,8 @@ export const PaginationBackwardForward = styled.div<PaginationBackwardForwardPro
     align-items: center;
     justify-content: center;
     font-size: 1.4rem;
+    cursor: pointer;
+    opacity: ${({ isDisabled }) => (isDisabled ? "0.2" : "1")};
     & svg {
         position: relative;
         ${({ backward }) =>
