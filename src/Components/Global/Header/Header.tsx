@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import {
     Container,
+    HamMenuButton,
     Link,
     Links,
     Logo,
@@ -10,6 +11,7 @@ import {
     NeedHelpGetStarted,
 } from "./styles";
 import logo from "/assets/logo-white.svg";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const headerLinks = [
     {
@@ -29,7 +31,7 @@ const headerLinks = [
 const Header = () => {
     return (
         <Container>
-            <NavLink to="/">
+            <NavLink to="/" style={{ display: "flex", alignItems: "center" }}>
                 <Logo src={logo} />
             </NavLink>
             <Links>
@@ -43,6 +45,9 @@ const Header = () => {
                     </NavLink>
                 ))}
             </Links>
+            <HamMenuButton>
+                <AiOutlineMenu />
+            </HamMenuButton>
             <NeedHelpGetStarted>
                 <NeedHelp>Need Help?</NeedHelp>
                 <Button>Get started</Button>

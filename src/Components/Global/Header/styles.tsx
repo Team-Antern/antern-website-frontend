@@ -5,7 +5,7 @@ export const Container = styled.div`
     justify-content: space-between;
     gap: 10rem;
     align-items: center;
-    padding: 0.3rem 0 1.6rem 0;
+    padding: 0.3rem 5.4rem 1.6rem 5.4rem;
     position: relative;
     &:after {
         content: "";
@@ -20,6 +20,9 @@ export const Container = styled.div`
             #4df3a3 47.63%,
             rgba(77, 243, 163, 0) 87.83%
         );
+        @media screen and (max-width: 600px) {
+            content: none;
+        }
     }
 `;
 
@@ -30,10 +33,26 @@ export const Logo = styled.img`
     z-index: 1;
 `;
 
+export const HamMenuButton = styled.div`
+    display: none;
+    align-items: center;
+    color: #fff;
+    font-size: 3rem;
+    @media screen and (max-width: 600px) {
+        display: flex;
+    }
+`;
+
 export const Links = styled.div`
     display: flex;
     gap: 4rem;
     flex-grow: 1;
+    @media screen and (max-width: 820px) {
+        justify-content: flex-end;
+    }
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
 `;
 
 interface LinkProps {
@@ -71,6 +90,9 @@ export const NeedHelpGetStarted = styled.div`
     display: flex;
     gap: 2.4rem;
     align-items: center;
+    @media screen and (max-width: 820px) {
+        display: none;
+    }
 `;
 
 export const NeedHelp = styled.div`
@@ -78,4 +100,7 @@ export const NeedHelp = styled.div`
     line-height: 150%;
     color: #4df3a3;
     opacity: 0.8;
+    @media screen and (max-width: 960px) {
+        display: none;
+    }
 `;
