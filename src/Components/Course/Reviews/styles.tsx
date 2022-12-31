@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     background: #13222f;
-    padding: 10rem 2.5rem;
+    padding: 10rem 4rem;
+    @media screen and (max-width: 900px) {
+        padding: 6rem 4rem;
+    }
 `;
 
 export const Heading = styled.div`
@@ -14,6 +17,9 @@ export const Heading = styled.div`
     text-align: center;
     margin-bottom: 8rem;
     text-transform: capitalize;
+    @media screen and (max-width: 900px) {
+        font-size: 3.2rem;
+    }
 `;
 
 export const Content = styled.div`

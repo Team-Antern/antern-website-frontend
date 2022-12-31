@@ -35,11 +35,10 @@ const Course = () => {
             />
             <Content>
                 <AboutCourse />
-                {/* <SkillsYouWillGain /> */}
+                <SkillsYouWillGain />
                 {/* <ModuleContent /> */}
                 {/* <Instructors /> */}
-                {/* <Reviews /> */}
-                {/* <JoinOurCommunity /> */}
+                <Reviews />
             </Content>
         </Container>
     );

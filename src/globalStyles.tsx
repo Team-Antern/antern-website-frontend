@@ -6,6 +6,9 @@ export const SwiperDots = styled.div`
     justify-content: center;
     gap: 1.2rem;
     margin-top: 6rem;
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
 `;
 
 interface SwiperDotProps {

@@ -4,6 +4,10 @@ export const Container = styled.div`
     max-width: 115rem;
     margin: 15rem auto 11rem;
     text-transform: capitalize;
+    padding: 0 4rem;
+    @media screen and (max-width: 700px) {
+        text-align: center;
+    }
 `;
 
 export const Heading = styled.div`
@@ -13,12 +17,19 @@ export const Heading = styled.div`
     font-size: 4rem;
     line-height: 125%;
     color: #121e27;
+    @media screen and (max-width: 700px) {
+        margin-bottom: 4rem;
+        font-size: 3.5rem;
+    }
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 2.4rem 1.6rem;
+    @media screen and (max-width: 700px) {
+        justify-content: center;
+    }
 `;
 
 export const Skill = styled.div`
@@ -29,4 +40,10 @@ export const Skill = styled.div`
     background: #effaf7;
     box-shadow: 0px 8px 16px #eaeeef;
     border-radius: 1rem;
+    @media screen and (max-width: 600px) {
+        width: calc((100% - 1.6rem) / 2);
+    }
+    @media screen and (max-width: 520px) {
+        width: 100%;
+    }
 `;

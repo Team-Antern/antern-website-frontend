@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Review from "../Review/Review";
 import { Heading, Container, Content } from "./styles";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +10,17 @@ const Reviews = () => {
     const [swiper, setSwiper] = useState<sw | null>(null);
     const [slidesPerView, setSlidesPerView] = useState(3);
     const [activeSlide, setActiveSlide] = useState(0);
+    useEffect(() => {
+        const decideAndSetSlidesPerView = () => {
+            if (window.innerWidth > 1000) setSlidesPerView(3);
+            else if (window.innerWidth <= 1000 && window.innerWidth > 640)
+                setSlidesPerView(2);
+            else setSlidesPerView(1);
+        };
+        window.addEventListener("resize", decideAndSetSlidesPerView);
+        return () =>
+            window.removeEventListener("resize", decideAndSetSlidesPerView);
+    }, []);
     return (
         <Container>
             <Heading>not just take our words</Heading>

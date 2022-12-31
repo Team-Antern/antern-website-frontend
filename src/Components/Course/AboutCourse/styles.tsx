@@ -6,11 +6,24 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 4rem;
+    padding: 0 5.4rem;
+    @media screen and (max-width: 920px) {
+        flex-direction: column;
+    }
+    @media screen and (max-width: 800px) {
+        text-align: center;
+    }
+    @media screen and (max-width: 560px) {
+        padding: 0 4.5rem;
+    }
 `;
 
 export const Left = styled.div`
     width: 60%;
+    @media screen and (max-width: 920px) {
+        width: 100%;
+    }
 `;
 
 export const Heading = styled.div`
@@ -20,6 +33,12 @@ export const Heading = styled.div`
     line-height: 115%;
     color: #121e27;
     text-transform: capitalize;
+    @media screen and (max-width: 760px) {
+        font-size: 4.5rem;
+    }
+    @media screen and (max-width: 560px) {
+        font-size: 3.8rem;
+    }
 `;
 
 export const Desc = styled.div`
@@ -31,12 +50,19 @@ export const Desc = styled.div`
     line-height: 150%;
     color: #394a65;
     opacity: 0.8;
+    @media screen and (max-width: 760px) {
+        gap: 2.9rem;
+    }
 `;
 
 export const CourseFeatures = styled.div`
     display: flex;
     align-items: center;
-    gap: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+    @media screen and (max-width: 800px) {
+        justify-content: center;
+    }
 `;
 
 export const CourseFeature = styled.div`
@@ -50,6 +76,9 @@ export const CourseFeatureIcon = styled.div`
     font-size: 3rem;
     display: flex;
     align-items: center;
+    @media screen and (max-width: 550px) {
+        font-size: 2.5rem;
+    }
 `;
 
 export const CourseFeatureContent = styled.div`
@@ -81,6 +110,18 @@ export const Right = styled.div`
             rgba(239, 250, 247, 0.9) 6.09%,
             rgba(239, 250, 247, 0) 96.38%
         );
+        @media screen and (max-width: 920px) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 920px) {
+        flex-direction: row;
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+    }
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
     }
 `;
 
@@ -89,6 +130,10 @@ export const AboutCourseCard = styled.div`
     background: #ffffff;
     box-shadow: 0px 15px 60px rgba(5, 9, 13, 0.04);
     border-radius: 16px;
+    @media screen and (max-width: 700px) {
+        width: 100%;
+        padding: 3rem 2.6rem;
+    }
 `;
 
 export const AboutCourseCardHeading = styled.div`
