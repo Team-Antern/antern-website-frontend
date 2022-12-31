@@ -41,7 +41,7 @@ const Courses = () => {
                         course.title.includes(searchValue)
                     )}
                 />
-                <JoinOurCommunity />
+                {/* <JoinOurCommunity /> */}
             </Content>
         </Container>
     );

@@ -8,8 +8,9 @@ import {
     PaginationBackwardForward,
     PaginationPage,
     PaginationPages,
+    PaginationWrapper,
 } from "./styles";
-import { BsFillTriangleFill } from "react-icons/bs";
+import { HiOutlineChevronRight, HiOutlineChevronLeft } from "react-icons/hi";
 import { Course as CourseInterface } from "../../../Pages/Courses/Courses";
 
 interface CoursesPaginationProps {
@@ -30,46 +31,47 @@ const CoursesPagination = ({ courses }: CoursesPaginationProps) => {
                         return <Course key={index} {...course} />;
                     })}
             </Content>
-            <Pagination>
-                <PaginationBackwardForward
-                    backward
-                    isDisabled={activePage === 0}
-                    onClick={() =>
-                        activePage !== 0 && setActivePage((prev) => prev - 1)
-                    }
-                >
-                    <BsFillTriangleFill />
-                </PaginationBackwardForward>
-                <PaginationPages>
-                    {(() => {
-                        const paginationPages = [];
-                        for (let i = 0; i < totalPages; i++) {
-                            paginationPages.push(
-                                <PaginationPage
-                                    key={i}
-                                    isActive={activePage === i}
-                                    onClick={() => {
-                                        setActivePage(i);
-                                    }}
-                                >
-                                    {i + 1}
-                                </PaginationPage>
-                            );
+            <PaginationWrapper>
+                <Pagination>
+                    <PaginationBackwardForward
+                        isDisabled={activePage === 0}
+                        onClick={() =>
+                            activePage !== 0 &&
+                            setActivePage((prev) => prev - 1)
                         }
-                        return paginationPages;
-                    })()}
-                </PaginationPages>
-                <PaginationBackwardForward
-                    backward={false}
-                    isDisabled={activePage === totalPages - 1}
-                    onClick={() =>
-                        activePage !== totalPages - 1 &&
-                        setActivePage((prev) => prev + 1)
-                    }
-                >
-                    <BsFillTriangleFill />
-                </PaginationBackwardForward>
-            </Pagination>
+                    >
+                        <HiOutlineChevronLeft />
+                    </PaginationBackwardForward>
+                    <PaginationPages>
+                        {(() => {
+                            const paginationPages = [];
+                            for (let i = 0; i < totalPages; i++) {
+                                paginationPages.push(
+                                    <PaginationPage
+                                        key={i}
+                                        isActive={activePage === i}
+                                        onClick={() => {
+                                            setActivePage(i);
+                                        }}
+                                    >
+                                        {i + 1}
+                                    </PaginationPage>
+                                );
+                            }
+                            return paginationPages;
+                        })()}
+                    </PaginationPages>
+                    <PaginationBackwardForward
+                        isDisabled={activePage === totalPages - 1}
+                        onClick={() =>
+                            activePage !== totalPages - 1 &&
+                            setActivePage((prev) => prev + 1)
+                        }
+                    >
+                        <HiOutlineChevronRight />
+                    </PaginationBackwardForward>
+                </Pagination>
+            </PaginationWrapper>
         </Container>
     );
 };

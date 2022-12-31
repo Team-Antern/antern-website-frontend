@@ -21,45 +21,39 @@ export const Content = styled.div`
     margin: 7.2rem 0;
 `;
 
-export const Pagination = styled.div`
+export const PaginationWrapper = styled.div`
     display: flex;
+    justify-content: center;
+`;
+
+export const Pagination = styled.div`
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    padding: 1.4rem 2rem;
+    background: #fff;
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.1);
+    border-radius: 13rem;
 `;
 
 interface PaginationBackwardForwardProps {
-    backward: boolean;
     isDisabled: boolean;
 }
 
 export const PaginationBackwardForward = styled.div<PaginationBackwardForwardProps>`
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     opacity: 0.6;
-    border: 0.15rem solid #5d6c83;
-    color: #8993a4;
+    background: #13222f;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 2.5rem;
     cursor: pointer;
     opacity: ${({ isDisabled }) => (isDisabled ? "0.2" : "1")};
-    & svg {
-        position: relative;
-        ${({ backward }) =>
-            backward
-                ? `
-                    position: relative;
-                    left: -2px;
-                    transform: rotate(270deg);
-                `
-                : `
-                    left: 2px;
-                    transform: rotate(-270deg);
-                `}
-    }
 `;
 
 export const PaginationPages = styled.div`
@@ -76,13 +70,13 @@ export const PaginationPage = styled.div<PaginationPagesProps>`
     height: 4rem;
     cursor: pointer;
     user-select: none;
-    background: ${({ isActive }) => (isActive ? "#4df3a3" : "#fff")};
-    border-radius: 0.5rem;
+    background: ${({ isActive }) => (isActive ? "#4df3a3" : "transparent")};
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 400;
     font-size: 2rem;
     line-height: 150%;
-    color: #42526d;
+    color: #000;
 `;
