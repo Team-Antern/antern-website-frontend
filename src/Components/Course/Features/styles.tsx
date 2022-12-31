@@ -1,19 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem 4rem;
-    gap: 2.4rem;
     background: #fff;
     box-shadow: 0px 15px 60px rgba(5, 9, 13, 0.04);
-    width: 100%;
+    width: calc(100% - 2.5rem);
     max-width: 120rem;
     margin: auto;
     border-radius: 2rem;
     position: relative;
     top: -8rem;
+    z-index: 2;
 `;
 
 export const Feature = styled.div`
@@ -46,4 +42,22 @@ export const FeaturesSeperator = styled.div`
     );
     width: 0.2rem;
     height: 5.8rem;
+`;
+
+export const WithoutSwiper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 6rem 4rem;
+    @media screen and (max-width: 880px) {
+        display: none;
+    }
+`;
+
+export const WithSwiper = styled.div`
+    @media screen and (max-width: 880px) {
+        display: block;
+    }
+    padding: 4rem 2.5rem;
 `;
