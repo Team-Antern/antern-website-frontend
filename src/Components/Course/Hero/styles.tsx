@@ -24,6 +24,9 @@ export const HeroMain = styled.div`
         flex-direction: column;
         gap: 6rem;
     }
+    @media screen and (max-width: 540px) {
+        padding: 5rem 3.2rem;
+    }
 `;
 
 export const CourseDetails = styled.div`
@@ -44,13 +47,17 @@ export const CourseTitle = styled.div`
     line-height: 120%;
     color: #edf5f1;
     margin-top: 1.6rem;
+    @media screen and (max-width: 530px) {
+        font-size: 4.5rem;
+    }
 `;
 
 export const CourseRating = styled.div`
     display: flex;
-    gap: 3rem;
+    gap: 1rem 3rem;
     align-items: center;
     margin: 2.4rem 0 2rem;
+    flex-wrap: wrap;
 `;
 
 export const CourseStarRating = styled.div`
@@ -128,6 +135,7 @@ export const EnrollNow = styled.div`
     align-items: center;
     gap: 2.4rem;
     margin: 3.2rem 0 2rem;
+    flex-wrap: wrap;
 `;
 
 export const EnrollButton = styled.div`
