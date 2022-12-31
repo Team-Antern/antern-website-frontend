@@ -4,7 +4,14 @@ export const Container = styled.div`
     background: #13222f;
     backdrop-filter: blur(22px);
     border-radius: 4.6rem 4.6rem 0px 0px;
-    padding: 9rem 2.5rem 7rem;
+    padding: 9rem 5.4rem 7rem;
+    @media screen and (max-width: 480px) {
+        padding: 9rem 5.4rem 7rem;
+    }
+    @media screen and (max-width: 430px) {
+        padding: 6.5rem 3.2rem 7rem;
+        border-radius: 0;
+    }
 `;
 
 export const Content = styled.div`
@@ -15,15 +22,29 @@ export const Content = styled.div`
 export const AboutCompanyLinkSections = styled.div`
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+        gap: 4rem;
+    }
 `;
 
 export const AboutCompany = styled.div`
     max-width: 38rem;
+    @media screen and (max-width: 900px) {
+        max-width: max-content;
+        padding: 0 10rem;
+    }
+    @media screen and (max-width: 630px) {
+        padding: 0rem;
+    }
 `;
 
 export const CompanyLogo = styled.img`
     width: 15rem;
     margin-bottom: 0.6rem;
+    @media screen and (max-width: 900px) {
+        margin-bottom: 1.5rem;
+    }
 `;
 
 export const CompanyDesc = styled.div`
@@ -35,6 +56,13 @@ export const CompanyDesc = styled.div`
 export const LinkSections = styled.div`
     display: flex;
     gap: 5.6rem;
+    @media screen and (max-width: 900px) {
+        justify-content: center;
+    }
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+        gap: 3.2rem;
+    }
 `;
 
 export const LinkSection = styled.div`
@@ -68,6 +96,10 @@ export const SocialLinksCopyrightButtons = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-top: 4rem;
+    @media screen and (max-width: 950px) {
+        flex-direction: column-reverse;
+        gap: 2.5rem;
+    }
 `;
 
 export const SocialLinks = styled.div`
@@ -93,9 +125,24 @@ export const Copyright = styled.div`
     line-height: 150%;
     color: #c9c9c9;
     opacity: 0.6;
+    @media screen and (max-width: 950px) {
+        font-size: 1.6rem;
+    }
 `;
 
 export const Buttons = styled.div`
     display: flex;
     gap: 2.5rem;
+    flex-wrap: wrap;
+    @media screen and (max-width: 430px) {
+        width: 100%;
+        & div {
+            flex: 1;
+        }
+    }
+    @media screen and (max-width: 370px) {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
 `;

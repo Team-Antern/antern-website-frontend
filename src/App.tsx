@@ -17,7 +17,7 @@ function App() {
                 <Route path="/courses/:id" element={<Course />} />
                 <Route path="/about-us" element={<AboutUs />} />
             </Routes>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 }
