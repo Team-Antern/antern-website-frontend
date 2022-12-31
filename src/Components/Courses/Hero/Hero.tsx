@@ -28,7 +28,7 @@ const CoursesHero = ({ searchValue, setSearchValue }: CoursesHeroProps) => {
         <Container>
             <Content>
                 <Header />
-                {/* <HeroMain>
+                <HeroMain>
                     <BreadCrumbs
                         path={[
                             {
@@ -58,11 +58,11 @@ const CoursesHero = ({ searchValue, setSearchValue }: CoursesHeroProps) => {
                         <span>3Years.</span>
                         <span>100% Free Courses</span>
                     </Stats>
-                </HeroMain> */}
-                {/* <Rocket />
+                </HeroMain>
+                <Rocket />
                 <Discount />
                 <ELearning />
-                <Code /> */}
+                <Code />
             </Content>
         </Container>
     );

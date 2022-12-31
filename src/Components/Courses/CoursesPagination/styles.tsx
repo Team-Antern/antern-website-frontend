@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     max-width: 116rem;
     margin: auto;
+    padding: 0 3rem;
 `;
 
 export const Heading = styled.div`
@@ -11,6 +12,11 @@ export const Heading = styled.div`
     font-size: 4rem;
     line-height: 125%;
     color: #101c26;
+    text-align: center;
+    letter-spacing: -0.5px;
+    @media screen and (max-width: 500px) {
+        font-size: 3.5rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -19,6 +25,9 @@ export const Content = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     margin: 7.2rem 0;
+    @media screen and (max-width: 500px) {
+        margin: 5rem 0;
+    }
 `;
 
 export const PaginationWrapper = styled.div`

@@ -24,6 +24,7 @@ import {
     LikesOnCourse,
     LikesOnCourseContent,
     NumberOfPeopleEnrolled,
+    CourseImage,
 } from "./styles";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { AiFillLike } from "react-icons/ai";
@@ -35,6 +36,7 @@ const CourseHero = () => {
             <Content>
                 <Header />
                 <HeroMain>
+                    <CourseImage />
                     <CourseDetails>
                         <BreadCrumbs
                             path={[
@@ -74,12 +76,12 @@ const CourseHero = () => {
                             <CourseNumberOfRatings>
                                 20,454 ratings
                             </CourseNumberOfRatings>
-                            <LikesOnCourse>
+                            {/* <LikesOnCourse>
                                 <LikeIcon>
                                     <AiFillLike />
                                 </LikeIcon>
                                 <LikesOnCourseContent>97%</LikesOnCourseContent>
-                            </LikesOnCourse>
+                            </LikesOnCourse> */}
                         </CourseRating>
                         <CourseInstructor>
                             <CourseInstructorProfilePic src="https://bit.ly/3iFDcYj" />
@@ -100,7 +102,6 @@ const CourseHero = () => {
                             <span>511,324</span> already enrolled
                         </NumberOfPeopleEnrolled>
                     </CourseDetails>
-                    <CourseVideo></CourseVideo>
                 </HeroMain>
             </Content>
         </Container>

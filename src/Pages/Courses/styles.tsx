@@ -8,4 +8,7 @@ export const Content = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0px 0px;
+    @media screen and (max-width: 500px) {
+        padding: 5rem 0;
+    }
 `;

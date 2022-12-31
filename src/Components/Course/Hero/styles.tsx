@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding: 5rem 0 17rem 0;
+    padding: 5rem 0 0 0;
     background: url("/assets/herobg.svg");
     background-size: cover;
     background-position: center;
@@ -10,19 +10,30 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     position: relative;
-    max-width: 115rem;
+    max-width: 130rem;
     margin: auto;
 `;
 
 export const HeroMain = styled.div`
-    margin-top: 8.5rem;
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
+    padding: 8.5rem 5.4rem 17rem;
+    align-items: center;
+    position: relative;
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        gap: 6rem;
+    }
 `;
 
 export const CourseDetails = styled.div`
     width: 60%;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+    }
 `;
 
 export const CourseTitle = styled.div`
@@ -153,6 +164,40 @@ export const NumberOfPeopleEnrolled = styled.div`
     }
 `;
 
-export const CourseVideo = styled.div`
-    flex: 1;
+export const CourseImage = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @media screen and (max-width: 750px) {
+        width: 100%;
+        left: 0;
+    }
+    &:after {
+        position: absolute;
+        z-index: 1;
+        content: "";
+        top: 0;
+        width: 60rem;
+        height: 100%;
+        background: linear-gradient(
+            90.05deg,
+            #101c26 0.05%,
+            rgba(0, 0, 0, 0) 99.94%
+        );
+        @media screen and (max-width: 750px) {
+            width: 100%;
+            background: linear-gradient(
+                90deg,
+                #101c26 0%,
+                rgba(0, 0, 0, 0) 143.75%
+            );
+        }
+    }
 `;

@@ -5,8 +5,10 @@ export const Container = styled.div`
     justify-content: space-between;
     gap: 10rem;
     align-items: center;
-    padding: 0.3rem 5.4rem 1.6rem 5.4rem;
+    padding: 0.3rem 5.4rem 3rem 5.4rem;
     position: relative;
+    z-index: 2;
+    overflow: hidden;
     &:after {
         content: "";
         position: absolute;

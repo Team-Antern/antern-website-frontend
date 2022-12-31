@@ -36,11 +36,11 @@ const Courses = () => {
             />
             {/* <FilterSorts /> */}
             <Content>
-                {/* <CoursesPagination
+                <CoursesPagination
                     courses={courses.filter((course) =>
                         course.title.includes(searchValue)
                     )}
-                /> */}
+                />
                 {/* <JoinOurCommunity /> */}
             </Content>
         </Container>

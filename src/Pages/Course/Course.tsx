@@ -13,7 +13,7 @@ const Course = () => {
     return (
         <Container>
             <CourseHero />
-            <Features
+            {/* <Features
                 data={[
                     {
                         heading: "6 month",
@@ -32,14 +32,14 @@ const Course = () => {
                         desc: "Learn on your own time",
                     },
                 ]}
-            />
+            /> */}
             <Content>
-                <AboutCourse />
-                <SkillsYouWillGain />
-                <ModuleContent />
-                <Instructors />
-                <Reviews />
-                <JoinOurCommunity />
+                {/* <AboutCourse /> */}
+                {/* <SkillsYouWillGain /> */}
+                {/* <ModuleContent /> */}
+                {/* <Instructors /> */}
+                {/* <Reviews /> */}
+                {/* <JoinOurCommunity /> */}
             </Content>
         </Container>
     );

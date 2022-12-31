@@ -20,6 +20,9 @@ export const HeroMain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 1;
 `;
 
 export const Heading = styled.div`
@@ -32,20 +35,29 @@ export const Heading = styled.div`
     text-transform: capitalize;
     max-width: 52.2rem;
     margin: 1.6rem auto 0;
+    @media screen and (max-width: 700px) {
+        font-size: 5rem;
+    }
+    @media screen and (max-width: 460px) {
+        font-size: 4rem;
+    }
 `;
 
 export const InputContainer = styled.div`
-    background: #13202c;
+    background: rgba(19, 32, 44, 0.5);
+    backdrop-filter: blur(7.5px);
     border: 0.1rem solid #1c2c3a;
     border-radius: 6rem;
     padding: 2rem 3.2rem;
     width: 100%;
     margin: 4rem 0 1.6rem;
-    opacity: 0.7;
     display: flex;
     gap: 1rem;
     align-items: center;
     cursor: text;
+    @media screen and (max-width: 470px) {
+        padding: 1.5rem 2.7rem;
+    }
 `;
 
 const inputTextStyles = `
@@ -53,6 +65,9 @@ const inputTextStyles = `
     font-size: 1.8rem;
     line-height: 150%;
     color: rgba(222, 227, 236, 0.5);
+    @media screen and (max-width: 470px) {
+        font-size: 1.6rem;
+    }
 `;
 
 export const Input = styled.input`
@@ -78,6 +93,9 @@ export const InputIcon = styled.div`
     align-items: center;
     border-left: 1px solid rgba(209, 216, 223, 0.3);
     padding-left: 2rem;
+    @media screen and (max-width: 470px) {
+        font-size: 2rem;
+    }
 `;
 
 export const Stats = styled.div`
@@ -86,12 +104,18 @@ export const Stats = styled.div`
     color: #ab5314;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media screen and (max-width: 470px) {
+        text-align: center;
+        font-size: 1.4rem;
+    }
 `;
 
 export const Rocket = styled.div`
     position: absolute;
     top: 0;
-    left: -10rem;
+    left: -2rem;
     width: 32rem;
     height: 32rem;
     background: url("/assets/rocket.svg");
@@ -112,7 +136,7 @@ export const ELearning = styled.div`
     height: 32rem;
     background: url("/assets/e-learning.svg");
     top: 0;
-    right: -10rem;
+    right: -2rem;
 `;
 
 export const Code = styled.div`
@@ -121,5 +145,5 @@ export const Code = styled.div`
     height: 32rem;
     background: url("/assets/code.svg");
     bottom: -10rem;
-    right: -10rem;
+    right: -2rem;
 `;
