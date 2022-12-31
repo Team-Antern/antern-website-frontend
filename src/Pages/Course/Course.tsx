@@ -34,7 +34,7 @@ const Course = () => {
                 ]}
             />
             <Content>
-                {/* <AboutCourse /> */}
+                <AboutCourse />
                 {/* <SkillsYouWillGain /> */}
                 {/* <ModuleContent /> */}
                 {/* <Instructors /> */}

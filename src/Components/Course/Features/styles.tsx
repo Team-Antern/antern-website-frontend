@@ -56,6 +56,7 @@ export const WithoutSwiper = styled.div`
 `;
 
 export const WithSwiper = styled.div`
+    display: none;
     @media screen and (max-width: 880px) {
         display: block;
     }
