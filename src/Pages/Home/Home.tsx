@@ -7,6 +7,7 @@ import PremiumBenefits from "../../Components/Home/PremiumBenefits/PremiumBenefi
 import NotJustTakeOurWords from "../../Components/Home/NotJustTakeOurWords/NotJustTakeOurWords";
 import PlatformComparision from "../../Components/Home/PlatformComparision/PlatformComparision";
 import JoinOurCommunity from "../../Components/Home/JoinOurCommunity/JoinOurCommunity";
+import FAQ from "../../Components/Home/FAQ/FAQ";
 
 const Home = () => {
     return (
@@ -18,7 +19,7 @@ const Home = () => {
                 <PremiumBenefits />
                 <NotJustTakeOurWords />
                 <PlatformComparision />
-                <JoinOurCommunity />
+                <FAQ />
             </Content>
         </Container>
     );

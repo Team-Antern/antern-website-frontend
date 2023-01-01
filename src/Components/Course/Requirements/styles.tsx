@@ -14,12 +14,18 @@ export const Heading = styled.div`
     line-height: 130%;
     color: #121e27;
     text-transform: capitalize;
+    @media screen and (max-width: 700px) {
+        font-size: 3.5rem;
+    }
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    @media screen and (max-width: 600px) {
+        gap: 1.2rem;
+    }
 `;
 
 export const Requirement = styled.div`
@@ -33,6 +39,9 @@ export const RequirementCheckIcon = styled.div`
     color: #15d33f;
     display: flex;
     align-items: center;
+    @media screen and (max-width: 600px) {
+        font-size: 2.5rem;
+    }
 `;
 
 export const RequirementContent = styled.div`
@@ -41,4 +50,7 @@ export const RequirementContent = styled.div`
     line-height: 150%;
     color: #121e27;
     text-transform: capitalize;
+    @media screen and (max-width: 600px) {
+        font-size: 1.6rem;
+    }
 `;

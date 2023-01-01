@@ -8,6 +8,7 @@ import {
     InstructorPosition,
     InstructorProfilePic,
     InstructorProfilePicName,
+    SlideControls,
 } from "./styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { default as sw } from "swiper";
@@ -43,14 +44,6 @@ const Instructors = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <Container>
-            <SlideControl2
-                isDisabled={activeIndex === 0}
-                onClick={() =>
-                    Object.getPrototypeOf(swiper).slidePrev.apply(swiper)
-                }
-            >
-                <FaChevronLeft />
-            </SlideControl2>
             <Content>
                 <Swiper
                     onSwiper={setSwiper}
@@ -75,14 +68,24 @@ const Instructors = () => {
                     )}
                 </Swiper>
             </Content>
-            <SlideControl2
-                isDisabled={activeIndex === instructors.length - 1}
-                onClick={() =>
-                    Object.getPrototypeOf(swiper).slideNext.apply(swiper)
-                }
-            >
-                <FaChevronRight />
-            </SlideControl2>
+            <SlideControls>
+                <SlideControl2
+                    isDisabled={activeIndex === 0}
+                    onClick={() =>
+                        Object.getPrototypeOf(swiper).slidePrev.apply(swiper)
+                    }
+                >
+                    <FaChevronLeft />
+                </SlideControl2>
+                <SlideControl2
+                    isDisabled={activeIndex === instructors.length - 1}
+                    onClick={() =>
+                        Object.getPrototypeOf(swiper).slideNext.apply(swiper)
+                    }
+                >
+                    <FaChevronRight />
+                </SlideControl2>
+            </SlideControls>
         </Container>
     );
 };

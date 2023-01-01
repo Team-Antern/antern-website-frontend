@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    max-width: 90rem;
+    max-width: 95.4rem;
     margin: 15.2rem auto;
-    display: flex;
-    gap: 1.8rem;
-    align-items: center;
+    padding: 0 5.4rem;
+    position: relative;
+    @media screen and (max-width: 540px) {
+        padding: 0 3rem;
+        margin: 12rem auto;
+    }
 `;
 
 export const Instructor = styled.div`
@@ -58,10 +61,14 @@ export const InstructorAbout = styled.div`
     line-height: 150%;
     color: #070707;
     opacity: 0.7;
+    @media screen and (max-width: 480px) {
+        font-size: 1.6rem;
+    }
 `;
 
 export const Content = styled.div`
     max-width: calc(100% - ((1.8rem * 2) + (4rem * 2)));
+    margin: auto;
     background: #fdfefd;
     border: 0.1rem solid rgba(215, 218, 221, 0.5);
     box-shadow: 0px 14px 101px rgba(154, 154, 154, 0.3);
@@ -69,4 +76,28 @@ export const Content = styled.div`
     padding: 3.2rem 5.6rem 4.8rem;
     flex-grow: 1;
     user-select: none;
+    @media screen and (max-width: 730px) {
+        max-width: 100%;
+    }
+    @media screen and (max-width: 480px) {
+        padding: 3.2rem 2.4rem;
+    }
+`;
+
+export const SlideControls = styled.div`
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: calc(100% - (5.4rem * 2));
+    top: 50%;
+    left: 5.4rem;
+    transform: translateY(-50%);
+    @media screen and (max-width: 730px) {
+        position: static;
+        transform: unset;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        width: 100%;
+    }
 `;

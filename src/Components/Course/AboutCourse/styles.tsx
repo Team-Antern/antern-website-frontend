@@ -17,6 +17,9 @@ export const Container = styled.div`
     @media screen and (max-width: 560px) {
         padding: 0 4.5rem;
     }
+    @media screen and (max-width: 420px) {
+        padding: 0 2.5rem;
+    }
 `;
 
 export const Left = styled.div`
