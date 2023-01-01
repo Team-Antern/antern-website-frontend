@@ -15,7 +15,6 @@ import {
     CourseStarRating,
     CourseStarRatingContent,
     CourseTitle,
-    CourseVideo,
     EnrollButton,
     EnrollNow,
     FinancialAid,
