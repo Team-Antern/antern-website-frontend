@@ -53,3 +53,18 @@ export const SlideControl = styled.div<SlideControlProps>`
                 }
             `}
 `;
+
+export const SlideControl2 = styled.div<SlideControlProps>`
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #fff;
+    flex-shrink: 0;
+    cursor: pointer;
+    opacity: ${({ isDisabled }) => (isDisabled ? "0.2" : `1`)};
+    background: #243757;
+`;

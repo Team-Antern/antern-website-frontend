@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     Container,
     Content,
     ContentLength,
     ContentLengthExpandCollapse,
     ExpandCollapse,
-    Heading,
     Section,
     SectionCollapseExpandChevron,
     SectionCollapseExpandChevronHeading,
@@ -217,7 +216,6 @@ const ModuleContent = () => {
     };
     return (
         <Container>
-            <Heading>Module Content</Heading>
             <Content>
                 <ContentLengthExpandCollapse>
                     <ContentLength>

@@ -8,6 +8,8 @@ import JoinOurCommunity from "../../Components/Courses/JoinOurCommunity/JoinOurC
 import { Container, Content } from "./styles";
 import Instructors from "../../Components/Course/Instructors/Instructors";
 import ModuleContent from "../../Components/Course/ModuleContent/ModuleContent";
+import WhatYouGetByEnrolling from "../../Components/Course/WhatYouGetByEnrolling/WhatYouGetByEnrolling";
+import Requirements from "../../Components/Course/Requirements/Requirements";
 
 const Course = () => {
     return (
@@ -36,9 +38,10 @@ const Course = () => {
             <Content>
                 <AboutCourse />
                 <SkillsYouWillGain />
-                {/* <ModuleContent /> */}
-                {/* <Instructors /> */}
+                <Requirements />
+                <WhatYouGetByEnrolling />
                 <Reviews />
+                <Instructors />
             </Content>
         </Container>
     );

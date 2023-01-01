@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import {
     Container,
+    Content,
     Instructor,
     InstructorAbout,
     InstructorName,
     InstructorPosition,
     InstructorProfilePic,
+    InstructorProfilePicName,
 } from "./styles";
-import { RxTriangleLeft, RxTriangleRight } from "react-icons/rx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { default as sw } from "swiper";
-import { SlideControl } from "../../../globalStyles";
+import { SlideControl2 } from "../../../globalStyles";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const instructors = [
     {
@@ -41,43 +43,46 @@ const Instructors = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <Container>
-            <SlideControl
+            <SlideControl2
                 isDisabled={activeIndex === 0}
                 onClick={() =>
                     Object.getPrototypeOf(swiper).slidePrev.apply(swiper)
                 }
             >
-                <RxTriangleLeft />
-            </SlideControl>
-            <Swiper
-                onSwiper={setSwiper}
-                onActiveIndexChange={({ activeIndex }) =>
-                    setActiveIndex(activeIndex)
-                }
-            >
-                {instructors.map(
-                    ({ profilePic, name, position, about }, index) => (
-                        <SwiperSlide key={index}>
-                            <Instructor>
-                                <InstructorProfilePic src={profilePic} />
-                                <InstructorName>{name}</InstructorName>
-                                <InstructorPosition>
-                                    {position}
-                                </InstructorPosition>
-                                <InstructorAbout>{about}</InstructorAbout>
-                            </Instructor>
-                        </SwiperSlide>
-                    )
-                )}
-            </Swiper>
-            <SlideControl
+                <FaChevronLeft />
+            </SlideControl2>
+            <Content>
+                <Swiper
+                    onSwiper={setSwiper}
+                    onActiveIndexChange={({ activeIndex }) =>
+                        setActiveIndex(activeIndex)
+                    }
+                >
+                    {instructors.map(
+                        ({ profilePic, name, position, about }, index) => (
+                            <SwiperSlide key={index}>
+                                <Instructor>
+                                    <InstructorProfilePicName>
+                                        <InstructorProfilePic
+                                            src={profilePic}
+                                        />
+                                        <InstructorName>{name}</InstructorName>
+                                    </InstructorProfilePicName>
+                                    <InstructorAbout>{about}</InstructorAbout>
+                                </Instructor>
+                            </SwiperSlide>
+                        )
+                    )}
+                </Swiper>
+            </Content>
+            <SlideControl2
                 isDisabled={activeIndex === instructors.length - 1}
                 onClick={() =>
                     Object.getPrototypeOf(swiper).slideNext.apply(swiper)
                 }
             >
-                <RxTriangleRight />
-            </SlideControl>
+                <FaChevronRight />
+            </SlideControl2>
         </Container>
     );
 };

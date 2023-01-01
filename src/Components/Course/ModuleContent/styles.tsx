@@ -2,16 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div``;
 
-export const Heading = styled.div`
-    margin-bottom: 4rem;
-    font-family: "Plus Jakarta Sans";
-    font-weight: 600;
-    font-size: 4rem;
-    line-height: 125%;
-    text-align: center;
-    color: #121e27;
-`;
-
 export const Content = styled.div`
     padding: 2.4rem 3.2rem;
     background: #fff;

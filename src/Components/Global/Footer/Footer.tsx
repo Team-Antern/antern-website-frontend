@@ -1,7 +1,7 @@
 import React from "react";
 import { BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
 import {
     AboutCompany,
@@ -79,8 +79,9 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+    const { pathname } = useLocation();
     return (
-        <Container>
+        <Container style={pathname === "/" ? {} : { borderRadius: "0px" }}>
             <Content>
                 <AboutCompanyLinkSections>
                     <AboutCompany>
