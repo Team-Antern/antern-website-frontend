@@ -5,6 +5,7 @@ export const Container = styled.div`
     background-image: url("/assets/herobg.svg");
     background-size: cover;
     background-position: center;
+    position: relative;
 `;
 
 export const Content = styled.div`

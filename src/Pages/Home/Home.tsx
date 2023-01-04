@@ -8,10 +8,12 @@ import NotJustTakeOurWords from "../../Components/Home/NotJustTakeOurWords/NotJu
 import PlatformComparision from "../../Components/Home/PlatformComparision/PlatformComparision";
 import JoinOurCommunity from "../../Components/Home/JoinOurCommunity/JoinOurCommunity";
 import FAQ from "../../Components/Home/FAQ/FAQ";
+import SectionProgressTrack from "../../Components/Home/SectionProgressTrack/SectionProgressTrack";
 
 const Home = () => {
     return (
         <Container>
+            <SectionProgressTrack />
             <Content>
                 <Header />
                 <HomeHero />
