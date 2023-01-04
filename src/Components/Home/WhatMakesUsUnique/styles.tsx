@@ -28,7 +28,6 @@ export const Desc = styled.div`
 export const Content = styled.div`
     max-width: 115rem;
     margin: 5rem auto 0;
-    background: #192a36;
     border-radius: 2.4rem;
     padding: 3rem 6.5rem;
     display: flex;

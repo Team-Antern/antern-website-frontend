@@ -48,9 +48,9 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     gap: 3.2rem;
-    background: #192a36;
+    /* background: #192a36;
     border: 0.1rem solid rgba(255, 255, 255, 0.1);
-    border-radius: 2.8rem;
+    border-radius: 2.8rem; */
 `;
 
 // export const Slides = styled.div``;

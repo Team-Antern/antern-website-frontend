@@ -7,7 +7,7 @@ export const ContainerWrapper = styled.div`
 `;
 
 export const Container = styled.div`
-    max-width: 100rem;
+    max-width: 120rem;
     margin: auto;
 `;
 
@@ -29,7 +29,8 @@ export const Content = styled.div`
 `;
 
 export const Card = styled.div`
-    max-width: 35rem;
+    flex: 1;
+    /* max-width: 35rem; */
 `;
 
 export const CardIcon = styled.div`
