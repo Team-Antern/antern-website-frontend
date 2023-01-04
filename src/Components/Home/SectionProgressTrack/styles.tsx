@@ -64,6 +64,9 @@ export const SectionTitle = styled.div<SectionTitleProps>`
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    &:hover {
+        color: #b3b9c4;
+    }
 `;
 
 interface GemProps {
