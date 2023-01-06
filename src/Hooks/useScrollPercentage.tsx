@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const getScrollPercentage = (element) => {
+const getScrollPercentage = (element: HTMLElement) => {
     if (element === null) {
         return NaN;
     }
@@ -9,11 +9,11 @@ const getScrollPercentage = (element) => {
 };
 
 const useScrollPercentage = () => {
-    const scrollRef = useRef(null);
+    const scrollRef = useRef<HTMLElement>(null);
     const [scrollPercentage, setScrollPercentage] = useState(NaN);
 
-    const reportScroll = (e) => {
-        setScrollPercentage(getScrollPercentage(e.target));
+    const reportScroll = (e: Event) => {
+        setScrollPercentage(getScrollPercentage(scrollRef.current));
     };
 
     useEffect(() => {

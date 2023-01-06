@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import {
     AboutCompany,
     AboutCompanyLinkSections,
+    Background,
     Buttons,
     CompanyDesc,
     CompanyLogo,
@@ -82,6 +83,7 @@ const Footer = () => {
     const { pathname } = useLocation();
     return (
         <Container style={pathname === "/" ? {} : { borderRadius: "0px" }}>
+            <Background />
             <Content>
                 <AboutCompanyLinkSections>
                     <AboutCompany>

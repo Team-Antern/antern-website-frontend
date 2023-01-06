@@ -44,11 +44,11 @@ const CourseHero = () => {
                                     text: "home",
                                 },
                                 {
-                                    to: "/courses",
+                                    to: "/courses/",
                                     text: "courses",
                                 },
                                 {
-                                    to: "/course/123",
+                                    to: "/courses/123/",
                                     text: "course details",
                                 },
                             ]}

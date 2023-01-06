@@ -30,11 +30,11 @@ const headerLinks = [
 ];
 
 interface HeaderProps {
-    style: React.CSSProperties;
-    wrapperStyle: React.CSSProperties;
+    style?: React.CSSProperties;
+    wrapperStyle?: React.CSSProperties;
 }
 
-const Header = ({ style, wrapperStyle }: HeaderProps) => {
+const Header = ({ style = {}, wrapperStyle = {} }: HeaderProps) => {
     return (
         <Wrapper style={wrapperStyle}>
             <Container style={style}>

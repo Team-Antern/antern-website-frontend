@@ -12,6 +12,19 @@ export const Container = styled.div`
         padding: 6.5rem 3.2rem 7rem;
         border-radius: 0;
     }
+    position: relative;
+    overflow: hidden;
+`;
+
+export const Background = styled.div`
+    background: url("/assets/footer_home_bg.svg");
+    background-position: center;
+    width: 102rem;
+    height: 102rem;
+    position: absolute;
+    top: -100%;
+    z-index: -1;
+    right: -20%;
 `;
 
 export const Content = styled.div`
