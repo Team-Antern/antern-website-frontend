@@ -13,7 +13,8 @@ const useScrollPercentage = () => {
     const [scrollPercentage, setScrollPercentage] = useState(NaN);
 
     const reportScroll = (e: Event) => {
-        setScrollPercentage(getScrollPercentage(scrollRef.current));
+        if (scrollRef.current)
+            setScrollPercentage(getScrollPercentage(scrollRef.current));
     };
 
     useEffect(() => {
