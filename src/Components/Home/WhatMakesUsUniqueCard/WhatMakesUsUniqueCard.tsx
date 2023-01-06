@@ -6,6 +6,7 @@ import {
     CardTitle,
     Container,
 } from "./styles";
+import { motion } from "framer-motion";
 
 interface WhatMakesUsUniqueCardProps {
     bg: string;
@@ -21,7 +22,24 @@ const WhatMakesUsUniqueCard = ({
     desc,
 }: WhatMakesUsUniqueCardProps) => {
     return (
-        <Container bg={bg}>
+        <Container
+            bg={bg}
+            as={motion.div}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            variants={{
+                offscreen: {
+                    y: 300,
+                },
+                onscreen: {
+                    y: 50,
+                    transition: {
+                        type: "ease-in",
+                    },
+                },
+            }}
+        >
             <CardNumber>{number}</CardNumber>
             <CardContent>
                 <CardTitle>{title}</CardTitle>

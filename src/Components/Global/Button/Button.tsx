@@ -9,6 +9,7 @@ interface ButtonProps {
     transparentBg?: boolean;
     style?: CSSProperties;
     hoverStyle?: string;
+    animationProps?: any;
 }
 
 const Button = ({
@@ -17,6 +18,7 @@ const Button = ({
     hoverStyle = ``,
     to,
     transparentBg = false,
+    animationProps = {},
     onClick = () => {},
 }: ButtonProps) => {
     const buttonElem = (
@@ -25,6 +27,7 @@ const Button = ({
             style={style}
             hoverStyle={hoverStyle}
             onClick={onClick}
+            {...animationProps}
         >
             {children}
         </Container>

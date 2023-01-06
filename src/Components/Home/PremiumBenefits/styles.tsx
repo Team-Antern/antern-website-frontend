@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    min-height: calc(100vh - 11rem);
+    margin-bottom: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
 
 export const SubtitleHeadingDesc = styled.div`
     padding: 4rem 2.5rem;
@@ -48,6 +55,7 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     gap: 3.2rem;
+    max-width: 100%;
     /* background: #192a36;
     border: 0.1rem solid rgba(255, 255, 255, 0.1);
     border-radius: 2.8rem; */

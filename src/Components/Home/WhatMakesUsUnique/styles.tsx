@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    min-height: calc(100vh - 11rem);
+    margin-bottom: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
 
 export const HeadingDescGetStarted = styled.div`
     font-family: "Plus Jakarta Sans";
     text-align: center;
     max-width: 78rem;
-    margin: auto;
+    margin: 0 auto;
 `;
 
 export const Heading = styled.div`

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     Container,
     Gem,
@@ -8,24 +8,21 @@ import {
     Sections,
     Track,
 } from "./styles";
+import { SectionProgressTrackContext } from "../../../Context/SectionProgressTrackContext";
+import { sections } from "../../../Pages/Home/Home";
 
 const SectionProgressTrack = () => {
     const [hovered, setHovered] = useState(false);
-    const [sections, setSections] = useState([
-        "home",
-        "about",
-        "about",
-        "about",
-        "about",
-    ]);
-    const [activeSection, setActiveSection] = useState(0);
+    const [activeSection, setActiveSection, , scrollPercentage] = useContext(
+        SectionProgressTrackContext
+    );
     return (
         <Container
             onMouseOver={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
             <Sections>
-                <Track />
+                <Track scrollPercentage={scrollPercentage} />
                 {sections.map((section, index) => (
                     <Gem
                         onClick={() => setActiveSection(index)}
@@ -35,13 +32,13 @@ const SectionProgressTrack = () => {
                 ))}
             </Sections>
             <SectionTitles style={{ opacity: hovered ? 1 : 0 }}>
-                {sections.map((section, index) => (
+                {sections.map(({ title }, index) => (
                     <SectionTitle
                         onClick={() => setActiveSection(index)}
                         isActive={activeSection === index}
                         key={index}
                     >
-                        {section}
+                        {title}
                     </SectionTitle>
                 ))}
             </SectionTitles>

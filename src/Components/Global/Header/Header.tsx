@@ -9,6 +9,7 @@ import {
     Logo,
     NeedHelp,
     NeedHelpGetStarted,
+    Wrapper,
 } from "./styles";
 import logo from "/assets/logo-white.svg";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -28,31 +29,41 @@ const headerLinks = [
     },
 ];
 
-const Header = () => {
+interface HeaderProps {
+    style: React.CSSProperties;
+    wrapperStyle: React.CSSProperties;
+}
+
+const Header = ({ style, wrapperStyle }: HeaderProps) => {
     return (
-        <Container>
-            <NavLink to="/" style={{ display: "flex", alignItems: "center" }}>
-                <Logo src={logo} />
-            </NavLink>
-            <Links>
-                {headerLinks.map(({ to, text }, index) => (
-                    <NavLink key={index} to={to}>
-                        {({ isActive }) => (
-                            <Link isActive={isActive}>
-                                <span>{text}</span>
-                            </Link>
-                        )}
-                    </NavLink>
-                ))}
-            </Links>
-            <HamMenuButton>
-                <AiOutlineMenu />
-            </HamMenuButton>
-            <NeedHelpGetStarted>
-                <NeedHelp>Need Help?</NeedHelp>
-                <Button>Get started</Button>
-            </NeedHelpGetStarted>
-        </Container>
+        <Wrapper style={wrapperStyle}>
+            <Container style={style}>
+                <NavLink
+                    to="/"
+                    style={{ display: "flex", alignItems: "center" }}
+                >
+                    <Logo src={logo} />
+                </NavLink>
+                <Links>
+                    {headerLinks.map(({ to, text }, index) => (
+                        <NavLink key={index} to={to}>
+                            {({ isActive }) => (
+                                <Link isActive={isActive}>
+                                    <span>{text}</span>
+                                </Link>
+                            )}
+                        </NavLink>
+                    ))}
+                </Links>
+                <HamMenuButton>
+                    <AiOutlineMenu />
+                </HamMenuButton>
+                <NeedHelpGetStarted>
+                    <NeedHelp>Need Help?</NeedHelp>
+                    <Button>Get started</Button>
+                </NeedHelpGetStarted>
+            </Container>
+        </Wrapper>
     );
 };
 

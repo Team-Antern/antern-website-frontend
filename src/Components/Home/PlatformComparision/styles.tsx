@@ -1,6 +1,22 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    min-height: calc(100vh - 11rem);
+    margin-bottom: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
+
+export const Background = styled.div`
+    background: url("/assets/section_bg.svg");
+    background-position: center;
+    width: 151.2rem;
+    height: 128rem;
+    position: absolute;
+    z-index: -1;
+`;
 
 export const Heading = styled.div`
     font-family: "Plus Jakarta Sans";

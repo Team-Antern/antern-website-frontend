@@ -8,6 +8,8 @@ import {
 } from "./styles";
 import Button from "../../Global/Button/Button";
 import WhatMakesUsUniqueCard from "../WhatMakesUsUniqueCard/WhatMakesUsUniqueCard";
+import { motion } from "framer-motion";
+import AnimateOnVisible from "../../Global/AnimateOnVisible/AnimateOnVisible";
 
 const whatMakesUsUniqueCards = [
     {
@@ -42,16 +44,20 @@ const whatMakesUsUniqueCards = [
     },
 ];
 
-const WhatMakesUsUnique = () => {
+const WhatMakesUsUnique = React.forwardRef<HTMLDivElement>(({}, ref) => {
     return (
-        <Container>
+        <Container ref={ref}>
             <HeadingDescGetStarted>
-                <Heading>what makes us unique?</Heading>
-                <Desc>
-                    The potential to educate at a global scale was
-                    awe-inspiring, and Antern was founded to pursue a mission to
-                    democratize education and learn this courses
-                </Desc>
+                <AnimateOnVisible as={motion.div}>
+                    <Heading>what makes us unique?</Heading>
+                </AnimateOnVisible>
+                <AnimateOnVisible viewport={{ once: true }} as={motion.div}>
+                    <Desc>
+                        The potential to educate at a global scale was
+                        awe-inspiring, and Antern was founded to pursue a
+                        mission to democratize education and learn this courses
+                    </Desc>
+                </AnimateOnVisible>
                 <Button
                     style={{
                         padding: "1.6rem 4rem",
@@ -75,6 +81,6 @@ const WhatMakesUsUnique = () => {
             </Content>
         </Container>
     );
-};
+});
 
 export default WhatMakesUsUnique;

@@ -12,8 +12,10 @@ import { RxTriangleLeft, RxTriangleRight } from "react-icons/rx";
 import PremiumBenefit from "../PremiumBenefit/PremiumBenefit";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { default as sw } from "swiper";
+import AnimateOnVisible from "../../Global/AnimateOnVisible/AnimateOnVisible";
+import { motion } from "framer-motion";
 
-const PremiumBenefits = () => {
+const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
     const [swiper, setSwiper] = useState({
         isBeginning: true,
         isEnd: false,
@@ -30,17 +32,35 @@ const PremiumBenefits = () => {
         });
     };
     return (
-        <Container>
-            <SubtitleHeadingDesc>
-                <Subtitle>choose your course & start with antern</Subtitle>
-                <Heading>premium benefits</Heading>
-                <Desc>
-                    Physical Specially designed Learning Kits for each courses.
-                    for example for "Machine Learning Course", we provide a
-                    fully package.
-                </Desc>
-            </SubtitleHeadingDesc>
-            <Content>
+        <Container ref={ref}>
+            <AnimateOnVisible as={motion.div}>
+                <SubtitleHeadingDesc>
+                    <Subtitle>choose your course & start with antern</Subtitle>
+                    <Heading>premium benefits</Heading>
+                    <Desc>
+                        Physical Specially designed Learning Kits for each
+                        courses. for example for "Machine Learning Course", we
+                        provide a fully package.
+                    </Desc>
+                </SubtitleHeadingDesc>
+            </AnimateOnVisible>
+            <Content
+                as={motion.div}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true }}
+                variants={{
+                    offscreen: {
+                        y: 300,
+                    },
+                    onscreen: {
+                        y: 50,
+                        transition: {
+                            type: "ease-in",
+                        },
+                    },
+                }}
+            >
                 <SlideControl
                     isDisabled={swiper.isBeginning}
                     onClick={() => swiper.slidePrev()}
@@ -81,6 +101,6 @@ const PremiumBenefits = () => {
             </Content>
         </Container>
     );
-};
+});
 
 export default PremiumBenefits;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     font-family: "Plus Jakarta Sans";
     color: #fbfbfb;
+    margin-bottom: 10rem;
 `;
 
 export const Heading = styled.div`

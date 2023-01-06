@@ -9,19 +9,77 @@ import PlatformComparision from "../../Components/Home/PlatformComparision/Platf
 import JoinOurCommunity from "../../Components/Home/JoinOurCommunity/JoinOurCommunity";
 import FAQ from "../../Components/Home/FAQ/FAQ";
 import SectionProgressTrack from "../../Components/Home/SectionProgressTrack/SectionProgressTrack";
+import Footer from "../../Components/Global/Footer/Footer";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import { useContext } from "react";
+import { SectionProgressTrackContext } from "../../Context/SectionProgressTrackContext";
+import Section from "../../Components/Home/Section/Section";
+
+export const sections = [
+    {
+        title: "intro",
+        component: <HomeHero />,
+    },
+    {
+        title: "unique thing",
+        component: <WhatMakesUsUnique />,
+    },
+    {
+        title: "premium benefits",
+        component: <PremiumBenefits />,
+    },
+    {
+        title: "reviews",
+        component: <NotJustTakeOurWords />,
+    },
+    {
+        title: "platform comparision",
+        component: <PlatformComparision />,
+    },
+    {
+        title: "faq",
+        component: <FAQ />,
+    },
+];
 
 const Home = () => {
+    const [, setActiveSection, scrollRef] = useContext(
+        SectionProgressTrackContext
+    );
     return (
-        <Container>
+        <Container ref={scrollRef}>
             <SectionProgressTrack />
+            <Header
+                wrapperStyle={{
+                    background: "#101c27",
+                    position: "sticky",
+                    top: "0",
+                    zIndex: "2",
+                }}
+                style={{
+                    paddingTop: "3rem",
+                    maxWidth: "115rem",
+                    margin: "auto",
+                }}
+            />
             <Content>
-                <Header />
-                <HomeHero />
-                <WhatMakesUsUnique />
-                <PremiumBenefits />
-                <NotJustTakeOurWords />
-                <PlatformComparision />
-                <FAQ />
+                {sections.map(({ component }, index) => (
+                    // <ReactVisibilitySensor
+                    //     partialVisibility={true}
+                    //     minTopValue={0}
+                    //     onChange={(isVisible: boolean) => {
+                    //         console.log(isVisible, index);
+                    //         if (isVisible) setActiveSection(index);
+                    //     }}
+                    //     key={index}
+                    // >
+                    //     {component}
+                    // </ReactVisibilitySensor>
+                    <Section index={index} key={index}>
+                        {component}
+                    </Section>
+                ))}
+                <Footer />
             </Content>
         </Container>
     );

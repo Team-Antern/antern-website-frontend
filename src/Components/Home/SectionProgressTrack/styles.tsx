@@ -23,11 +23,19 @@ export const Sections = styled.div`
     position: relative;
 `;
 
-export const Track = styled.div`
+interface TrackProps {
+    scrollPercentage: number;
+}
+
+export const Track = styled.div<TrackProps>`
     width: 0.4rem;
     height: calc(100% - 2rem);
     z-index: -1;
-    background: #b7b7b7;
+    background: linear-gradient(
+        to bottom,
+        #4df3a3 ${({ scrollPercentage }) => scrollPercentage}%,
+        #b7b7b7 ${({ scrollPercentage }) => scrollPercentage}%
+    );
     position: absolute;
     left: 50%;
     top: 50%;

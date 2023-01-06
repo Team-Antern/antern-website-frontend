@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { Container, Content, Heading, SlideControls } from "./styles";
+import {
+    Background,
+    Container,
+    Content,
+    Heading,
+    SlideControls,
+} from "./styles";
 import { SlideControl } from "../../../globalStyles";
 import { RxTriangleLeft, RxTriangleRight } from "react-icons/rx";
 import NotJustTakeOurWordsCard from "../NotJustTakeOurWordsCard/NotJustTakeOurWordsCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { default as sw } from "swiper";
 import { AiFillLinkedin, AiFillTwitterCircle } from "react-icons/ai";
+import AnimateOnVisible from "../../Global/AnimateOnVisible/AnimateOnVisible";
+import { motion } from "framer-motion";
 
 const notJustTakeOurWordsCards = [
     {
@@ -129,7 +137,7 @@ const notJustTakeOurWordsCards = [
     },
 ];
 
-const NotJustTakeOurWords = () => {
+const NotJustTakeOurWords = React.forwardRef<HTMLDivElement>(({}, ref) => {
     const [swiper, setSwiper] = useState({
         isBeginning: true,
         isEnd: true,
@@ -146,42 +154,45 @@ const NotJustTakeOurWords = () => {
         });
     };
     return (
-        <Container>
-            <Heading>not just take our words</Heading>
-            <Content>
-                <Swiper
-                    onSwiper={onSwiperAndIndexChange}
-                    onActiveIndexChange={onSwiperAndIndexChange}
-                    slidesPerView={3}
-                    spaceBetween={40}
-                >
-                    {notJustTakeOurWordsCards.map(
-                        (notJustTakeOurWordsCard, index) => (
-                            <SwiperSlide key={index}>
-                                <NotJustTakeOurWordsCard
-                                    {...notJustTakeOurWordsCard}
-                                />
-                            </SwiperSlide>
-                        )
-                    )}
-                </Swiper>
-            </Content>
-            <SlideControls>
-                <SlideControl
-                    isDisabled={swiper.isBeginning}
-                    onClick={() => swiper.slidePrev()}
-                >
-                    <RxTriangleLeft />
-                </SlideControl>
-                <SlideControl
-                    isDisabled={swiper.isEnd}
-                    onClick={() => swiper.slideNext()}
-                >
-                    <RxTriangleRight />
-                </SlideControl>
-            </SlideControls>
-        </Container>
+        <AnimateOnVisible as={motion.div}>
+            <Container ref={ref}>
+                <Background />
+                <Heading>not just take our words</Heading>
+                <Content>
+                    <Swiper
+                        onSwiper={onSwiperAndIndexChange}
+                        onActiveIndexChange={onSwiperAndIndexChange}
+                        slidesPerView={3}
+                        spaceBetween={40}
+                    >
+                        {notJustTakeOurWordsCards.map(
+                            (notJustTakeOurWordsCard, index) => (
+                                <SwiperSlide key={index}>
+                                    <NotJustTakeOurWordsCard
+                                        {...notJustTakeOurWordsCard}
+                                    />
+                                </SwiperSlide>
+                            )
+                        )}
+                    </Swiper>
+                </Content>
+                <SlideControls>
+                    <SlideControl
+                        isDisabled={swiper.isBeginning}
+                        onClick={() => swiper.slidePrev()}
+                    >
+                        <RxTriangleLeft />
+                    </SlideControl>
+                    <SlideControl
+                        isDisabled={swiper.isEnd}
+                        onClick={() => swiper.slideNext()}
+                    >
+                        <RxTriangleRight />
+                    </SlideControl>
+                </SlideControls>
+            </Container>
+        </AnimateOnVisible>
     );
-};
+});
 
 export default NotJustTakeOurWords;

@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    min-height: calc(100vh - 11rem);
 `;
 
 export const Content = styled.div`
@@ -39,9 +39,14 @@ export const Heading = styled.div`
     text-align: center;
     text-transform: uppercase;
     color: #dee3ec;
-    & span {
-        color: #4df3a3;
-    }
+`;
+
+interface HeadingLetterProps {
+    green: boolean;
+}
+
+export const HeadingLetter = styled.span<HeadingLetterProps>`
+    ${({ green }) => (green ? "color: #4df3a3;" : "")}
 `;
 
 export const Desc = styled.div`
