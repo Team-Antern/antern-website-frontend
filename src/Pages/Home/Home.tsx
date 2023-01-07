@@ -28,18 +28,18 @@ export const sections = [
         title: "premium benefits",
         component: <PremiumBenefits />,
     },
-    {
-        title: "reviews",
-        component: <NotJustTakeOurWords />,
-    },
-    {
-        title: "platform comparision",
-        component: <PlatformComparision />,
-    },
-    {
-        title: "faq",
-        component: <FAQ />,
-    },
+    // {
+    //     title: "reviews",
+    //     component: <NotJustTakeOurWords />,
+    // },
+    // {
+    //     title: "platform comparision",
+    //     component: <PlatformComparision />,
+    // },
+    // {
+    //     title: "faq",
+    //     component: <FAQ />,
+    // },
 ];
 
 const Home = () => {

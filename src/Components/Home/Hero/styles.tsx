@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding: 5rem 0 8rem 0;
+    padding: 5rem 5.4rem 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 11rem);
+    margin-bottom: 6rem;
+    @media screen and (max-width: 600px) {
+        padding: 10rem 3rem 8rem;
+        min-height: auto;
+    }
 `;
 
 export const Content = styled.div`
@@ -28,6 +33,9 @@ export const BestQualityCourses = styled.div`
     text-transform: uppercase;
     margin-bottom: 3.2rem;
     display: inline-block;
+    @media screen and (max-width: 600px) {
+        font-size: 1.4rem;
+    }
 `;
 
 export const Heading = styled.div`
@@ -39,6 +47,14 @@ export const Heading = styled.div`
     text-align: center;
     text-transform: uppercase;
     color: #dee3ec;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media screen and (max-width: 600px) {
+        font-size: 5.6rem;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 4rem;
+    }
 `;
 
 interface HeadingLetterProps {
@@ -56,6 +72,12 @@ export const Desc = styled.div`
     color: #fff;
     opacity: 0.8;
     margin: 2.4rem 0 3.2rem;
+    @media screen and (max-width: 600px) {
+        font-size: 2rem;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 1.6rem;
+    }
 `;
 
 export const Reviews = styled.div`
@@ -115,6 +137,9 @@ export const ReviewsPageArrow = styled.div`
 const leftRightArtStyles = `
     position: absolute;
     background-size: cover;
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
 `;
 
 export const LeftArt = styled.div`

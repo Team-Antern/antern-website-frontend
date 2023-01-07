@@ -12,7 +12,4 @@ export const Container = styled.div`
     overflow: hidden scroll;
 `;
 
-export const Content = styled.div`
-    max-width: 115rem;
-    margin: auto;
-`;
+export const Content = styled.div``;

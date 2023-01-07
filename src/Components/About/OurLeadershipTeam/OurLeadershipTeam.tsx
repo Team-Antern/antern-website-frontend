@@ -66,8 +66,34 @@ const teamMembers = [
 const OurLeadershipTeam = () => {
     return (
         <Container>
-            <Heading>meet our leadership team</Heading>
-            <Desc>
+            <Heading
+                as={motion.div}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{
+                    duration: 1,
+                }}
+                variants={{
+                    visible: { opacity: 1 },
+                    hidden: { opacity: 0 },
+                }}
+            >
+                meet our leadership team
+            </Heading>
+            <Desc
+                as={motion.div}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{
+                    duration: 1,
+                }}
+                variants={{
+                    visible: { opacity: 1 },
+                    hidden: { opacity: 0 },
+                }}
+            >
                 Out talented team of executives have come together with one
                 goal: to help students, companies for the next generation of
                 technical jobs.
@@ -87,11 +113,11 @@ const OurLeadershipTeam = () => {
                                 as={motion.div}
                                 initial="hidden"
                                 whileInView="visible"
-                                viewport={{ once: true }}
+                                viewport={{ amount: 0.3, once: true }}
                                 transition={{
                                     type: "spring",
                                     stiffness: 300,
-                                    duration: 0.1 * (index + 1),
+                                    duration: 0.2 * (index + 1),
                                     delay: 0.15 * (index + 1),
                                 }}
                                 variants={{

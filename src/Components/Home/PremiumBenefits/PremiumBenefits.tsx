@@ -44,7 +44,7 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
                     </Desc>
                 </SubtitleHeadingDesc>
             </AnimateOnVisible>
-            <Content
+            {/* <Content
                 as={motion.div}
                 initial="offscreen"
                 whileInView="onscreen"
@@ -98,7 +98,7 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
                 >
                     <RxTriangleRight />
                 </SlideControl>
-            </Content>
+            </Content> */}
         </Container>
     );
 });

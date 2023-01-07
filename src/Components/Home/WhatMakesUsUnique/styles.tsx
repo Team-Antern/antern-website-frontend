@@ -7,6 +7,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0 5.4rem;
+    @media screen and (max-width: 600px) {
+        padding: 0 3.2rem;
+    }
 `;
 
 export const HeadingDescGetStarted = styled.div`
@@ -22,6 +26,9 @@ export const Heading = styled.div`
     line-height: 120%;
     color: #e9e9e9;
     text-transform: capitalize;
+    @media screen and (max-width: 950px) {
+        font-size: 4rem;
+    }
 `;
 
 export const Desc = styled.div`
@@ -30,6 +37,9 @@ export const Desc = styled.div`
     line-height: 150%;
     color: #b3b3b3;
     margin: 1.4rem 0 1.6rem;
+    @media screen and (max-width: 950px) {
+        font-size: 1.8rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -39,6 +49,12 @@ export const Content = styled.div`
     padding: 3rem 6.5rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 4.5rem;
+    @media screen and (max-width: 600px) {
+        margin: 3rem auto 0;
+    }
+    @media screen and (max-width: 600px) {
+        padding: 0rem;
+    }
 `;

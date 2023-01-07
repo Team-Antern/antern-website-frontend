@@ -7,6 +7,7 @@ import Footer from "./Components/Global/Footer/Footer";
 import Course from "./Pages/Course/Course";
 import AboutUs from "./Pages/About/About";
 import Home from "./Pages/Home/Home";
+import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
 import SectionProgressTrackContextProvider from "./Context/SectionProgressTrackContext";
 import Loading from "./Components/Global/Loading/Loading";
 import { LoadingContext } from "./Context/LoadingContext";
@@ -35,8 +36,12 @@ function App() {
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/courses/:id" element={<Course />} />
                 <Route path="/about-us" element={<AboutUs />} />
+                <Route
+                    path="/terms-and-conditions"
+                    element={<TermsAndConditions />}
+                />
             </Routes>
-            {pathname !== "/" && <Footer />}
+            {/* {pathname !== "/" && <Footer />} */}
         </div>
     );
 }

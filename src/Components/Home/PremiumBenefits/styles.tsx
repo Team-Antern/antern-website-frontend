@@ -2,11 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     min-height: calc(100vh - 11rem);
-    margin-bottom: 12rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    max-width: 130rem;
+    margin: 0 auto 12rem;
+    padding: 5.4rem;
+    @media screen and (max-width: 540px) {
+        padding: 3.2rem;
+    }
 `;
 
 export const SubtitleHeadingDesc = styled.div`
@@ -28,6 +33,9 @@ export const Subtitle = styled.div`
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #4df3a3;
+    @media screen and (max-width: 900px) {
+        font-size: 1.4rem;
+    }
 `;
 
 export const Heading = styled.div`
@@ -38,6 +46,16 @@ export const Heading = styled.div`
     line-height: 115%;
     color: #e9e9e9;
     text-transform: capitalize;
+    @media screen and (max-width: 900px) {
+        font-size: 4.6rem;
+    }
+    @media screen and (max-width: 640px) {
+        font-size: 3.8rem;
+    }
+    @media screen and (max-width: 470px) {
+        font-size: 2.5rem;
+        margin: 1rem 0 1.6rem;
+    }
 `;
 
 export const Desc = styled.div`
@@ -48,6 +66,15 @@ export const Desc = styled.div`
     line-height: 150%;
     color: #fff;
     opacity: 0.8;
+    @media screen and (max-width: 1020px) {
+        font-size: 2rem;
+    }
+    @media screen and (max-width: 900px) {
+        font-size: 1.8rem;
+    }
+    @media screen and (max-width: 470px) {
+        font-size: 1.6rem;
+    }
 `;
 
 export const Content = styled.div`

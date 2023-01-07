@@ -9,6 +9,9 @@ export const Container = styled.div`
     display: flex;
     gap: 2rem;
     user-select: none;
+    @media screen and (max-width: 1380px) {
+        display: none;
+    }
 `;
 
 interface SectionProps {

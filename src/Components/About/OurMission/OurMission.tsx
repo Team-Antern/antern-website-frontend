@@ -62,7 +62,7 @@ const OurMission = () => {
                                         as={motion.div}
                                         initial="hidden"
                                         whileInView="visible"
-                                        viewport={{ once: true }}
+                                        viewport={{ amount: 0.3, once: true }}
                                         transition={{
                                             type: "spring",
                                             stiffness: 100,
@@ -94,7 +94,7 @@ const OurMission = () => {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ amount: 0.3, once: true }}
                     transition={{
                         duration: 0.7,
                     }}

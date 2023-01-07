@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import {
@@ -13,8 +13,9 @@ import {
 } from "./styles";
 import logo from "/assets/logo-white.svg";
 import { AiOutlineMenu } from "react-icons/ai";
+import HamMenu from "../HamMenu/HamMenu";
 
-const headerLinks = [
+export const headerLinks = [
     {
         to: "/",
         text: "home",
@@ -35,8 +36,12 @@ interface HeaderProps {
 }
 
 const Header = ({ style = {}, wrapperStyle = {} }: HeaderProps) => {
+    const [showHamMenu, setShowHamMenu] = useState(false);
     return (
         <Wrapper style={wrapperStyle}>
+            {showHamMenu && (
+                <HamMenu closeHamMenu={() => setShowHamMenu(false)} />
+            )}
             <Container style={style}>
                 <NavLink
                     to="/"
@@ -55,7 +60,7 @@ const Header = ({ style = {}, wrapperStyle = {} }: HeaderProps) => {
                         </NavLink>
                     ))}
                 </Links>
-                <HamMenuButton>
+                <HamMenuButton onClick={() => setShowHamMenu(true)}>
                     <AiOutlineMenu />
                 </HamMenuButton>
                 <NeedHelpGetStarted>
