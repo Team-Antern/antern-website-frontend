@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Components/Global/Header/Header";
@@ -11,6 +11,12 @@ import SectionProgressTrackContextProvider from "./Context/SectionProgressTrackC
 
 function App() {
     const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, [pathname]);
     return (
         <div className="App">
             <Routes>

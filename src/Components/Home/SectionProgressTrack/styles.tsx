@@ -90,4 +90,5 @@ export const Gem = styled.div<GemProps>`
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    /* box-shadow: 0px 4px 36px 0px rgba(77, 243, 163, 1); */
 `;
