@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Background,
     Container,
@@ -144,6 +144,19 @@ const NotJustTakeOurWords = React.forwardRef<HTMLDivElement>(({}, ref) => {
         slidePrev: () => {},
         slideNext: () => {},
     });
+    const [slidesPerView, setSlidesPerView] = useState(3);
+    useEffect(() => {
+        const decideAndSetSlidesPerView = () => {
+            if (window.innerWidth > 1300) setSlidesPerView(3);
+            else if (window.innerWidth <= 1300 && window.innerWidth > 760)
+                setSlidesPerView(2);
+            else setSlidesPerView(1);
+        };
+        decideAndSetSlidesPerView();
+        window.addEventListener("resize", decideAndSetSlidesPerView);
+        return () =>
+            window.removeEventListener("resize", decideAndSetSlidesPerView);
+    }, []);
     const onSwiperAndIndexChange = (swiper: sw) => {
         const { isBeginning, isEnd, slidePrev, slideNext } = swiper;
         setSwiper({
@@ -162,7 +175,7 @@ const NotJustTakeOurWords = React.forwardRef<HTMLDivElement>(({}, ref) => {
                     <Swiper
                         onSwiper={onSwiperAndIndexChange}
                         onActiveIndexChange={onSwiperAndIndexChange}
-                        slidesPerView={3}
+                        slidesPerView={slidesPerView}
                         spaceBetween={40}
                     >
                         {notJustTakeOurWordsCards.map(

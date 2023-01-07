@@ -24,14 +24,14 @@ export const sections = [
         title: "unique thing",
         component: <WhatMakesUsUnique />,
     },
-    {
-        title: "premium benefits",
-        component: <PremiumBenefits />,
-    },
     // {
-    //     title: "reviews",
-    //     component: <NotJustTakeOurWords />,
+    //     title: "premium benefits",
+    //     component: <PremiumBenefits />,
     // },
+    {
+        title: "reviews",
+        component: <NotJustTakeOurWords />,
+    },
     // {
     //     title: "platform comparision",
     //     component: <PlatformComparision />,

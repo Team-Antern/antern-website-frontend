@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     border-radius: 1.6rem;
-    /* width: calc(50% - 1.5rem); */
     position: relative;
     background: #223644;
     user-select: none;
+    max-width: 44rem;
 `;
 
 export const Image = styled.div`

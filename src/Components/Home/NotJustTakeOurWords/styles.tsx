@@ -7,6 +7,12 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0 5.4rem;
+    max-width: 114rem;
+    margin: auto;
+    @media screen and (max-width: 1050px) {
+        padding: 0 3.2rem;
+    }
 `;
 
 export const Background = styled.div`
@@ -15,6 +21,7 @@ export const Background = styled.div`
     width: 151.2rem;
     height: 128rem;
     position: absolute;
+    z-index: -1;
 `;
 
 export const Heading = styled.div`
@@ -25,11 +32,17 @@ export const Heading = styled.div`
     color: #dee3ec;
     text-align: center;
     text-transform: capitalize;
+    @media screen and (max-width: 1050px) {
+        font-size: 4rem;
+    }
 `;
 
 export const Content = styled.div`
-    max-width: 114rem;
-    margin: 7.2rem auto;
+    max-width: 100%;
+    margin: 7.2rem 0;
+    @media screen and (max-width: 450px) {
+        margin: 4.8rem 0;
+    }
 `;
 
 export const SlideControls = styled.div`

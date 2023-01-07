@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Container,
     Content,
@@ -22,6 +22,17 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
         slidePrev: () => {},
         slideNext: () => {},
     });
+    const [slidesPerView, setSlidesPerView] = useState(3);
+    useEffect(() => {
+        const decideAndSetSlidesPerView = () => {
+            if (window.innerWidth > 1240) setSlidesPerView(2);
+            else setSlidesPerView(1);
+        };
+        decideAndSetSlidesPerView();
+        window.addEventListener("resize", decideAndSetSlidesPerView);
+        return () =>
+            window.removeEventListener("resize", decideAndSetSlidesPerView);
+    }, []);
     const onSwiperAndIndexChange = (swiper: sw) => {
         const { isBeginning, isEnd, slidePrev, slideNext } = swiper;
         setSwiper({
@@ -44,7 +55,7 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
                     </Desc>
                 </SubtitleHeadingDesc>
             </AnimateOnVisible>
-            {/* <Content
+            <Content
                 as={motion.div}
                 initial="offscreen"
                 whileInView="onscreen"
@@ -70,7 +81,7 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
                 <Swiper
                     onSwiper={onSwiperAndIndexChange}
                     onActiveIndexChange={onSwiperAndIndexChange}
-                    slidesPerView={2}
+                    slidesPerView={slidesPerView}
                     spaceBetween={30}
                 >
                     <SwiperSlide>
@@ -98,7 +109,7 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
                 >
                     <RxTriangleRight />
                 </SlideControl>
-            </Content> */}
+            </Content>
         </Container>
     );
 });
