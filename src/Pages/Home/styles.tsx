@@ -9,7 +9,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
-    overflow-y: auto;
+    overflow: hidden scroll;
 `;
 
 export const Content = styled.div`
