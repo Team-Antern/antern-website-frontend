@@ -10,6 +10,7 @@ import {
     GrowSkill,
     Tips,
 } from "./styles";
+import { Variants, motion } from "framer-motion";
 
 const AboutHero = () => {
     return (
@@ -29,8 +30,35 @@ const AboutHero = () => {
                             },
                         ]}
                     />
-                    <Heading>about us</Heading>
-                    <Desc>
+                    <Heading
+                        as={motion.div}
+                        initial={{
+                            opacity: 0,
+                            y: -10,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                        }}
+                        transition={{
+                            duration: 1,
+                        }}
+                    >
+                        about us
+                    </Heading>
+                    <Desc
+                        as={motion.div}
+                        initial={{
+                            opacity: 0,
+                        }}
+                        animate={{
+                            opacity: 1,
+                        }}
+                        transition={{
+                            duration: 2,
+                            delay: 0.5,
+                        }}
+                    >
                         Antern is where lifelong learners come to learn the
                         skills they need, to land the jobs they want, to build
                         the lives they deserve.

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Components/Global/Header/Header";
@@ -8,17 +8,21 @@ import Course from "./Pages/Course/Course";
 import AboutUs from "./Pages/About/About";
 import Home from "./Pages/Home/Home";
 import SectionProgressTrackContextProvider from "./Context/SectionProgressTrackContext";
+import Loading from "./Components/Global/Loading/Loading";
+import { LoadingContext } from "./Context/LoadingContext";
 
 function App() {
     const { pathname } = useLocation();
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }, [pathname]);
+    const [loading] = useContext(LoadingContext);
+    // useEffect(() => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth",
+    //     });
+    // }, [pathname]);
     return (
         <div className="App">
+            {loading && <Loading />}
             <Routes>
                 <Route
                     path="/"

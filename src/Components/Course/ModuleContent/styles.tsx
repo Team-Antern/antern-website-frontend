@@ -10,6 +10,9 @@ export const Content = styled.div`
     border-radius: 0.8rem;
     max-width: 114rem;
     margin: auto;
+    @media screen and (max-width: 640px) {
+        padding: 2rem;
+    }
 `;
 
 export const ContentLengthExpandCollapse = styled.div`
@@ -17,6 +20,11 @@ export const ContentLengthExpandCollapse = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2.5rem;
+    @media screen and (max-width: 770px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
 `;
 
 export const ContentLength = styled.div`
@@ -26,7 +34,11 @@ export const ContentLength = styled.div`
     font-weight: 400;
     line-height: 150%;
     color: #121e27;
+    flex-wrap: wrap;
     text-transform: capitalize;
+    @media screen and (max-width: 640px) {
+        font-size: 1.4rem;
+    }
 `;
 
 export const ExpandCollapse = styled.div`
@@ -70,6 +82,9 @@ export const SectionCollapseExpandChevron = styled.div`
 export const SectionHeading = styled.div`
     font-weight: 500;
     line-height: 150%;
+    @media screen and (max-width: 640px) {
+        font-size: 1.4rem;
+    }
 `;
 
 export const SectionLength = styled.div`
@@ -78,6 +93,9 @@ export const SectionLength = styled.div`
     gap: 0.4rem;
     font-weight: 400;
     line-height: 150%;
+    @media screen and (max-width: 770px) {
+        display: none;
+    }
 `;
 
 export const SectionLectures = styled.div`
@@ -113,6 +131,9 @@ export const SectionLectureHeading = styled.div`
     line-height: 150%;
     text-decoration-line: underline;
     color: #394a65;
+    @media screen and (max-width: 640px) {
+        font-size: 1.4rem;
+    }
 `;
 
 export const SectionLectureLength = styled.div`

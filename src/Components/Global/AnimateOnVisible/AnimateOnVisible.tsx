@@ -7,7 +7,7 @@ interface AnimateOnVisibleProps {
     transition?: any;
     variants?: any;
     as: any;
-    children: React.ReactElement;
+    children: JSX.Element;
 }
 
 const AnimateOnVisible = ({

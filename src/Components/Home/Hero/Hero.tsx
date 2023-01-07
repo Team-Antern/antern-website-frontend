@@ -113,7 +113,7 @@ const HomeHero = React.forwardRef<HTMLDivElement>(({}, ref) => {
                             scale: 0.5,
                         },
                         whileHover: {
-                            scale: 1.2,
+                            scale: 1.1,
                         },
                         whileTap: {
                             scale: 0.8,

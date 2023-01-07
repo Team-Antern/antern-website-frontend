@@ -11,6 +11,9 @@ export const Image = styled.img`
     display: block;
     margin: auto;
     width: 40%;
+    @media screen and (max-width: 650px) {
+        width: 80%;
+    }
 `;
 
 export const Heading = styled.div`
@@ -20,6 +23,11 @@ export const Heading = styled.div`
     line-height: 50px;
     letter-spacing: -0.04em;
     text-transform: capitalize;
+    @media screen and (max-width: 600px) {
+        font-size: 3.2rem;
+        margin: 1rem 0 0.5rem 0;
+        line-height: 40px;
+    }
 `;
 
 export const Desc = styled.div`
@@ -29,4 +37,7 @@ export const Desc = styled.div`
     letter-spacing: -0.05em;
     color: #7a8699;
     text-transform: capitalize;
+    @media screen and (max-width: 600px) {
+        font-size: 1.6rem;
+    }
 `;

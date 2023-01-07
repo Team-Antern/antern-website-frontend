@@ -22,6 +22,7 @@ export const OurMissionCardStacks = styled.div`
     display: flex;
     gap: 3rem;
     flex-shrink: 0;
+    position: relative;
     & > div:last-child {
         margin-top: 10rem;
     }

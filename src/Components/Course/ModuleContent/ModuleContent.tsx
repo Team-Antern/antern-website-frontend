@@ -34,7 +34,7 @@ const sections = [
         totalLength: 494,
         lectures: [
             {
-                name: "installing python",
+                name: "installing python acbinstalling python acbinstalling python acbinstalling python acb",
                 totalLength: 247,
             },
             {
