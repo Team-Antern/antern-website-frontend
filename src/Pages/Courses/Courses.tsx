@@ -22,7 +22,7 @@ export interface Course {
 const Courses = () => {
     const [courses, setCourses] = useState<Course[]>([]);
     const [searchValue, setSearchValue] = useState("");
-    const [loading, startApiCall, finishApiCall] = useContext(LoadingContext);
+    const [, startApiCall, finishApiCall] = useContext(LoadingContext);
     useEffect(() => {
         startApiCall && startApiCall();
         fetch("https://api.npoint.io/b47a93aad13d58160aad")
