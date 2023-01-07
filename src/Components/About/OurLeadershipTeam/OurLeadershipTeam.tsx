@@ -12,6 +12,7 @@ import {
     TeamMemberSocial,
     TeamMemberSocials,
 } from "./styles";
+import { Variants, motion } from "framer-motion";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 
 const teamMembers = [
@@ -74,7 +75,26 @@ const OurLeadershipTeam = () => {
             <Content>
                 {teamMembers.map(
                     ({ profilePic, socials, name, position }, index) => (
-                        <TeamMember key={index}>
+                        <TeamMember
+                            key={index}
+                            as={motion.div}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 0.7,
+                            }}
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    transform: `translateX(0px)`,
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    transform: `translateX(100px)`,
+                                },
+                            }}
+                        >
                             <TeamMemberProfilePic src={profilePic} />
                             <TeamMemberDetails top={(index + 1) % 2 === 0}>
                                 <TeamMemberSocials>

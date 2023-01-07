@@ -17,6 +17,7 @@ const Reviews = () => {
                 setSlidesPerView(2);
             else setSlidesPerView(1);
         };
+        decideAndSetSlidesPerView();
         window.addEventListener("resize", decideAndSetSlidesPerView);
         return () =>
             window.removeEventListener("resize", decideAndSetSlidesPerView);
