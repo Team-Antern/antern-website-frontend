@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding: 5rem 0 30rem 0;
+    padding: 5rem 0 30rem;
     background: url("/assets/herobg.svg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    @media screen and (max-width: 480px) {
+        padding: 5rem 0 6rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -16,11 +19,14 @@ export const Content = styled.div`
 
 export const HeroMain = styled.div`
     max-width: 63rem;
+    padding: 0 5.4rem;
     margin: 5.5rem auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    z-index: 1;
 `;
 
 export const Heading = styled.div`
@@ -32,6 +38,9 @@ export const Heading = styled.div`
     text-transform: capitalize;
     max-width: 52.2rem;
     margin: 1.6rem auto 2.4rem;
+    @media screen and (max-width: 540px) {
+        font-size: 4.6rem;
+    }
 `;
 
 export const Desc = styled.div`
@@ -40,6 +49,9 @@ export const Desc = styled.div`
     line-height: 150%;
     color: #b9c0c5;
     opacity: 0.8;
+    @media screen and (max-width: 540px) {
+        font-size: 1.8rem;
+    }
 `;
 
 export const Chat = styled.div`
@@ -49,6 +61,10 @@ export const Chat = styled.div`
     width: 44.4rem;
     height: 44.4rem;
     background: url("/assets/chat.svg");
+    @media screen and (max-width: 480px) {
+        transform: scale(0.7);
+        top: -12rem;
+    }
 `;
 
 export const Tips = styled.div`
@@ -58,6 +74,10 @@ export const Tips = styled.div`
     background: url("/assets/tips.svg");
     top: -6rem;
     right: -15rem;
+    @media screen and (max-width: 480px) {
+        transform: scale(0.7);
+        top: -10rem;
+    }
 `;
 
 export const GrowSkill = styled.div`
@@ -68,4 +88,7 @@ export const GrowSkill = styled.div`
     bottom: -35rem;
     left: 50%;
     transform: translateX(-50%);
+    @media screen and (max-width: 480px) {
+        display: none;
+    }
 `;

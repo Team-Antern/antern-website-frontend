@@ -3,7 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
     font-family: "Plus Jakarta Sans";
     color: #fbfbfb;
-    margin-bottom: 10rem;
+    margin: 0 auto 10rem;
+    max-width: 115rem;
+    padding: 0 5.4rem;
+    @media screen and (max-width: 700px) {
+        padding: 0 3.2rem;
+    }
 `;
 
 export const Heading = styled.div`
@@ -13,6 +18,9 @@ export const Heading = styled.div`
     letter-spacing: -0.055em;
     text-align: center;
     text-transform: capitalize;
+    @media screen and (max-width: 1000px) {
+        font-size: 3.2rem;
+    }
 `;
 
 export const Desc = styled.div`
@@ -22,6 +30,9 @@ export const Desc = styled.div`
     text-align: center;
     opacity: 0.8;
     margin: 1rem 0 7rem;
+    @media screen and (max-width: 1000px) {
+        margin: 1rem 0 5rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -36,6 +47,9 @@ export const QuestionAnswer = styled.div`
     border: 0.1rem solid #202e3a;
     box-shadow: 0px 23px 81px #0c151d;
     border-radius: 1.6rem;
+    @media screen and (max-width: 700px) {
+        padding: 2rem;
+    }
 `;
 
 export const QuestionChevron = styled.div`
@@ -52,6 +66,9 @@ export const Question = styled.div`
     letter-spacing: -0.03em;
     color: #fafbfb;
     cursor: pointer;
+    @media screen and (max-width: 700px) {
+        font-size: 2rem;
+    }
 `;
 
 export const Chevron = styled.div`
@@ -68,4 +85,7 @@ export const Answer = styled.div`
     line-height: 125%;
     letter-spacing: -0.03em;
     color: #98a1b0;
+    @media screen and (max-width: 700px) {
+        font-size: 1.6rem;
+    }
 `;

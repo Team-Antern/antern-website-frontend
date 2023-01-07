@@ -7,6 +7,12 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    max-width: 115rem;
+    margin: auto;
+    padding: 0 5.4rem;
+    @media screen and (max-width: 1050px) {
+        padding: 0 3.2rem;
+    }
 `;
 
 export const Background = styled.div`
@@ -27,11 +33,18 @@ export const Heading = styled.div`
     margin-bottom: 4.8rem;
     text-align: center;
     text-transform: capitalize;
+    @media screen and (max-width: 1050px) {
+        font-size: 4rem;
+    }
+`;
+
+export const Content = styled.div`
+    overflow-x: scroll;
+    max-width: 100%;
 `;
 
 export const PlatformComparisionTable = styled.table`
     border-radius: 8px;
-    width: 100%;
     color: #fff;
     table-layout: fixed;
     background: #121f2b;

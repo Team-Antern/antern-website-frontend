@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding: 16rem 0;
+    padding: 16rem 5.4rem;
     max-width: 135rem;
     margin: auto;
     background: url("./assets/ourmission.svg");
     background-repeat: no-repeat;
     background-position: 3rem 35%;
+    @media screen and (max-width: 600px) {
+        padding: 4rem 3.2rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -16,6 +19,12 @@ export const Content = styled.div`
     gap: 5rem;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 1050px) {
+        flex-direction: column-reverse;
+    }
+    @media screen and (max-width: 600px) {
+        gap: 4rem;
+    }
 `;
 
 export const OurMissionCardStacks = styled.div`
@@ -25,6 +34,13 @@ export const OurMissionCardStacks = styled.div`
     position: relative;
     & > div:last-child {
         margin-top: 10rem;
+        @media screen and (max-width: 640px) {
+            margin-top: 0;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        flex-direction: column;
     }
 `;
 
@@ -32,6 +48,9 @@ export const OurMissionCardStack = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
 `;
 
 export const OurMissionCard = styled.div`
@@ -41,6 +60,9 @@ export const OurMissionCard = styled.div`
     border-radius: 0.8rem;
     max-width: 26.4rem;
     padding: 3.2rem 2.4rem;
+    @media screen and (max-width: 600px) {
+        max-width: initial;
+    }
 `;
 
 export const OurMissionCardIcon = styled.div`
@@ -79,6 +101,9 @@ export const Heading = styled.div`
     line-height: 120%;
     color: #243757;
     text-transform: capitalize;
+    @media screen and (max-width: 600px) {
+        font-size: 4rem;
+    }
 `;
 
 export const Desc = styled.div`
@@ -87,6 +112,10 @@ export const Desc = styled.div`
     font-size: 2rem;
     line-height: 150%;
     color: #354764;
+    @media screen and (max-width: 600px) {
+        font-size: 1.8rem;
+        margin: 1.8rem 0 0 0;
+    }
 `;
 
 // export const

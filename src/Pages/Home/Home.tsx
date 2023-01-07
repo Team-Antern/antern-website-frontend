@@ -32,14 +32,14 @@ export const sections = [
         title: "reviews",
         component: <NotJustTakeOurWords />,
     },
-    // {
-    //     title: "platform comparision",
-    //     component: <PlatformComparision />,
-    // },
-    // {
-    //     title: "faq",
-    //     component: <FAQ />,
-    // },
+    {
+        title: "platform comparision",
+        component: <PlatformComparision />,
+    },
+    {
+        title: "faq",
+        component: <FAQ />,
+    },
 ];
 
 const Home = () => {
