@@ -6,6 +6,7 @@ export const Container = styled.div`
     border-radius: 0.8rem;
     max-width: 36.4rem;
     width: 100%;
+    z-index: 1;
     position: relative;
     &:hover::after {
         content: "";

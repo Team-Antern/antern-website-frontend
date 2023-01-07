@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import BreadCrumbs from "../../Global/BreadCrumbs/BreadCrumbs";
 import Header from "../../Global/Header/Header";
 import {
@@ -16,6 +16,7 @@ import {
     Stats,
 } from "./styles";
 import { FiSearch } from "react-icons/fi";
+import { TypeAnimation } from "react-type-animation";
 
 interface CoursesHeroProps {
     searchValue: string;
@@ -24,6 +25,7 @@ interface CoursesHeroProps {
 
 const CoursesHero = ({ searchValue, setSearchValue }: CoursesHeroProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
+    const [inputFocused, setInputFocused] = useState(false);
     return (
         <Container>
             <Content>
@@ -42,13 +44,43 @@ const CoursesHero = ({ searchValue, setSearchValue }: CoursesHeroProps) => {
                         ]}
                     />
                     <Heading>Boost your skills with antern</Heading>
-                    <InputContainer onClick={() => inputRef.current?.focus()}>
+                    <InputContainer
+                        onClick={() => {
+                            if (inputRef.current) {
+                                inputRef.current.focus();
+                                setInputFocused(true);
+                            }
+                        }}
+                    >
                         <Input
                             ref={inputRef}
+                            onBlur={() => setInputFocused(false)}
                             value={searchValue}
                             onChange={(e) => setSearchValue(e.target.value)}
-                            placeholder="What do you want to learn today?"
                         />
+                        {!inputFocused && (
+                            <TypeAnimation
+                                sequence={[
+                                    "What do you want to learn today?",
+                                    1000,
+                                    "Web Development",
+                                    1000,
+                                    "AR/VR",
+                                    2000,
+                                    "Machine Learning",
+                                ]}
+                                cursor={true}
+                                repeat={Infinity}
+                                style={{
+                                    fontWeight: 400,
+                                    fontSize: "1.8rem",
+                                    lineHeight: "150%",
+                                    color: "rgba(222, 227, 236, 0.5)",
+                                    position: "absolute",
+                                    width: "100%",
+                                }}
+                            />
+                        )}
                         <InputIcon>
                             <FiSearch />
                         </InputIcon>

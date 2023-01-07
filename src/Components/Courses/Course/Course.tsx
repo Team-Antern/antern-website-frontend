@@ -24,6 +24,7 @@ import { IoIosTimer } from "react-icons/io";
 import Button from "../../Global/Button/Button";
 import { BsCameraVideo, BsFileEarmarkPdf } from "react-icons/bs";
 import { Course as CourseInterface } from "../../../Pages/Courses/Courses";
+import { motion } from "framer-motion";
 
 const Course = ({
     id,
@@ -35,7 +36,23 @@ const Course = ({
     duration,
 }: CourseInterface) => {
     return (
-        <Container>
+        <Container
+            as={motion.div}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            variants={{
+                offscreen: {
+                    y: 300,
+                },
+                onscreen: {
+                    y: 50,
+                    transition: {
+                        type: "ease-in",
+                    },
+                },
+            }}
+        >
             <CourseImage src={courseBanner} />
             <CourseDetails>
                 <CourseTitle>{title}</CourseTitle>
