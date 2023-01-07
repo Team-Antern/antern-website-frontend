@@ -24,12 +24,12 @@ const Courses = () => {
     const [searchValue, setSearchValue] = useState("");
     const [loading, startApiCall, finishApiCall] = useContext(LoadingContext);
     useEffect(() => {
-        startApiCall();
+        startApiCall && startApiCall();
         fetch("https://api.npoint.io/b47a93aad13d58160aad")
             .then((response) => response.json())
             .then((data) => {
                 setCourses(data);
-                finishApiCall();
+                finishApiCall && finishApiCall();
             });
     }, []);
     return (
