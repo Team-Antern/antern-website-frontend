@@ -11,24 +11,29 @@ import {
     ReviewerProfilePic,
     ReviewQuotes,
 } from "./styles";
+import { Review as ReviewSchema } from "../../../Context/CourseContext";
 
-const Review = () => {
+interface ReviewProps {
+    review: ReviewSchema;
+}
+
+const Review = ({ review }: ReviewProps) => {
     return (
         <Container>
             <ReviewQuotes />
             <Content>
-                "I found Priyanshu's course to be the foundation for my
-                knowledge of Unity's platform and C# scripting as it was the
-                first one I followed."
+                "{review.review}"
                 <ReviewChevron>
                     <BsFillTriangleFill />
                 </ReviewChevron>
             </Content>
             <Reviewer>
-                <ReviewerProfilePic src="https://bit.ly/3iFDcYj" />
+                <ReviewerProfilePic src={review.author.profilePic} />
                 <ReviewerNamePosition>
-                    <ReviewerName>shreya sethi</ReviewerName>
-                    <ReviewerPosition>student</ReviewerPosition>
+                    <ReviewerName>{review.author.name}</ReviewerName>
+                    <ReviewerPosition>
+                        {review.author.position}
+                    </ReviewerPosition>
                 </ReviewerNamePosition>
             </Reviewer>
         </Container>

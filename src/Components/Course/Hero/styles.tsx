@@ -172,14 +172,18 @@ export const NumberOfPeopleEnrolled = styled.div`
     }
 `;
 
-export const CourseImage = styled.div`
+interface CourseImageProps {
+    src: string;
+}
+
+export const CourseImage = styled.div<CourseImageProps>`
     position: absolute;
     top: 0;
     right: 0;
     width: 50%;
     height: 100%;
     overflow: hidden;
-    background: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfHw%3D&w=1000&q=80");
+    background: url(${({ src }) => src});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

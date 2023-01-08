@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Content, Heading, Skill } from "./styles";
+import { CourseContext } from "../../../Context/CourseContext";
 
 const skills = [
     "data science",
@@ -16,11 +17,15 @@ const skills = [
 ];
 
 const SkillsYouWillGain = () => {
+    const courseDetails = useContext(CourseContext);
+
+    if (!courseDetails) return null;
+
     return (
         <Container>
             <Heading>skills you will gain</Heading>
             <Content>
-                {skills.map((skill, index) => (
+                {courseDetails.skillsYouWillGain.map((skill, index) => (
                     <Skill key={index}>{skill}</Skill>
                 ))}
             </Content>

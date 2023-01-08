@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     Container,
     Content,
@@ -8,6 +8,7 @@ import {
     RequirementContent,
 } from "./styles";
 import { BiCheckCircle } from "react-icons/bi";
+import { CourseContext } from "../../../Context/CourseContext";
 
 const requirements = [
     "time management skills.",
@@ -18,11 +19,15 @@ const requirements = [
 ];
 
 const Requirements = () => {
+    const courseDetails = useContext(CourseContext);
+
+    if (!courseDetails) return null;
+
     return (
         <Container>
             <Heading>requirements</Heading>
             <Content>
-                {requirements.map((requirement, index) => (
+                {courseDetails.requirements.map((requirement, index) => (
                     <Requirement key={index}>
                         <RequirementCheckIcon>
                             <BiCheckCircle />

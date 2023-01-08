@@ -11,6 +11,7 @@ import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
 import SectionProgressTrackContextProvider from "./Context/SectionProgressTrackContext";
 import Loading from "./Components/Global/Loading/Loading";
 import { LoadingContext } from "./Context/LoadingContext";
+import CourseContextProvider, { CourseContext } from "./Context/CourseContext";
 
 function App() {
     const { pathname } = useLocation();
@@ -34,7 +35,14 @@ function App() {
                     }
                 />
                 <Route path="/courses" element={<Courses />} />
-                <Route path="/courses/:id" element={<Course />} />
+                <Route
+                    path="/courses/:id"
+                    element={
+                        <CourseContextProvider>
+                            <Course />
+                        </CourseContextProvider>
+                    }
+                />
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route
                     path="/terms-and-conditions"

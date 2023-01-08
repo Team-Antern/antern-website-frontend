@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import BreadCrumbs from "../../Global/BreadCrumbs/BreadCrumbs";
 import Header from "../../Global/Header/Header";
 // @ts-ignore
@@ -28,14 +28,19 @@ import {
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { AiFillLike } from "react-icons/ai";
 import Button from "../../Global/Button/Button";
+import { CourseContext } from "../../../Context/CourseContext";
+// @ts-ignore
+import numberWithCommas from "number-with-commas";
 
 const CourseHero = () => {
+    const courseDetails = useContext(CourseContext);
+    if (!courseDetails) return null;
     return (
         <Container>
             <Content>
                 <Header />
                 <HeroMain>
-                    <CourseImage />
+                    <CourseImage src={courseDetails.coverImage} />
                     <CourseDetails>
                         <BreadCrumbs
                             path={[
@@ -53,7 +58,7 @@ const CourseHero = () => {
                                 },
                             ]}
                         />
-                        <CourseTitle>core machine learning</CourseTitle>
+                        <CourseTitle>{courseDetails.title}</CourseTitle>
                         <CourseRating>
                             <CourseStarRating>
                                 <ReactStars
@@ -62,18 +67,19 @@ const CourseHero = () => {
                                     color="#fff"
                                     activeColor="#de640c"
                                     edit={false}
-                                    value={5}
+                                    value={courseDetails.rating.stars}
                                     isHalf={true}
                                     emptyIcon={<BsStar />}
                                     halfIcon={<BsStarHalf />}
                                     filledIcon={<BsStarFill />}
                                 />
                                 <CourseStarRatingContent>
-                                    5.0
+                                    {courseDetails.rating.stars}
                                 </CourseStarRatingContent>
                             </CourseStarRating>
                             <CourseNumberOfRatings>
-                                20,454 ratings
+                                {numberWithCommas(courseDetails.rating.total)}{" "}
+                                ratings
                             </CourseNumberOfRatings>
                             {/* <LikesOnCourse>
                                 <LikeIcon>
@@ -83,22 +89,33 @@ const CourseHero = () => {
                             </LikesOnCourse> */}
                         </CourseRating>
                         <CourseInstructor>
-                            <CourseInstructorProfilePic src="https://bit.ly/3iFDcYj" />
+                            <CourseInstructorProfilePic
+                                src={courseDetails.instructors[0].profilePic}
+                            />
                             <CourseInstructorName>
-                                ayush singh
+                                {courseDetails.instructors[0].name}
                             </CourseInstructorName>
                         </CourseInstructor>
                         <EnrollNow>
                             <Button style={{ textAlign: "center" }}>
                                 <EnrollButton>
-                                    <span>Enroll for free</span>
-                                    <span>Starts Dec 1</span>
+                                    <span>
+                                        Enroll Now For ₹{courseDetails.price}
+                                    </span>
+                                    <span>Starts {courseDetails.starts}</span>
                                 </EnrollButton>
                             </Button>
-                            <FinancialAid>Financial aid available</FinancialAid>
+                            {courseDetails.financialAidAvail && (
+                                <FinancialAid>
+                                    Financial aid available
+                                </FinancialAid>
+                            )}
                         </EnrollNow>
                         <NumberOfPeopleEnrolled>
-                            <span>511,324</span> already enrolled
+                            <span>
+                                {numberWithCommas(courseDetails.totalEnrolled)}
+                            </span>{" "}
+                            already enrolled
                         </NumberOfPeopleEnrolled>
                     </CourseDetails>
                 </HeroMain>

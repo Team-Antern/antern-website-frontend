@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BsFileEarmarkText } from "react-icons/bs";
 import { TbMessageLanguage } from "react-icons/tb";
@@ -17,20 +17,25 @@ import {
     Left,
     Right,
 } from "./styles";
+import { CourseContext } from "../../../Context/CourseContext";
 
 const AboutCourse = () => {
+    const courseDetails = useContext(CourseContext);
+
+    if (!courseDetails) return null;
+
     const courseFeatures = [
         {
             icon: <AiOutlineClockCircle />,
-            content: "17 hours",
+            content: courseDetails.totalLength,
         },
         {
             icon: <BsFileEarmarkText />,
-            content: "5 modules",
+            content: `${courseDetails.sections.length} modules`,
         },
         {
             icon: <TbMessageLanguage />,
-            content: "english",
+            content: courseDetails.language,
         },
     ];
     return (
@@ -38,19 +43,9 @@ const AboutCourse = () => {
             <Left>
                 <Heading>about the course</Heading>
                 <Desc>
-                    <p>
-                        Antern began as an experiment in online learning, when
-                        Antern instructors Ayush, Tushar & Priyanshu elected to
-                        offer their "Introduction to Artificial Intelligence"
-                        course online to anyone, for free. Over 160,00 students
-                        in more Than 190
-                    </p>
-                    <p>
-                        The potential to educate at a global scale was
-                        awe-inspiring, and Antern was founded to pursue a
-                        mission to democratize education Get started and learn
-                        this courses
-                    </p>
+                    {courseDetails.about.map((aboutPara, index) => (
+                        <p key={index}>{aboutPara}</p>
+                    ))}
                 </Desc>
                 <CourseFeatures>
                     {courseFeatures.map(({ icon, content }, index) => (

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
     Container,
     Content,
@@ -27,184 +27,16 @@ import formatDuration from "format-duration";
 import * as simpleDuration from "simple-duration";
 import SmoothCollapse from "react-smooth-collapse";
 import Button from "../../Global/Button/Button";
-
-const sections = [
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python acbinstalling python acbinstalling python acbinstalling python acb",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-    {
-        name: "up and running with python",
-        totalLength: 494,
-        lectures: [
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-            {
-                name: "installing python",
-                totalLength: 247,
-            },
-        ],
-    },
-];
+import { CourseContext } from "../../../Context/CourseContext";
 
 const ModuleContent = () => {
+    const courseDetails = useContext(CourseContext);
+    if (!courseDetails) return null;
     const [expandedSections, setExpandedSections] = useState<number[]>([]);
     const [showAllSections, setShowAllSections] = useState(false);
     const isExpanded = (index: number) => expandedSections.includes(index);
     const allSectionsExpanded = () =>
-        sections.length === expandedSections.length;
+        courseDetails.sections.length === expandedSections.length;
     const expandCollapse = (index: number) => {
         if (isExpanded(index))
             setExpandedSections((prev) => prev.filter((i) => i !== index));
@@ -212,14 +44,17 @@ const ModuleContent = () => {
     };
     const expandCollapseAll = () => {
         if (allSectionsExpanded()) setExpandedSections([]);
-        else setExpandedSections(Object.keys(sections).map((key) => +key));
+        else
+            setExpandedSections(
+                Object.keys(courseDetails.sections).map((key) => +key)
+            );
     };
     return (
         <Container>
             <Content>
                 <ContentLengthExpandCollapse>
                     <ContentLength>
-                        <span>{sections.length} sections</span>
+                        <span>{courseDetails.sections.length} sections</span>
                         <RxDotFilled />
                         <span>24 lectures</span>
                         <RxDotFilled />
@@ -232,8 +67,11 @@ const ModuleContent = () => {
                     </ExpandCollapse>
                 </ContentLengthExpandCollapse>
                 <Sections>
-                    {sections
-                        .slice(0, showAllSections ? sections.length : 11)
+                    {courseDetails.sections
+                        .slice(
+                            0,
+                            showAllSections ? courseDetails.sections.length : 11
+                        )
                         .map(({ name, totalLength, lectures }, index) => (
                             <Section key={index}>
                                 <SectionCollapseExpandChevronHeadingLength
@@ -285,7 +123,7 @@ const ModuleContent = () => {
                             </Section>
                         ))}
                 </Sections>
-                {!showAllSections && sections.length > 10 && (
+                {!showAllSections && courseDetails.sections.length > 10 && (
                     <Button
                         style={{
                             background: "#fff",
@@ -297,7 +135,7 @@ const ModuleContent = () => {
                     `}
                         onClick={() => setShowAllSections(true)}
                     >
-                        {sections.length - 10} more sections
+                        {courseDetails.sections.length - 10} more sections
                     </Button>
                 )}
             </Content>

@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Review from "../Review/Review";
 import { Heading, Container, Content } from "./styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { SwiperDot, SwiperDots } from "../../../globalStyles";
 import sw from "swiper";
+import { CourseContext } from "../../../Context/CourseContext";
 
 const Reviews = () => {
+    const courseDetails = useContext(CourseContext);
     const [swiper, setSwiper] = useState<sw | null>(null);
     const [slidesPerView, setSlidesPerView] = useState(3);
     const [activeSlide, setActiveSlide] = useState(0);
@@ -22,6 +24,7 @@ const Reviews = () => {
         return () =>
             window.removeEventListener("resize", decideAndSetSlidesPerView);
     }, []);
+    if (!courseDetails) return null;
     return (
         <Container>
             <Heading>not just take our words</Heading>
@@ -36,14 +39,14 @@ const Reviews = () => {
                     loopFillGroupWithBlank
                     onSwiper={(swiper) => setSwiper(swiper)}
                 >
-                    {Array.from(Array(10).keys()).map((review, index) => (
+                    {courseDetails.reviews.map((review, index) => (
                         <SwiperSlide key={index}>
-                            <Review />
+                            <Review review={review} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
                 <SwiperDots>
-                    {Array.from(Array(10).keys()).map((review, index) =>
+                    {courseDetails.reviews.map((review, index) =>
                         index % slidesPerView === 0 ? (
                             <SwiperDot
                                 onClick={() => swiper?.slideTo(index)}

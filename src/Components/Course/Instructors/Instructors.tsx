@@ -20,21 +20,18 @@ const instructors = [
         profilePic:
             "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
         name: "ayush singh",
-        position: "python, data science",
         about: "The Atlas Fellowship’s unique emphasis on casual discussion and individual thinking was at once invigorating, exhilarating, and inspiring. The fascinating concepts I learned and debated with my peers in this community led me on pathway to impacts that I've always wanted to make.",
     },
     {
         profilePic:
             "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
         name: "ayush singh",
-        position: "python, data science",
         about: "The Atlas Fellowship’s unique emphasis on casual discussion and individual thinking was at once invigorating, exhilarating, and inspiring. The fascinating concepts I learned and debated with my peers in this community led me on pathway to impacts that I've always wanted to make.",
     },
     {
         profilePic:
             "https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1676505600&v=beta&t=EBIs4-3Kwk7OeJyjt48RZn2okNeMQj85NjramNYzVmk",
         name: "ayush singh",
-        position: "python, data science",
         about: "The Atlas Fellowship’s unique emphasis on casual discussion and individual thinking was at once invigorating, exhilarating, and inspiring. The fascinating concepts I learned and debated with my peers in this community led me on pathway to impacts that I've always wanted to make.",
     },
 ];
