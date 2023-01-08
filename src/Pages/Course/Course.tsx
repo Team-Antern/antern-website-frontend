@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AboutCourse from "../../Components/Course/AboutCourse/AboutCourse";
 import Features from "../../Components/Course/Features/Features";
 import CourseHero from "../../Components/Course/Hero/Hero";
@@ -10,8 +10,24 @@ import Instructors from "../../Components/Course/Instructors/Instructors";
 import ModuleContent from "../../Components/Course/ModuleContent/ModuleContent";
 import WhatYouGetByEnrolling from "../../Components/Course/WhatYouGetByEnrolling/WhatYouGetByEnrolling";
 import Requirements from "../../Components/Course/Requirements/Requirements";
+import { useParams } from "react-router-dom";
+import { LoadingContext } from "../../Context/LoadingContext";
 
 const Course = () => {
+    const { id } = useParams();
+    const [courseDetails, setCourseDetails] = useState();
+    const [, startApiCall, finishApiCall] = useContext(LoadingContext);
+    console.log(courseDetails);
+    useEffect(() => {
+        startApiCall && startApiCall();
+        fetch(`https://api.npoint.io/${id}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setCourseDetails(data);
+                finishApiCall && finishApiCall();
+            });
+    }, []);
+    if (!courseDetails) return null;
     return (
         <Container>
             <CourseHero />

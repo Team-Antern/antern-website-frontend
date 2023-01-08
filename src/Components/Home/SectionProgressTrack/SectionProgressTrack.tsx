@@ -17,11 +17,11 @@ const SectionProgressTrack = () => {
         SectionProgressTrackContext
     );
     return (
-        <Container
-            onMouseOver={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-        >
-            <Sections>
+        <Container>
+            <Sections
+                onMouseOver={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+            >
                 <Track scrollPercentage={scrollPercentage} />
                 {sections.map((section, index) => (
                     <Gem

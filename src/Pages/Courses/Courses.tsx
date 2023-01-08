@@ -25,13 +25,14 @@ const Courses = () => {
     const [, startApiCall, finishApiCall] = useContext(LoadingContext);
     useEffect(() => {
         startApiCall && startApiCall();
-        fetch("https://api.npoint.io/b47a93aad13d58160aad")
+        fetch("https://api.npoint.io/f46e5559a66c6a6e88b5")
             .then((response) => response.json())
             .then((data) => {
                 setCourses(data);
                 finishApiCall && finishApiCall();
             });
     }, []);
+    if (!courses.length) return null;
     return (
         <Container>
             <CoursesHero

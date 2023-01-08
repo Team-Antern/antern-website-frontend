@@ -39,7 +39,7 @@ export const Heading = styled.div`
 `;
 
 export const Content = styled.div`
-    overflow-x: scroll;
+    overflow-x: auto;
     max-width: 100%;
 `;
 
@@ -48,6 +48,7 @@ export const PlatformComparisionTable = styled.table`
     color: #fff;
     table-layout: fixed;
     background: #121f2b;
+    min-width: 90rem;
 `;
 
 export const PlatformComparisionTableHead = styled.thead`
@@ -58,7 +59,7 @@ export const PlatformComparisionTableHead = styled.thead`
 export const PlatformComparisionTableBody = styled.tbody`
     & tr td:first-child {
         padding-left: 2.4rem;
-        padding-right: 0rem;
+        padding-right: 6.5rem;
         font-weight: 400;
         font-size: 2rem;
         line-height: 150%;
