@@ -48,21 +48,17 @@ const Instructors = () => {
                         setActiveIndex(activeIndex)
                     }
                 >
-                    {instructors.map(
-                        ({ profilePic, name, position, about }, index) => (
-                            <SwiperSlide key={index}>
-                                <Instructor>
-                                    <InstructorProfilePicName>
-                                        <InstructorProfilePic
-                                            src={profilePic}
-                                        />
-                                        <InstructorName>{name}</InstructorName>
-                                    </InstructorProfilePicName>
-                                    <InstructorAbout>{about}</InstructorAbout>
-                                </Instructor>
-                            </SwiperSlide>
-                        )
-                    )}
+                    {instructors.map(({ profilePic, name, about }, index) => (
+                        <SwiperSlide key={index}>
+                            <Instructor>
+                                <InstructorProfilePicName>
+                                    <InstructorProfilePic src={profilePic} />
+                                    <InstructorName>{name}</InstructorName>
+                                </InstructorProfilePicName>
+                                <InstructorAbout>{about}</InstructorAbout>
+                            </Instructor>
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </Content>
             <SlideControls>
