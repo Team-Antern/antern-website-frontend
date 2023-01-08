@@ -83,4 +83,4 @@ const WhatMakesUsUnique = React.forwardRef<HTMLDivElement>(({}, ref) => {
     );
 });
 
-export default WhatMakesUsUnique;
+export default React.memo(WhatMakesUsUnique);

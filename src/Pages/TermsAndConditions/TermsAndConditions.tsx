@@ -3,7 +3,7 @@ import Header from "../../Components/Global/Header/Header";
 import Footer from "../../Components/Global/Footer/Footer";
 import { useContext } from "react";
 import {
-    Body,
+    Wrapper,
     Container,
     Content,
     Heading,
@@ -15,11 +15,10 @@ import {
     SectionContent,
     UnorderdList,
 } from "./styles";
-import { Wrapper } from "../../Components/Global/Header/styles";
 
 const TermsAndConditions = () => {
     return (
-        <Body>
+        <Wrapper>
             <Header
                 wrapperStyle={{
                     background: "#101c27",
@@ -426,9 +425,7 @@ const TermsAndConditions = () => {
                     </Sections>
                 </Content>
             </Container>
-
-            <Footer />
-        </Body>
+        </Wrapper>
     );
 };
 

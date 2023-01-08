@@ -120,4 +120,4 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
     );
 });
 
-export default PremiumBenefits;
+export default React.memo(PremiumBenefits);

@@ -1,27 +1,27 @@
-import React, { useContext, useEffect } from "react";
+import React, { Suspense, useContext, useEffect } from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Header from "./Components/Global/Header/Header";
-import Courses from "./Pages/Courses/Courses";
-import Footer from "./Components/Global/Footer/Footer";
-import Course from "./Pages/Course/Course";
-import AboutUs from "./Pages/About/About";
-import Home from "./Pages/Home/Home";
-import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
-import SectionProgressTrackContextProvider from "./Context/SectionProgressTrackContext";
-import Loading from "./Components/Global/Loading/Loading";
 import { LoadingContext } from "./Context/LoadingContext";
-import CourseContextProvider, { CourseContext } from "./Context/CourseContext";
+import Loading from "./Components/Global/Loading/Loading";
+import CourseContextProvider from "./Context/CourseContext";
+import Footer from "./Components/Global/Footer/Footer";
+const Home = React.lazy(() => import("./Pages/Home/Home"));
+const Courses = React.lazy(() => import("./Pages/Courses/Courses"));
+const Course = React.lazy(() => import("./Pages/Course/Course"));
+const AboutUs = React.lazy(() => import("./Pages/About/About"));
+const TermsAndConditions = React.lazy(
+    () => import("./Pages/TermsAndConditions/TermsAndConditions")
+);
 
 function App() {
     const { pathname } = useLocation();
     const [loading] = useContext(LoadingContext);
-    // useEffect(() => {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth",
-    //     });
-    // }, [pathname]);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, [pathname]);
     return (
         <div className="App">
             {loading && <Loading />}
@@ -29,24 +29,44 @@ function App() {
                 <Route
                     path="/"
                     element={
-                        <SectionProgressTrackContextProvider>
+                        <Suspense fallback={<Loading />}>
                             <Home />
-                        </SectionProgressTrackContextProvider>
+                        </Suspense>
                     }
                 />
-                <Route path="/courses" element={<Courses />} />
+                <Route
+                    path="/courses"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <Courses />
+                        </Suspense>
+                    }
+                />
                 <Route
                     path="/courses/:id"
                     element={
-                        <CourseContextProvider>
-                            <Course />
-                        </CourseContextProvider>
+                        <Suspense fallback={<Loading />}>
+                            <CourseContextProvider>
+                                <Course />
+                            </CourseContextProvider>
+                        </Suspense>
                     }
                 />
-                <Route path="/about-us" element={<AboutUs />} />
+                <Route
+                    path="/about-us"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <AboutUs />
+                        </Suspense>
+                    }
+                />
                 <Route
                     path="/terms-and-conditions"
-                    element={<TermsAndConditions />}
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <TermsAndConditions />
+                        </Suspense>
+                    }
                 />
             </Routes>
             {pathname !== "/" && <Footer />}

@@ -12,7 +12,9 @@ import SectionProgressTrack from "../../Components/Home/SectionProgressTrack/Sec
 import Footer from "../../Components/Global/Footer/Footer";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { useContext } from "react";
-import { SectionProgressTrackContext } from "../../Context/SectionProgressTrackContext";
+import SectionProgressTrackContextProvider, {
+    SectionProgressTrackContext,
+} from "../../Context/SectionProgressTrackContext";
 import Section from "../../Components/Home/Section/Section";
 
 export const sections = [
@@ -43,12 +45,8 @@ export const sections = [
 ];
 
 const Home = () => {
-    const [, setActiveSection, scrollRef] = useContext(
-        SectionProgressTrackContext
-    );
     return (
-        <Container ref={scrollRef}>
-            <SectionProgressTrack />
+        <Container>
             <Header
                 wrapperStyle={{
                     background: "#101c27",
@@ -63,22 +61,25 @@ const Home = () => {
                 }}
             />
             <Content>
-                {sections.map(({ component }, index) => (
-                    // <ReactVisibilitySensor
-                    //     partialVisibility={true}
-                    //     minTopValue={0}
-                    //     onChange={(isVisible: boolean) => {
-                    //         console.log(isVisible, index);
-                    //         if (isVisible) setActiveSection(index);
-                    //     }}
-                    //     key={index}
-                    // >
-                    //     {component}
-                    // </ReactVisibilitySensor>
-                    <Section index={index} key={index}>
-                        {component}
-                    </Section>
-                ))}
+                <SectionProgressTrackContextProvider>
+                    <SectionProgressTrack />
+                    {sections.map(({ component }, index) => (
+                        // <ReactVisibilitySensor
+                        //     partialVisibility={true}
+                        //     minTopValue={0}
+                        //     onChange={(isVisible: boolean) => {
+                        //         console.log(isVisible, index);
+                        //         if (isVisible) setActiveSection(index);
+                        //     }}
+                        //     key={index}
+                        // >
+                        //     {component}
+                        // </ReactVisibilitySensor>
+                        <Section index={index} key={index}>
+                            {component}
+                        </Section>
+                    ))}
+                </SectionProgressTrackContextProvider>
                 <Footer />
             </Content>
         </Container>

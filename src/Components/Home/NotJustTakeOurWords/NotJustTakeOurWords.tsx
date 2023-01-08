@@ -208,4 +208,4 @@ const NotJustTakeOurWords = React.forwardRef<HTMLDivElement>(({}, ref) => {
     );
 });
 
-export default NotJustTakeOurWords;
+export default React.memo(NotJustTakeOurWords);

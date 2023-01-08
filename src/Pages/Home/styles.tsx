@@ -8,8 +8,6 @@ export const Container = styled.div`
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100vh;
-    overflow: hidden scroll;
 `;
 
 export const Content = styled.div``;

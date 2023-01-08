@@ -103,4 +103,4 @@ const PlatformComparision = React.forwardRef<HTMLDivElement>(({}, ref) => {
     );
 });
 
-export default PlatformComparision;
+export default React.memo(PlatformComparision);

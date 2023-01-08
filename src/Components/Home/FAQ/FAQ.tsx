@@ -68,4 +68,4 @@ const FAQ = React.forwardRef<HTMLDivElement>(({}, ref) => {
     );
 });
 
-export default FAQ;
+export default React.memo(FAQ);

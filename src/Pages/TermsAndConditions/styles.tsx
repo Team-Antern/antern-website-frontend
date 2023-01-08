@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const Body = styled.div`
-    height: 100vh;
+export const Wrapper = styled.div`
     position: relative;
     width: 100%;
 `;
@@ -35,7 +34,7 @@ export const Heading = styled.div`
 
     & span {
         font-family: Poppins;
-        color: #46c162;
+        color: #4df3a3;
     }
 `;
 
@@ -68,7 +67,7 @@ export const SectionHeading = styled.div`
     font-weight: 700;
     line-height: 27px;
     letter-spacing: -0.01em;
-    color: #46c162;
+    color: #4df3a3;
     margin: 20px 0px;
 `;
 

@@ -158,4 +158,4 @@ const HomeHero = React.forwardRef<HTMLDivElement>(({}, ref) => {
     );
 });
 
-export default HomeHero;
+export default React.memo(HomeHero);

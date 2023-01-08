@@ -9,7 +9,7 @@ const getScrollPercentage = (element: HTMLElement) => {
 };
 
 const useScrollPercentage = () => {
-    const scrollRef = useRef<HTMLElement>(null);
+    const scrollRef = useRef(document.body);
     const [scrollPercentage, setScrollPercentage] = useState(NaN);
 
     const reportScroll = (e: Event) => {
@@ -32,7 +32,7 @@ const useScrollPercentage = () => {
         };
     }, [scrollPercentage]);
 
-    return [scrollRef, Number.isNaN(scrollPercentage) ? 0 : scrollPercentage];
+    return Number.isNaN(scrollPercentage) ? 0 : scrollPercentage;
 };
 
 export default useScrollPercentage;

@@ -13,7 +13,7 @@ import { sections } from "../../../Pages/Home/Home";
 
 const SectionProgressTrack = () => {
     const [hovered, setHovered] = useState(false);
-    const [activeSection, setActiveSection, , scrollPercentage] = useContext(
+    const [activeSection, setActiveSection, scrollPercentage] = useContext(
         SectionProgressTrackContext
     );
     return (
