@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
 export const ContainerWrapper = styled.div`
-    padding: 13rem 0 20rem 0;
+    padding: 13rem 5.4rem 20rem;
     background: #101c26;
     text-align: center;
+    @media screen and (max-width: 1000px) {
+        padding: 10rem 5.4rem;
+    }
+    @media screen and (max-width: 500px) {
+        padding: 10rem 3.2rem;
+    }
 `;
 
 export const Container = styled.div`
-    max-width: 120rem;
+    max-width: 140rem;
     margin: auto;
 `;
 
@@ -19,13 +25,22 @@ export const Heading = styled.div`
     line-height: 120%;
     color: #dee3ec;
     text-transform: capitalize;
+    @media screen and (max-width: 1000px) {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 700px) {
+        margin-bottom: 6rem;
+    }
+    @media screen and (max-width: 500px) {
+        font-size: 3.2rem;
+    }
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10rem;
+    gap: 3rem;
 `;
 
 export const Card = styled.div`
@@ -35,7 +50,6 @@ export const Card = styled.div`
     border-radius: 2.2rem;
     min-width: 25rem;
     max-width: 32rem;
-    width: 100%;
 `;
 
 export const CardIcon = styled.div`

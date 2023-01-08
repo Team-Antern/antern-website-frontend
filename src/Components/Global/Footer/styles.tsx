@@ -14,6 +14,7 @@ export const Container = styled.div`
     }
     position: relative;
     overflow: hidden;
+    margin: auto;
 `;
 
 export const Background = styled.div`

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import {
     Container,
     Content,
@@ -49,6 +49,17 @@ const ModuleContent = () => {
                 Object.keys(courseDetails.sections).map((key) => +key)
             );
     };
+    const [totalNumberOfLectures, courseTotalLength] = useMemo(() => {
+        let totalLectures = 0;
+        let totalLength = 0;
+        courseDetails.sections.forEach(({ lectures }) => {
+            totalLectures += lectures.length;
+            lectures.forEach(({ totalLength: totalLectureLength }) => {
+                totalLength += totalLectureLength;
+            });
+        });
+        return [totalLectures, totalLength];
+    }, []);
     return (
         <Container>
             <Content>
@@ -56,9 +67,12 @@ const ModuleContent = () => {
                     <ContentLength>
                         <span>{courseDetails.sections.length} sections</span>
                         <RxDotFilled />
-                        <span>24 lectures</span>
+                        <span>{totalNumberOfLectures} lectures</span>
                         <RxDotFilled />
-                        <span>14h 42m total length</span>
+                        <span>
+                            {simpleDuration.stringify(courseTotalLength)} total
+                            length
+                        </span>
                     </ContentLength>
                     <ExpandCollapse onClick={expandCollapseAll}>
                         {allSectionsExpanded()

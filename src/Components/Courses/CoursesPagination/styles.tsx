@@ -13,7 +13,9 @@ export const Heading = styled.div`
     line-height: 125%;
     color: #101c26;
     text-align: center;
+    text-transform: capitalize;
     letter-spacing: -0.5px;
+    margin-bottom: 7.2rem;
     @media screen and (max-width: 500px) {
         font-size: 3.5rem;
     }
@@ -24,7 +26,7 @@ export const Content = styled.div`
     gap: 4rem 3.4rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 7.2rem 0;
+    margin-bottom: 7.2rem;
     @media screen and (max-width: 500px) {
         margin: 5rem 0;
     }

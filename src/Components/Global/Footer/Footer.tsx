@@ -82,7 +82,15 @@ const socialLinks = [
 const Footer = () => {
     const { pathname } = useLocation();
     return (
-        <Container style={pathname === "/" ? {} : { borderRadius: "0px" }}>
+        <Container
+            style={
+                pathname === "/"
+                    ? {
+                          maxWidth: "115rem",
+                      }
+                    : { borderRadius: "0px" }
+            }
+        >
             <Background />
             <Content>
                 <AboutCompanyLinkSections>

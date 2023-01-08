@@ -11,7 +11,7 @@ export const Content = styled.div`
     background: #fdfefd;
     box-shadow: 0px 14px 94px rgba(232, 221, 234, 0.6);
     border-radius: 0.8rem;
-    overflow-y: scroll;
+    overflow-x: auto;
     white-space: nowrap;
     @media screen and (max-width: 640px) {
         padding: 1.6rem 2rem;

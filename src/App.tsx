@@ -12,6 +12,7 @@ const AboutUs = React.lazy(() => import("./Pages/About/About"));
 const TermsAndConditions = React.lazy(
     () => import("./Pages/TermsAndConditions/TermsAndConditions")
 );
+import "swiper/css";
 
 function App() {
     const { pathname } = useLocation();

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^1.6.2",
     "@types/format-duration": "^1.0.1",
     "@types/react-collapse": "^5.0.1",
     "@types/react-expand-animated": "^1.0.0",

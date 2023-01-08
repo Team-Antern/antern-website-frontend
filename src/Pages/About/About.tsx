@@ -13,7 +13,7 @@ const AboutUs = () => {
             <Content>
                 <OurMission />
                 <WithAnternYouCan />
-                {/* <OurLeadershipTeam /> */}
+                <OurLeadershipTeam />
                 <JoinOurCommunity />
             </Content>
         </Container>
