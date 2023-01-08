@@ -5,7 +5,6 @@ import {
     Container,
     Content,
     Desc,
-    Image,
     Price,
     Tag,
     Title,
@@ -16,7 +15,6 @@ const PremiumBenefit = () => {
     return (
         <Container>
             <Tag>popular</Tag>
-            <Image />
             <Content>
                 <TitlePrice>
                     <Title>chapter wise assignments and projects</Title>

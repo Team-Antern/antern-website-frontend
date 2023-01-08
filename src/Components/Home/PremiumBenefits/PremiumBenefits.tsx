@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import {
     Container,
     Content,
+    ContentWrapper,
     Desc,
     Heading,
+    SlideControls,
     Subtitle,
     SubtitleHeadingDesc,
 } from "./styles";
@@ -55,61 +57,65 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
                     </Desc>
                 </SubtitleHeadingDesc>
             </AnimateOnVisible>
-            <Content
-                as={motion.div}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true }}
-                variants={{
-                    offscreen: {
-                        y: 300,
-                    },
-                    onscreen: {
-                        y: 50,
-                        transition: {
-                            type: "ease-in",
+            <ContentWrapper>
+                <Content
+                    as={motion.div}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true }}
+                    variants={{
+                        offscreen: {
+                            y: 300,
                         },
-                    },
-                }}
-            >
-                <SlideControl
-                    isDisabled={swiper.isBeginning}
-                    onClick={() => swiper.slidePrev()}
+                        onscreen: {
+                            y: 0,
+                            transition: {
+                                type: "ease-in",
+                            },
+                        },
+                    }}
                 >
-                    <RxTriangleLeft />
-                </SlideControl>
-                <Swiper
-                    onSwiper={onSwiperAndIndexChange}
-                    onActiveIndexChange={onSwiperAndIndexChange}
-                    slidesPerView={slidesPerView}
-                    spaceBetween={30}
-                >
-                    <SwiperSlide>
-                        <PremiumBenefit />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <PremiumBenefit />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <PremiumBenefit />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <PremiumBenefit />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <PremiumBenefit />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <PremiumBenefit />
-                    </SwiperSlide>
-                </Swiper>
-                <SlideControl
-                    isDisabled={swiper.isEnd}
-                    onClick={() => swiper.slideNext()}
-                >
-                    <RxTriangleRight />
-                </SlideControl>
-            </Content>
+                    <Swiper
+                        onSwiper={onSwiperAndIndexChange}
+                        onActiveIndexChange={onSwiperAndIndexChange}
+                        slidesPerView={slidesPerView}
+                        spaceBetween={30}
+                    >
+                        <SwiperSlide>
+                            <PremiumBenefit />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <PremiumBenefit />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <PremiumBenefit />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <PremiumBenefit />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <PremiumBenefit />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <PremiumBenefit />
+                        </SwiperSlide>
+                    </Swiper>
+                </Content>
+                <SlideControls>
+                    <SlideControl
+                        isDisabled={swiper.isBeginning}
+                        onClick={() => swiper.slidePrev()}
+                    >
+                        <RxTriangleLeft />
+                    </SlideControl>
+                    <SlideControl
+                        isDisabled={swiper.isEnd}
+                        onClick={() => swiper.slideNext()}
+                    >
+                        <RxTriangleRight />
+                    </SlideControl>
+                </SlideControls>
+            </ContentWrapper>
         </Container>
     );
 });

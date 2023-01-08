@@ -25,7 +25,7 @@ export const HeroMain = styled.div`
         gap: 6rem;
     }
     @media screen and (max-width: 540px) {
-        padding: 5rem 3.2rem;
+        padding: 5rem 3.2rem 12rem;
     }
 `;
 
@@ -200,7 +200,7 @@ export const CourseImage = styled.div<CourseImageProps>`
         height: 100%;
         background: linear-gradient(
             90.05deg,
-            #101c26 0.05%,
+            #101c26 4%,
             rgba(0, 0, 0, 0) 99.94%
         );
         @media screen and (max-width: 750px) {
@@ -212,4 +212,38 @@ export const CourseImage = styled.div<CourseImageProps>`
             );
         }
     }
+`;
+
+export const PlayNow = styled.div`
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    cursor: pointer;
+`;
+
+export const PlayNowIcon = styled.div`
+    color: #41c88a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    width: 12rem;
+    height: 12rem;
+    background: #fff;
+    border-radius: 50%;
+    & svg {
+        position: relative;
+        left: 0.5rem;
+    }
+`;
+
+export const PlayNowContent = styled.div`
+    font-family: "Plus Jakarta Sans";
+    font-weight: 600;
+    font-size: 2.8rem;
+    letter-spacing: -0.05em;
+    color: #fff;
+    text-transform: capitalize;
 `;

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import BreadCrumbs from "../../Global/BreadCrumbs/BreadCrumbs";
 import Header from "../../Global/Header/Header";
 // @ts-ignore
@@ -24,19 +24,29 @@ import {
     LikesOnCourseContent,
     NumberOfPeopleEnrolled,
     CourseImage,
+    PlayNow,
+    PlayNowIcon,
+    PlayNowContent,
 } from "./styles";
-import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+import { BsFillPlayFill, BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { AiFillLike } from "react-icons/ai";
 import Button from "../../Global/Button/Button";
 import { CourseContext } from "../../../Context/CourseContext";
 // @ts-ignore
 import numberWithCommas from "number-with-commas";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 
 const CourseHero = () => {
     const courseDetails = useContext(CourseContext);
+    const [showVideoPlayer, setShowVideoPlayer] = useState(false);
     if (!courseDetails) return null;
     return (
         <Container>
+            {showVideoPlayer && (
+                <VideoPlayer
+                    closeVideoPlayer={() => setShowVideoPlayer(false)}
+                />
+            )}
             <Content>
                 <Header />
                 <HeroMain>
@@ -118,6 +128,16 @@ const CourseHero = () => {
                             already enrolled
                         </NumberOfPeopleEnrolled>
                     </CourseDetails>
+                    <PlayNow onClick={() => setShowVideoPlayer(true)}>
+                        <PlayNowIcon>
+                            <BsFillPlayFill />
+                        </PlayNowIcon>
+                        <PlayNowContent>
+                            watch
+                            <br />
+                            now
+                        </PlayNowContent>
+                    </PlayNow>
                 </HeroMain>
             </Content>
         </Container>

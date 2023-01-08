@@ -3,21 +3,24 @@ import styled from "styled-components";
 export const Container = styled.div`
     border-radius: 1.6rem;
     position: relative;
-    background: #223644;
     user-select: none;
     max-width: 44rem;
-`;
-
-export const Image = styled.div`
-    background: url("/assets/robot.png");
+    margin: auto;
+    background: #223644 url("/assets/robot.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 34rem;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
 `;
+
+// export const Image = styled.div`
+//     background: url("/assets/robot.png");
+//     background-repeat: no-repeat;
+//     background-size: 100%;
+//     height: 34rem;
+//     width: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+// `;
 
 export const Tag = styled.div`
     position: absolute;
@@ -45,11 +48,35 @@ export const Content = styled.div`
     position: relative;
     z-index: 1;
     padding: 30rem 3.2rem 2.5rem;
+    @media screen and (max-width: 530px) {
+        padding-top: 28rem;
+    }
+    @media screen and (max-width: 480px) {
+        padding-top: 27rem;
+    }
+    @media screen and (max-width: 450px) {
+        padding-top: 25rem;
+    }
+    @media screen and (max-width: 450px) {
+        padding-top: 25rem;
+    }
+    @media screen and (max-width: 420px) {
+        padding-top: 24rem;
+    }
+    @media screen and (max-width: 400px) {
+        padding-top: 22rem;
+    }
+    @media screen and (max-width: 380px) {
+        padding-top: 20rem;
+    }
 `;
 
 export const TitlePrice = styled.div`
     display: flex;
-    gap: 3.5rem;
+    gap: 1rem 3.5rem;
+    @media screen and (max-width: 420px) {
+        flex-direction: column;
+    }
 `;
 
 export const Title = styled.div`
@@ -58,6 +85,9 @@ export const Title = styled.div`
     line-height: 150%;
     color: #fff;
     text-transform: capitalize;
+    /* @media screen and (max-width: 420px) {
+        flex-direction: column;
+    } */
 `;
 
 export const Price = styled.div`

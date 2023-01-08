@@ -77,15 +77,39 @@ export const Desc = styled.div`
     }
 `;
 
-export const Content = styled.div`
-    padding: 7.4rem 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 3.2rem;
+export const ContentWrapper = styled.div`
+    position: relative;
     max-width: 100%;
+`;
+
+export const Content = styled.div`
+    /* display: flex;
+    align-items: center;
+    gap: 3.2rem; */
+    max-width: 100%;
+    margin: 0 7.2rem;
+    @media screen and (max-width: 750px) {
+        margin: 0;
+    }
     /* background: #192a36;
     border: 0.1rem solid rgba(255, 255, 255, 0.1);
     border-radius: 2.8rem; */
+`;
+
+export const SlideControls = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    @media screen and (max-width: 750px) {
+        position: relative;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 4rem;
+    }
 `;
 
 // export const Slides = styled.div``;

@@ -37,6 +37,7 @@ export interface Review {
 interface CourseDetailsSchema {
     title: string;
     coverImage: string;
+    courseVideo: string;
     rating: {
         stars: number;
         total: number;
