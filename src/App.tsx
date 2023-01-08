@@ -49,7 +49,7 @@ function App() {
                     element={<TermsAndConditions />}
                 />
             </Routes>
-            {/* {pathname !== "/" && <Footer />} */}
+            {pathname !== "/" && <Footer />}
         </div>
     );
 }
