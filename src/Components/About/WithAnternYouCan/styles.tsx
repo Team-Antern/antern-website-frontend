@@ -24,13 +24,18 @@ export const Heading = styled.div`
 export const Content = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10rem;
 `;
 
 export const Card = styled.div`
-    flex: 1;
-    /* max-width: 35rem; */
+    flex-shrink: 0;
+    padding: 4rem;
+    background: #223341;
+    border-radius: 2.2rem;
+    min-width: 25rem;
+    max-width: 32rem;
+    width: 100%;
 `;
 
 export const CardIcon = styled.div`
