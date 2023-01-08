@@ -79,6 +79,7 @@ const CoursesPagination = ({ courses }: CoursesPaginationProps) => {
                     </PaginationWrapper>
                 </>
             ) : (
+                // @ts-ignore
                 <lottie-player
                     autoplay
                     loop
@@ -89,6 +90,7 @@ const CoursesPagination = ({ courses }: CoursesPaginationProps) => {
                         width: "100%",
                         margin: "auto",
                     }}
+                    // @ts-ignore
                 ></lottie-player>
             )}
         </Container>
