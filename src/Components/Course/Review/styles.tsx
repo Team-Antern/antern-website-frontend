@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const ReviewQuotes = styled.div`
     width: 7rem;
     height: 5rem;
-    background: url("/assets/reviewquotes.svg");
+    background: url("/assets/reviewquotes.webp");
     background-size: contain;
     position: absolute;
     left: 2.4rem;

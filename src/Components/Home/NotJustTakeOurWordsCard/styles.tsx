@@ -16,7 +16,7 @@ const profilePicWrapperAfterBeforeStyles = `
     z-index: 0;
     width: 9rem;
     height: 5.5rem;
-    background: url("./assets/profile-pic-ellipse.png");
+    background: url("./assets/profile-pic-ellipse.webp");
 `;
 
 export const ProfilePicWrapper = styled.div`
@@ -71,7 +71,6 @@ export const Review = styled.div`
     height: 25rem;
     overflow-y: auto;
     overflow-x: hidden;
-    /* text-align: justify; */
     padding-right: 15px;
 
     &::-webkit-scrollbar {
@@ -84,7 +83,6 @@ export const Review = styled.div`
 
     &::-webkit-scrollbar-thumb {
         background-color: #4df3a3;
-        /* outline: 1px solid slategrey; */
     }
 `;
 

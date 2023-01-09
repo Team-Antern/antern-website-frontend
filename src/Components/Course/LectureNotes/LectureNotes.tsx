@@ -4,7 +4,7 @@ import { Container, Desc, Heading, Image } from "./styles";
 const LectureNotes = () => {
     return (
         <Container>
-            <Image src="/assets/lecture-notes.svg" />
+            <Image src="/assets/lecture-notes.webp" />
             <Heading>learning materials</Heading>
         </Container>
     );
