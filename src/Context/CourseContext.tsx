@@ -16,12 +16,11 @@ interface Instructors {
 
 interface Lecture {
     name: string;
-    totalLength: number;
+    totalLength?: number;
 }
 
 interface Section {
     name: string;
-    totalLength: number;
     lectures: Lecture[];
 }
 

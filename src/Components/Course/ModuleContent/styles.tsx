@@ -51,7 +51,6 @@ export const ExpandCollapse = styled.div`
 
 export const Sections = styled.div`
     text-transform: capitalize;
-    margin-bottom: 4rem;
 `;
 
 export const Section = styled.div``;

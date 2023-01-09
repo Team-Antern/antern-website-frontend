@@ -51,13 +51,16 @@ const ModuleContent = () => {
     };
     const [totalNumberOfLectures, courseTotalLength] = useMemo(() => {
         let totalLectures = 0;
-        let totalLength = 0;
+        let totalLength: null | number = 0;
         courseDetails.sections.forEach(({ lectures }) => {
             totalLectures += lectures.length;
-            lectures.forEach(({ totalLength: totalLectureLength }) => {
-                totalLength += totalLectureLength;
-            });
+            if (lectures[0].totalLength)
+                lectures.forEach(({ totalLength: totalLectureLength }) => {
+                    // @ts-ignore
+                    totalLength += totalLectureLength;
+                });
         });
+        if (!totalLength) totalLength = null;
         return [totalLectures, totalLength];
     }, []);
     return (
@@ -68,11 +71,17 @@ const ModuleContent = () => {
                         <span>{courseDetails.sections.length} sections</span>
                         <RxDotFilled />
                         <span>{totalNumberOfLectures} lectures</span>
-                        <RxDotFilled />
-                        <span>
-                            {simpleDuration.stringify(courseTotalLength)} total
-                            length
-                        </span>
+                        {courseTotalLength && (
+                            <>
+                                <RxDotFilled />
+                                <span>
+                                    {simpleDuration.stringify(
+                                        courseTotalLength
+                                    )}{" "}
+                                    total length
+                                </span>
+                            </>
+                        )}
                     </ContentLength>
                     <ExpandCollapse onClick={expandCollapseAll}>
                         {allSectionsExpanded()
@@ -86,56 +95,83 @@ const ModuleContent = () => {
                             0,
                             showAllSections ? courseDetails.sections.length : 11
                         )
-                        .map(({ name, totalLength, lectures }, index) => (
-                            <Section key={index}>
-                                <SectionCollapseExpandChevronHeadingLength
-                                    onClick={() => expandCollapse(index)}
-                                >
-                                    <SectionCollapseExpandChevronHeading>
-                                        <SectionCollapseExpandChevron>
-                                            {isExpanded(index) ? (
-                                                <HiChevronUp />
-                                            ) : (
-                                                <HiChevronDown />
-                                            )}
-                                        </SectionCollapseExpandChevron>
-                                        <SectionHeading>{name}</SectionHeading>
-                                    </SectionCollapseExpandChevronHeading>
-                                    <SectionLength>
-                                        <span>{lectures.length} lectures</span>
-                                        <RxDotFilled />
-                                        <span>
-                                            {simpleDuration.stringify(
-                                                totalLength
-                                            )}
-                                        </span>
-                                    </SectionLength>
-                                </SectionCollapseExpandChevronHeadingLength>
-                                <SmoothCollapse expanded={isExpanded(index)}>
-                                    <SectionLectures>
-                                        {lectures.map(
-                                            ({ name, totalLength }, index) => (
-                                                <SectionLecture key={index}>
-                                                    <SectionLectureIconHeading>
-                                                        <SectionLectureIcon>
-                                                            <BsPlayCircleFill />
-                                                        </SectionLectureIcon>
-                                                        <SectionLectureHeading>
-                                                            {name}
-                                                        </SectionLectureHeading>
-                                                    </SectionLectureIconHeading>
-                                                    <SectionLectureLength>
-                                                        {formatDuration(
-                                                            totalLength * 1000
+                        .map(({ name, lectures }, index) => {
+                            let totalSectionLength: null | number = null;
+                            if (lectures[0].totalLength) {
+                                totalSectionLength = 0;
+                                lectures.forEach(
+                                    ({ totalLength: lectureLength }) =>
+                                        // @ts-ignore
+                                        (totalSectionLength += lectureLength)
+                                );
+                            }
+                            return (
+                                <Section key={index}>
+                                    <SectionCollapseExpandChevronHeadingLength
+                                        onClick={() => expandCollapse(index)}
+                                    >
+                                        <SectionCollapseExpandChevronHeading>
+                                            <SectionCollapseExpandChevron>
+                                                {isExpanded(index) ? (
+                                                    <HiChevronUp />
+                                                ) : (
+                                                    <HiChevronDown />
+                                                )}
+                                            </SectionCollapseExpandChevron>
+                                            <SectionHeading>
+                                                {name}
+                                            </SectionHeading>
+                                        </SectionCollapseExpandChevronHeading>
+                                        <SectionLength>
+                                            <span>
+                                                {lectures.length} lectures
+                                            </span>
+                                            {totalSectionLength && (
+                                                <>
+                                                    <RxDotFilled />
+                                                    <span>
+                                                        {simpleDuration.stringify(
+                                                            totalSectionLength
                                                         )}
-                                                    </SectionLectureLength>
-                                                </SectionLecture>
-                                            )
-                                        )}
-                                    </SectionLectures>
-                                </SmoothCollapse>
-                            </Section>
-                        ))}
+                                                    </span>
+                                                </>
+                                            )}
+                                        </SectionLength>
+                                    </SectionCollapseExpandChevronHeadingLength>
+                                    <SmoothCollapse
+                                        expanded={isExpanded(index)}
+                                    >
+                                        <SectionLectures>
+                                            {lectures.map(
+                                                (
+                                                    { name, totalLength },
+                                                    index
+                                                ) => (
+                                                    <SectionLecture key={index}>
+                                                        <SectionLectureIconHeading>
+                                                            <SectionLectureIcon>
+                                                                <BsPlayCircleFill />
+                                                            </SectionLectureIcon>
+                                                            <SectionLectureHeading>
+                                                                {name}
+                                                            </SectionLectureHeading>
+                                                        </SectionLectureIconHeading>
+                                                        {totalLength && (
+                                                            <SectionLectureLength>
+                                                                {formatDuration(
+                                                                    totalLength *
+                                                                        1000
+                                                                )}
+                                                            </SectionLectureLength>
+                                                        )}
+                                                    </SectionLecture>
+                                                )
+                                            )}
+                                        </SectionLectures>
+                                    </SmoothCollapse>
+                                </Section>
+                            );
+                        })}
                 </Sections>
                 {!showAllSections && courseDetails.sections.length > 10 && (
                     <Button
@@ -143,6 +179,7 @@ const ModuleContent = () => {
                             background: "#fff",
                             border: "1px solid #CBCBCB",
                             transition: "0.5s all",
+                            marginTop: "4rem",
                         }}
                         hoverStyle={`
                         background: #4df3a3!important;
