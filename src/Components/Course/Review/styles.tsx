@@ -21,7 +21,7 @@ export const ReviewQuotes = styled.div`
 export const Content = styled.div`
     margin-bottom: 3.2rem;
     background: #1b3042;
-    padding: 6rem 3.2rem 4.4rem;
+    padding: 6rem 2.2rem 4.4rem 3.2rem;
     border-radius: 0.4rem;
     position: relative;
     font-weight: 500;
@@ -33,6 +33,7 @@ export const ReviewText = styled.div`
     height: 20rem;
     overflow-y: auto;
     overflow-x: hidden;
+    padding-right: 1rem;
     &::-webkit-scrollbar {
         width: 0.3em;
     }
