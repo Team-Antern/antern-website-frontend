@@ -13,7 +13,7 @@ import {
     Right,
 } from "./styles";
 import { FaPhotoVideo } from "react-icons/fa";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import AnimateOnVisible from "../../Global/AnimateOnVisible/AnimateOnVisible";
 
 const ourMissionCardStacks = [
