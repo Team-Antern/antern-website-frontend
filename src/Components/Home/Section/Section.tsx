@@ -7,10 +7,13 @@ interface SectionProps {
 }
 
 const Section = ({ children, index }: SectionProps) => {
-    const [, setActiveSection] = useContext(SectionProgressTrackContext);
+    const [, setActiveSection, , setSectionRefs] = useContext(
+        SectionProgressTrackContext
+    );
     const ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (ref.current) {
+            setSectionRefs((prev: any) => ({ ...prev, [index]: ref.current }));
             const intersectionObserver = new IntersectionObserver(
                 (e) => e[0].isIntersecting && setActiveSection(index),
                 {

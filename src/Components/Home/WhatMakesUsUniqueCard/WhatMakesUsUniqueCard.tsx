@@ -2,14 +2,14 @@ import React from "react";
 import {
     CardContent,
     CardDesc,
-    CardNumber,
+    CardIcon,
     CardTitle,
     Container,
 } from "./styles";
 import { motion } from "framer-motion";
 
 interface WhatMakesUsUniqueCardProps {
-    bg: string;
+    icon: string;
     number: number;
     title: string;
     desc: string;
@@ -17,13 +17,12 @@ interface WhatMakesUsUniqueCardProps {
 
 const WhatMakesUsUniqueCard = ({
     number,
-    bg,
+    icon,
     title,
     desc,
 }: WhatMakesUsUniqueCardProps) => {
     return (
         <Container
-            bg={bg}
             as={motion.div}
             initial="offscreen"
             whileInView="onscreen"
@@ -40,7 +39,7 @@ const WhatMakesUsUniqueCard = ({
                 },
             }}
         >
-            <CardNumber>{number}</CardNumber>
+            <CardIcon src={icon} />
             <CardContent>
                 <CardTitle>{title}</CardTitle>
                 <CardDesc>{desc}</CardDesc>

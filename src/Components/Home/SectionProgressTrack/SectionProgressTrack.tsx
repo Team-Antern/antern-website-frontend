@@ -10,22 +10,33 @@ import {
 } from "./styles";
 import { SectionProgressTrackContext } from "../../../Context/SectionProgressTrackContext";
 import { sections } from "../../../Pages/Home/Home";
+import { motion } from "framer-motion";
 
 const SectionProgressTrack = () => {
     const [hovered, setHovered] = useState(false);
-    const [activeSection, setActiveSection, scrollPercentage] = useContext(
+    const [activeSection, setActiveSection, sectionsRef] = useContext(
         SectionProgressTrackContext
     );
+    const jumpToSection = (index: number) => {
+        setActiveSection(index);
+        window.scrollTo({
+            top:
+                sectionsRef[index].getBoundingClientRect().top +
+                window.pageYOffset -
+                140,
+            behavior: "smooth",
+        });
+    };
     return (
         <Container>
             <Sections
                 onMouseOver={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
             >
-                <Track scrollPercentage={scrollPercentage} />
+                <Track />
                 {sections.map((section, index) => (
                     <Gem
-                        onClick={() => setActiveSection(index)}
+                        onClick={() => jumpToSection(index)}
                         isActive={activeSection === index}
                         key={index}
                     />
@@ -34,7 +45,7 @@ const SectionProgressTrack = () => {
             <SectionTitles style={{ opacity: hovered ? 1 : 0 }}>
                 {sections.map(({ title }, index) => (
                     <SectionTitle
-                        onClick={() => setActiveSection(index)}
+                        onClick={() => jumpToSection(index)}
                         isActive={activeSection === index}
                         key={index}
                     >

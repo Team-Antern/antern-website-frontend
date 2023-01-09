@@ -9,10 +9,16 @@ const SectionProgressTrackContextProvider = ({
     children: React.ReactNode;
 }) => {
     const [activeSection, setActiveSection] = useState(0);
-    const scrollPercentage = useScrollPercentage();
+    const [sectionRefs, setSectionRefs] = useState({});
+    // const scrollPercentage = useScrollPercentage();
     return (
         <SectionProgressTrackContext.Provider
-            value={[activeSection, setActiveSection, scrollPercentage]}
+            value={[
+                activeSection,
+                setActiveSection,
+                sectionRefs,
+                setSectionRefs,
+            ]}
         >
             {children}
         </SectionProgressTrackContext.Provider>

@@ -30,15 +30,16 @@ interface TrackProps {
     scrollPercentage: number;
 }
 
-export const Track = styled.div<TrackProps>`
+export const Track = styled.div`
     width: 0.4rem;
     height: calc(100% - 2rem);
     z-index: -1;
-    background: linear-gradient(
+    background: #b7b7b7;
+    /* background: linear-gradient(
         to bottom,
         #4df3a3 ${({ scrollPercentage }) => scrollPercentage}%,
         #b7b7b7 ${({ scrollPercentage }) => scrollPercentage}%
-    );
+    ); */
     position: absolute;
     left: 50%;
     top: 50%;
@@ -66,7 +67,7 @@ interface SectionTitleProps {
 }
 
 export const SectionTitle = styled.div<SectionTitleProps>`
-    height: ${({ isActive }) => (isActive ? 3.5 : 2.2)}rem;
+    height: 2.2rem;
     display: flex;
     align-items: center;
     font-weight: ${({ isActive }) => (isActive ? 600 : 500)};
@@ -85,13 +86,32 @@ interface GemProps {
 }
 
 export const Gem = styled.div<GemProps>`
-    width: ${({ isActive }) => (isActive ? 3.5 : 2.2)}rem;
-    height: ${({ isActive }) => (isActive ? 3.5 : 2.2)}rem;
-    background: url("/assets/${({ isActive }) =>
-        isActive ? "big" : "small"}-gem.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    /* width: ${({ isActive }) => (isActive ? 12 : 2.2)}rem;
+    height: ${({ isActive }) => (isActive ? 12 : 2.2)}rem; */
+    width: 2.2rem;
+    height: 2.2rem;
     cursor: pointer;
-    /* box-shadow: 0px 4px 36px 0px rgba(77, 243, 163, 1); */
+    position: relative;
+    ${({ isActive }) =>
+        isActive
+            ? `
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 12rem;
+                    height: 12rem;
+                    background: url("/assets/big-gem.svg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            `
+            : `
+                background: url("/assets/small-gem.svg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+             `}
 `;

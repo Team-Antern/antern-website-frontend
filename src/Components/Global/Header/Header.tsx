@@ -61,7 +61,7 @@ const Header = ({ style = {}, wrapperStyle = {} }: HeaderProps) => {
         </HamMenuButton>
         <NeedHelpGetStarted>
           <NeedHelp href="mailto:team@antern.co">Need Help?</NeedHelp>
-          <Button>Get started</Button>
+          <Button to="/courses">Get started</Button>
         </NeedHelpGetStarted>
       </Container>
     </Wrapper>

@@ -7,7 +7,7 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     /* max-width: 130rem; */
-    max-width: 130rem;
+    max-width: 118rem;
     margin: 0 auto 12rem;
     padding: 5.4rem;
     @media screen and (max-width: 540px) {

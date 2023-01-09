@@ -42,7 +42,7 @@ const HamMenu = ({ closeHamMenu }: HamMenuProps) => {
                     </NavLink>
                 ))}
             </HamMenuLinks>
-            <Button>Get Started</Button>
+            <Button to="/courses">Get Started</Button>
         </Container>
     );
 };

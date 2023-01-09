@@ -1,39 +1,33 @@
 import styled from "styled-components";
 
-interface ContainerProps {
-    bg: string;
-}
-
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
     max-width: 30rem;
     width: 100%;
     height: 36rem;
     padding: 4rem 2rem;
     background: linear-gradient(
-            14.78deg,
-            rgba(0, 0, 0, 0.8) 40.73%,
-            rgba(0, 0, 0, 0) 96.23%
-        ),
-        url("${({ bg }) => bg}");
-    background-size: cover;
-    background-position: center;
-    border-radius: 1.6rem;
+        144.83deg,
+        #101e26 0%,
+        #122a27 48.66%,
+        #112426 100%
+    );
+    filter: drop-shadow(0px 6px 61px rgba(36, 166, 103, 0.1));
+    border-radius: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
-export const CardNumber = styled.div`
+interface CardIconProps {
+    src: string;
+}
+
+export const CardIcon = styled.div<CardIconProps>`
     width: 7.2rem;
     height: 7.2rem;
-    background: #4df3a3;
-    border-radius: 50%;
-    font-family: "Plus Jakarta Sans";
-    font-weight: 400;
-    font-size: 3.2rem;
-    line-height: 140%;
-    color: #2e3540;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2.5rem;
+    background: url(${({ src }) => src});
+    background-size: 100%;
+    background-repeat: no-repeat;
 `;
 
 export const CardContent = styled.div`
@@ -41,14 +35,22 @@ export const CardContent = styled.div`
 `;
 
 export const CardTitle = styled.div`
-    font-weight: 500;
-    font-size: 2rem;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 108%;
+    letter-spacing: -0.04em;
     color: #f2f2f2;
     text-transform: capitalize;
 `;
 
 export const CardDesc = styled.div`
+    font-family: "Plus Jakarta Sans";
     font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 128.5%;
+    letter-spacing: -0.03em;
     color: #dedede;
-    margin-top: 1.4rem;
+    opacity: 0.7;
+    margin-top: 0.8rem;
 `;
