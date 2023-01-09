@@ -38,7 +38,7 @@ const Button = ({
     transition: {
       default: {
         duration: 0.2,
-        delay: 1,
+        delay: 0,
       },
       scale: {
         delay: 0,
