@@ -34,15 +34,26 @@ const SectionProgressTrack = () => {
                 onMouseLeave={() => setHovered(false)}
             >
                 <Track />
-                {sections.map((section, index) => (
-                    <Gem
-                        onClick={() => jumpToSection(index)}
-                        isActive={activeSection === index}
-                        key={index}
-                    />
+
+                {sections.map(({ title }, index) => (
+                    <Section>
+                        <Gem
+                            onClick={() => jumpToSection(index)}
+                            isActive={activeSection === index}
+                            key={index}
+                        />
+                        <SectionTitle
+                            style={{ opacity: hovered ? 1 : 0 }}
+                            onClick={() => jumpToSection(index)}
+                            isActive={activeSection === index}
+                            key={index}
+                        >
+                            {title}
+                        </SectionTitle>
+                    </Section>
                 ))}
             </Sections>
-            <SectionTitles style={{ opacity: hovered ? 1 : 0 }}>
+            {/* <SectionTitles style={{ opacity: hovered ? 1 : 0 }}>
                 {sections.map(({ title }, index) => (
                     <SectionTitle
                         onClick={() => jumpToSection(index)}
@@ -52,7 +63,7 @@ const SectionProgressTrack = () => {
                         {title}
                     </SectionTitle>
                 ))}
-            </SectionTitles>
+            </SectionTitles> */}
         </Container>
     );
 };
