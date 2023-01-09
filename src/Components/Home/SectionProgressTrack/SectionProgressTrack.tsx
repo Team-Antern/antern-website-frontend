@@ -37,11 +37,22 @@ const SectionProgressTrack = () => {
 
                 {sections.map(({ title }, index) => (
                     <Section>
-                        <Gem
-                            onClick={() => jumpToSection(index)}
-                            isActive={activeSection === index}
-                            key={index}
-                        />
+                        {activeSection === index ? (
+                            <Gem
+                                as={motion.div}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                onClick={() => jumpToSection(index)}
+                                isActive={activeSection === index}
+                                key={index}
+                            />
+                        ) : (
+                            <Gem
+                                onClick={() => jumpToSection(index)}
+                                isActive={activeSection === index}
+                                key={index}
+                            />
+                        )}
                         <SectionTitle
                             style={{ opacity: hovered ? 1 : 0 }}
                             onClick={() => jumpToSection(index)}

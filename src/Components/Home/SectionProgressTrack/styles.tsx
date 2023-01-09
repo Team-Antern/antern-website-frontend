@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
     position: fixed;
@@ -74,6 +74,15 @@ export const SectionTitle = styled.div<SectionTitleProps>`
 interface GemProps {
     isActive: boolean;
 }
+
+const bigGemAppearAnimation = keyframes`
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+`;
 
 export const Gem = styled.div<GemProps>`
     width: 3rem;
