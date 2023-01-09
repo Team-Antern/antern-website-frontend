@@ -29,6 +29,21 @@ export const Content = styled.div`
     color: #ededed;
 `;
 
+export const ReviewText = styled.div`
+    height: 20rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 0.3em;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: none;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #4df3a3;
+    }
+`;
+
 export const ReviewChevron = styled.div`
     position: absolute;
     color: #1b3042;

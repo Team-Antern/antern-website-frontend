@@ -5,8 +5,7 @@ const LectureNotes = () => {
     return (
         <Container>
             <Image src="/assets/lecture-notes.svg" />
-            <Heading>lecture notes</Heading>
-            <Desc>notes are unavailable for this lecture</Desc>
+            <Heading>learning materials</Heading>
         </Container>
     );
 };

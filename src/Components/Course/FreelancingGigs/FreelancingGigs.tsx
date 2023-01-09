@@ -6,7 +6,6 @@ const FreelancingGigs = () => {
         <Container>
             <Image src="/assets/freelancing-gigs.svg" />
             <Heading>Assured gigs upto ₹7000 per gig.</Heading>
-            <Desc>gigs are unavailable for this lecture</Desc>
         </Container>
     );
 };

@@ -38,7 +38,7 @@ const whatMakesUsUniqueCards = [
         desc: "Achieve more in less time with Antern's micro-learning programs.",
     },
     {
-        icon: "/assets/assesments.svg",
+        icon: "/assets/assesments.webp",
         title: "Assessments",
         desc: "Track your progress and stay on track with Antern's comprehensive assessments",
     },

@@ -16,7 +16,7 @@ export const Container = styled.div`
 `;
 
 export const Background = styled.div`
-    background: url("/assets/section_bg.svg");
+    background: url("/assets/sectionbg.webp");
     background-position: center;
     width: 151.2rem;
     height: 128rem;

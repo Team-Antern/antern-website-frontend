@@ -10,6 +10,7 @@ import {
     ReviewerPosition,
     ReviewerProfilePic,
     ReviewQuotes,
+    ReviewText,
 } from "./styles";
 import { Review as ReviewSchema } from "../../../Context/CourseContext";
 
@@ -22,7 +23,7 @@ const Review = ({ review }: ReviewProps) => {
         <Container>
             <ReviewQuotes />
             <Content>
-                "{review.review}"
+                <ReviewText>"{review.review}"</ReviewText>
                 <ReviewChevron>
                     <BsFillTriangleFill />
                 </ReviewChevron>

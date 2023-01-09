@@ -18,7 +18,7 @@ export const Container = styled.div`
 `;
 
 export const Background = styled.div`
-    background: url("/assets/footer_home_bg.svg");
+    background: url("/assets/footerhomebg.png");
     background-position: center;
     width: 102rem;
     height: 102rem;

@@ -89,7 +89,7 @@ export const Gem = styled.div<GemProps>`
         width: ${({ isActive }) => (isActive ? 12 : 2.2)}rem;
         height: ${({ isActive }) => (isActive ? 12 : 2.2)}rem;
         background: url("/assets/${({ isActive }) =>
-            isActive ? "big" : "small"}-gem.svg");
+            isActive ? "big" : "small"}-gem.webp");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

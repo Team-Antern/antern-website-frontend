@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     Container,
     Content,
@@ -14,6 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { default as sw } from "swiper";
 import { SlideControl2 } from "../../../globalStyles";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { CourseContext } from "../../../Context/CourseContext";
 
 const instructors = [
     {
@@ -39,6 +40,8 @@ const instructors = [
 const Instructors = () => {
     const [swiper, setSwiper] = useState<sw | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const courseDetails = useContext(CourseContext);
+    if (!courseDetails) return null;
     return (
         <Container>
             <Content>
@@ -48,37 +51,47 @@ const Instructors = () => {
                         setActiveIndex(activeIndex)
                     }
                 >
-                    {instructors.map(({ profilePic, name, about }, index) => (
-                        <SwiperSlide key={index}>
-                            <Instructor>
-                                <InstructorProfilePicName>
-                                    <InstructorProfilePic src={profilePic} />
-                                    <InstructorName>{name}</InstructorName>
-                                </InstructorProfilePicName>
-                                <InstructorAbout>{about}</InstructorAbout>
-                            </Instructor>
-                        </SwiperSlide>
-                    ))}
+                    {courseDetails.instructors.map(
+                        ({ profilePic, name, about }, index) => (
+                            <SwiperSlide key={index}>
+                                <Instructor>
+                                    <InstructorProfilePicName>
+                                        <InstructorProfilePic
+                                            src={profilePic}
+                                        />
+                                        <InstructorName>{name}</InstructorName>
+                                    </InstructorProfilePicName>
+                                    <InstructorAbout>{about}</InstructorAbout>
+                                </Instructor>
+                            </SwiperSlide>
+                        )
+                    )}
                 </Swiper>
             </Content>
-            <SlideControls>
-                <SlideControl2
-                    isDisabled={activeIndex === 0}
-                    onClick={() =>
-                        Object.getPrototypeOf(swiper).slidePrev.apply(swiper)
-                    }
-                >
-                    <FaChevronLeft />
-                </SlideControl2>
-                <SlideControl2
-                    isDisabled={activeIndex === instructors.length - 1}
-                    onClick={() =>
-                        Object.getPrototypeOf(swiper).slideNext.apply(swiper)
-                    }
-                >
-                    <FaChevronRight />
-                </SlideControl2>
-            </SlideControls>
+            {courseDetails.instructors.length !== 1 && (
+                <SlideControls>
+                    <SlideControl2
+                        isDisabled={activeIndex === 0}
+                        onClick={() =>
+                            Object.getPrototypeOf(swiper).slidePrev.apply(
+                                swiper
+                            )
+                        }
+                    >
+                        <FaChevronLeft />
+                    </SlideControl2>
+                    <SlideControl2
+                        isDisabled={activeIndex === instructors.length - 1}
+                        onClick={() =>
+                            Object.getPrototypeOf(swiper).slideNext.apply(
+                                swiper
+                            )
+                        }
+                    >
+                        <FaChevronRight />
+                    </SlideControl2>
+                </SlideControls>
+            )}
         </Container>
     );
 };
