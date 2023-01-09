@@ -10,6 +10,7 @@ export const Container = styled.div`
     position: relative;
     top: -8rem;
     z-index: 2;
+    text-transform: capitalize;
 `;
 
 export const Feature = styled.div`

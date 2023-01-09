@@ -70,7 +70,7 @@ const ModuleContent = () => {
                     <ContentLength>
                         <span>{courseDetails.sections.length} sections</span>
                         <RxDotFilled />
-                        <span>{totalNumberOfLectures} lectures</span>
+                        <span>{totalNumberOfLectures} topics</span>
                         {courseTotalLength && (
                             <>
                                 <RxDotFilled />
@@ -124,7 +124,7 @@ const ModuleContent = () => {
                                         </SectionCollapseExpandChevronHeading>
                                         <SectionLength>
                                             <span>
-                                                {lectures.length} lectures
+                                                {lectures.length} topics
                                             </span>
                                             {totalSectionLength && (
                                                 <>

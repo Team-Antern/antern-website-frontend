@@ -38,6 +38,11 @@ export interface Review {
     review: string;
 }
 
+interface Feature {
+    heading: string;
+    desc: string;
+}
+
 interface CourseDetailsSchema {
     title: string;
     coverImage: string;
@@ -59,6 +64,8 @@ interface CourseDetailsSchema {
     requirements: string[];
     sections: Section[];
     reviews: Review[];
+    features: Feature[];
+    lectureNotes: string;
 }
 
 const CourseContextProvider = ({ children }: CourseContextProviderProps) => {

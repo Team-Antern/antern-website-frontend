@@ -15,26 +15,7 @@ const Course = () => {
     return (
         <Container>
             <CourseHero />
-            <Features
-                data={[
-                    {
-                        heading: "6 month",
-                        desc: "Under 10 hours of study week",
-                    },
-                    {
-                        heading: "english",
-                        desc: "Subtites: English",
-                    },
-                    {
-                        heading: "beginner",
-                        desc: "No prior experience required",
-                    },
-                    {
-                        heading: "100% self-paced",
-                        desc: "Learn on your own time",
-                    },
-                ]}
-            />
+            <Features />
             <Content>
                 <AboutCourse />
                 <SkillsYouWillGain />

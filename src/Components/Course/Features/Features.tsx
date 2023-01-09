@@ -10,31 +10,30 @@ import {
 } from "./styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useContext } from "react";
+import { CourseContext } from "../../../Context/CourseContext";
 
-interface FeaturesProps {
-    data: {
-        heading: string;
-        desc: string;
-    }[];
-}
-
-const Features = ({ data }: FeaturesProps) => {
+const Features = () => {
+    const courseDetails = useContext(CourseContext);
+    if (!courseDetails) return null;
     return (
         <Container>
             <WithoutSwiper>
-                {data.map(({ heading, desc }, index) => (
+                {courseDetails.features.map(({ heading, desc }, index) => (
                     <React.Fragment key={index}>
                         <Feature>
                             <FeatureHeading>{heading}</FeatureHeading>
                             <FeatureDesc>{desc}</FeatureDesc>
                         </Feature>
-                        {data.length - 1 !== index && <FeaturesSeperator />}
+                        {courseDetails.features.length - 1 !== index && (
+                            <FeaturesSeperator />
+                        )}
                     </React.Fragment>
                 ))}
             </WithoutSwiper>
             <WithSwiper>
                 <Swiper>
-                    {data.map(({ heading, desc }, index) => (
+                    {courseDetails.features.map(({ heading, desc }, index) => (
                         <SwiperSlide key={index}>
                             <Feature>
                                 <FeatureHeading>{heading}</FeatureHeading>
