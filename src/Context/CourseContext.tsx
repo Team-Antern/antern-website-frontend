@@ -24,6 +24,11 @@ interface Section {
     lectures: Lecture[];
 }
 
+interface AboutCard {
+    title: string;
+    points: string[];
+}
+
 export interface Review {
     author: {
         profilePic: string;
@@ -47,6 +52,7 @@ interface CourseDetailsSchema {
     financialAidAvail: boolean;
     totalEnrolled: number;
     about: string[];
+    aboutCards: AboutCard[];
     totalLength: string;
     language: string;
     skillsYouWillGain: string[];

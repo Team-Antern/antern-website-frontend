@@ -59,32 +59,18 @@ const AboutCourse = () => {
                 </CourseFeatures>
             </Left>
             <Right>
-                <AboutCourseCard>
-                    <AboutCourseCardHeading>
-                        Skills and experience
-                    </AboutCourseCardHeading>
-                    <AboutCourseCardContent>
-                        <AboutCourseCardContentItem>
-                            Basic javascript
-                        </AboutCourseCardContentItem>
-                        <AboutCourseCardContentItem>
-                            Basic HTML
-                        </AboutCourseCardContentItem>
-                    </AboutCourseCardContent>
-                </AboutCourseCard>
-                <AboutCourseCard>
-                    <AboutCourseCardHeading>
-                        Skills and experience
-                    </AboutCourseCardHeading>
-                    <AboutCourseCardContent>
-                        <AboutCourseCardContentItem>
-                            Basic javascript
-                        </AboutCourseCardContentItem>
-                        <AboutCourseCardContentItem>
-                            Basic HTML
-                        </AboutCourseCardContentItem>
-                    </AboutCourseCardContent>
-                </AboutCourseCard>
+                {courseDetails.aboutCards.map(({ title, points }, index) => (
+                    <AboutCourseCard key={index}>
+                        <AboutCourseCardHeading>{title}</AboutCourseCardHeading>
+                        <AboutCourseCardContent>
+                            {points.map((point, index) => (
+                                <AboutCourseCardContentItem key={index}>
+                                    {point}
+                                </AboutCourseCardContentItem>
+                            ))}
+                        </AboutCourseCardContent>
+                    </AboutCourseCard>
+                ))}
             </Right>
         </Container>
     );

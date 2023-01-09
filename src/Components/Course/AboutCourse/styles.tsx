@@ -137,6 +137,7 @@ export const AboutCourseCard = styled.div`
         width: 100%;
         padding: 3rem 2.6rem;
     }
+    text-transform: capitalize;
 `;
 
 export const AboutCourseCardHeading = styled.div`
