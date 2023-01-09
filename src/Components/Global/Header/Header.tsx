@@ -60,7 +60,7 @@ const Header = ({ style = {}, wrapperStyle = {} }: HeaderProps) => {
           <AiOutlineMenu />
         </HamMenuButton>
         <NeedHelpGetStarted>
-          <NeedHelp>Need Help?</NeedHelp>
+          <NeedHelp href="mailto:team@antern.co">Need Help?</NeedHelp>
           <Button>Get started</Button>
         </NeedHelpGetStarted>
       </Container>
