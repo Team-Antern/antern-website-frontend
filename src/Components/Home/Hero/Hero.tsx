@@ -73,16 +73,30 @@ const HomeHero = React.forwardRef<HTMLDivElement>(({}, ref) => {
                     initial="hidden"
                     animate="visible"
                 >
-                    {Array.from("build your future").map((letter, index) => (
-                        <HeadingLetter
-                            as={motion.span}
-                            key={index}
-                            green={index > 10}
-                            variants={child}
-                        >
-                            {letter === " " ? <>&nbsp;</> : letter}
-                        </HeadingLetter>
-                    ))}
+                    <span>
+                        {Array.from("build your ").map((letter, index) => (
+                            <HeadingLetter
+                                as={motion.span}
+                                key={index}
+                                green={index > 10}
+                                variants={child}
+                            >
+                                {letter === " " ? <>&nbsp;</> : letter}
+                            </HeadingLetter>
+                        ))}
+                    </span>
+                    <span>
+                        {Array.from("future").map((letter, index) => (
+                            <HeadingLetter
+                                as={motion.span}
+                                key={index}
+                                green={11 + index > 10}
+                                variants={child}
+                            >
+                                {letter === " " ? <>&nbsp;</> : letter}
+                            </HeadingLetter>
+                        ))}
+                    </span>
                 </Heading>
                 <Desc
                     as={motion.div}

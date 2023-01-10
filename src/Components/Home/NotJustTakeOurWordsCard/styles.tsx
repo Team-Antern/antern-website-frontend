@@ -4,6 +4,7 @@ export const Container = styled.div`
     padding: 2.6rem 2.4rem;
     background: #192a36;
     border-radius: 1.6rem;
+    height: 100%;
     /* max-width: 35rem; */
     text-align: center;
     user-select: none;
