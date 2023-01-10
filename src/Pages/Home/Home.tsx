@@ -42,6 +42,10 @@ export const sections = [
         title: "faq",
         component: <FAQ />,
     },
+    {
+        title: "join our community",
+        component: <JoinOurCommunity />,
+    },
 ];
 
 const Home = () => {

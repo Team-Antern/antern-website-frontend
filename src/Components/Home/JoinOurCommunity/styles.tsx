@@ -1,21 +1,13 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    max-width: 104rem;
-    margin: auto;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url("./assets/join-our-community-bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 2.4rem;
-    padding: 7rem 0;
-`;
-
-export const Container = styled.div`
     max-width: 67rem;
-    margin: auto;
+    margin: 6rem auto 6rem;
     text-align: center;
-    color: #fbfbfb;
+    padding: 0 5.4rem;
+    @media screen and (max-width: 500px) {
+        padding: 0 3.2rem;
+    }
 `;
 
 export const Heading = styled.div`
@@ -23,11 +15,16 @@ export const Heading = styled.div`
     font-weight: 700;
     font-size: 5rem;
     line-height: 120%;
+    color: #fafbfb;
+    @media screen and (max-width: 600px) {
+        font-size: 4rem;
+    }
 `;
 
 export const Desc = styled.div`
     font-weight: 400;
     line-height: 150%;
+    color: #98a1b0;
     opacity: 0.8;
     margin-top: 1.6rem;
 `;
@@ -38,5 +35,9 @@ export const InputGroup = styled.div`
     margin: 2.4rem 0;
     & input {
         flex: 1;
+    }
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+        gap: 1.5rem;
     }
 `;

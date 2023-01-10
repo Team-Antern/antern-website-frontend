@@ -105,6 +105,7 @@ export const SlideControls = styled.div`
     position: absolute;
     height: 100%;
     top: 0;
+    z-index: 5;
     @media screen and (max-width: 750px) {
         position: relative;
         justify-content: center;

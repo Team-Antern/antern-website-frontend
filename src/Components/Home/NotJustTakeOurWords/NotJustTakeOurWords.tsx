@@ -267,23 +267,6 @@ const notJustTakeOurWordsCards = [
             },
         ],
     },
-    {
-        profilePic:
-            "	https://cdn.discordapp.com/avatars/784777563109195807/741d3b140a15cdbb3719576681efcddc.webp?size=256",
-        name: "Premsiva Muddam ",
-        company: "./assets/amazon.png",
-        review: "The course is Amazing and I am learning a lot from this course. The lectures by Ayush are interesting and not boring. You make us explore the topic more with the assignments. Meeting great people through guest lectures boost our confidence. Last but not least those chill sessions are memorable, solving doubts regarding the course, relations, and career. Thank you Ayush :)",
-        socials: [
-            {
-                icon: <AiFillTwitterCircle />,
-                link: "https://twitter.com/",
-            },
-            {
-                icon: <AiFillLinkedin />,
-                link: "https://linkedin.com/",
-            },
-        ],
-    },
 ];
 
 const NotJustTakeOurWords = React.forwardRef<HTMLDivElement>(({}, ref) => {
