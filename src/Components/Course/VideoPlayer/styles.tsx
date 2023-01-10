@@ -28,4 +28,16 @@ export const Content = styled.iframe`
     width: 100%;
     max-width: 50rem;
     height: 30rem;
+    scale: 2;
+
+    @media screen and (max-width: 1100px) {
+        scale: 1.5;
+    }
+    @media screen and (max-width: 800px) {
+        scale: 1.3;
+    }
+
+    @media screen and (max-width: 700px) {
+        scale: 1;
+    }
 `;
