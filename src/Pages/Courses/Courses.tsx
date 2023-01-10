@@ -25,7 +25,7 @@ const Courses = () => {
     const [, startApiCall, finishApiCall] = useContext(LoadingContext);
     useEffect(() => {
         startApiCall && startApiCall();
-        fetch("https://api.npoint.io/f46e5559a66c6a6e88b5")
+        fetch("https://api.npoint.io/0beca2a87bb3e09e5fee")
             .then((response) => response.json())
             .then((data) => {
                 setCourses(data);
