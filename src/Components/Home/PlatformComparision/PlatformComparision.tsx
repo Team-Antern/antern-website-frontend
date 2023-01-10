@@ -39,17 +39,17 @@ const Cross = () => {
 const companies = ["self taught", "antern", "other platforms"];
 
 const rows = [
-    ["affordable", true, true, false],
-    ["guest lectures by pioneers", false, true, false],
-    ["end to end production grade projects", false, true, false],
-    ["earn while learning", false, true, false],
-    ["freelancing gigs", false, true, false],
-    ["1:1 mentorship session", false, true, true],
-    ["resume building", true, true, true],
-    ["interview preparation", false, true, true],
-    ["high quality & in depth content", false, true, false],
-    ["industry level assessments", false, true, false],
-    ["community support", false, true, true],
+    [["💰", "affordable"], true, true, false],
+    [["🤔", "guest lectures by pioneers"], false, true, false],
+    [["🚀", "end to end production grade projects"], false, true, false],
+    [["🤑", "earn while learning"], false, true, false],
+    [["💼", "freelancing gigs"], false, true, false],
+    [["🤝", "1:1 mentorship session"], false, true, true],
+    [["📝", "resume building"], true, true, true],
+    [["📖", "interview preparation"], false, true, true],
+    [["📚", "high quality & in depth content"], false, true, false],
+    [["📊", "industry level assessments"], false, true, false],
+    [["🤗", "community support"], false, true, true],
 ];
 
 const PlatformComparision = React.forwardRef<HTMLDivElement>(({}, ref) => {
@@ -83,7 +83,7 @@ const PlatformComparision = React.forwardRef<HTMLDivElement>(({}, ref) => {
                                 <PlatformComparisionTableRow>
                                     {column.map((value) => (
                                         <PlatformComparisionTableData>
-                                            {typeof value === "string" ? (
+                                            {typeof value === "object" ? (
                                                 <div
                                                     style={{
                                                         display: "flex",
@@ -92,18 +92,19 @@ const PlatformComparision = React.forwardRef<HTMLDivElement>(({}, ref) => {
                                                         alignItems: "center",
                                                     }}
                                                 >
-                                                    <BsPatchCheckFill
-                                                        color="#0EA75E"
+                                                    <span
                                                         style={{
-                                                            marginRight: 20,
+                                                            marginRight: 10,
                                                         }}
-                                                    />
+                                                    >
+                                                        {value[0]}
+                                                    </span>
                                                     <span
                                                         style={{
                                                             width: "100%",
                                                         }}
                                                     >
-                                                        {value}
+                                                        {value[1]}
                                                     </span>
                                                 </div>
                                             ) : value ? (
