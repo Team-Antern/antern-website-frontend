@@ -19,23 +19,23 @@ import { motion } from "framer-motion";
 
 const benifits = [
     {
-        icon: "",
+        icon: "/assets/money.webp",
         title: "Monetize your skill",
         body: "Make money while you learn with Antern's opportunities to monetize your skills.",
     },
     {
-        icon: "",
+        icon: "/assets/head.webp",
         title: "Production Grade Projects",
         body: "Gain real-world experience and build your unique portfolio with our production grade projects.",
     },
     {
-        icon: "",
+        icon: "/assets/clipboard.webp",
         title: "Write your own research paper",
         body: "Take your learning to the next level with our opportunity to write and publish your own research paper.",
     },
     {
-        icon: "",
-        title: "Assesments",
+        icon: "/assets/knowledge.webp",
+        title: "Assessments",
         body: "Enhance your learning experience with our comprehensive learning materials, including lecture notes, e-books, and assignments.",
     },
 ];

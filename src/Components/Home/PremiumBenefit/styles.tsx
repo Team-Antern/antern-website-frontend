@@ -23,7 +23,7 @@ export const Container = styled.div`
 //     left: 0;
 // `;
 
-export const Tag = styled.div`
+export const Tag = styled.img`
     position: absolute;
     top: 2.5rem;
     left: 2.5rem;
