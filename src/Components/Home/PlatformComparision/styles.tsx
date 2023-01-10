@@ -41,6 +41,18 @@ export const Heading = styled.div`
 export const Content = styled.div`
     overflow-x: auto;
     max-width: 100%;
+    &:hover {
+        scale: 1.02;
+        box-shadow: rgba(14, 167, 94, 0.07) 0px 1px 2px,
+            rgba(14, 167, 94, 0.07) 0px 2px 4px,
+            rgba(14, 167, 94, 0.07) 0px 4px 8px,
+            rgba(14, 167, 94, 0.07) 0px 8px 16px,
+            rgba(14, 167, 94, 0.07) 0px 16px 32px,
+            rgba(14, 167, 94, 0.07) 0px 32px 64px;
+    }
+
+    transition: all ease-in-out;
+    transition-duration: 0.3s;
 `;
 
 export const PlatformComparisionTable = styled.table`
