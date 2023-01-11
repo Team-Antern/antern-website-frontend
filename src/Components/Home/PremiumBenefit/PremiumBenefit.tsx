@@ -8,7 +8,7 @@ import {
 } from "./styles";
 
 const PremiumBenefit: React.FC<{
-    title: string;
+    title: string | JSX.Element;
     body: string;
     icon: string;
 }> = ({ title, body, icon }) => {
