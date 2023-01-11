@@ -424,25 +424,23 @@ const TermsAndConditions = () => {
                                 </p>
                             </SectionContent>
                         </Section>
-                            <Section>
+                        <Section>
                             <SectionHeading>Contact Us</SectionHeading>
                             <SectionContent>
                                 <p>
-                                    You can contact us using the given details below:-
+                                    You can contact us using the given details
+                                    below:-
                                 </p>
                                 <UnorderdList>
+                                    <li>Email ID:- team@antern.co</li>
+                                    <li>Contact Number:- +91 7783878890</li>
                                     <li>
-                                        Email ID:- team@antern.co
+                                        Address:- Indrapuri, Patna- 24, Bihar ,
+                                        India
                                     </li>
-                                    <li>
-                                        Contact Number:- +91 7783878890
-                                    </li>
-                                    <li>
-                                        Address:- Indrapuri, Patna- 24, Bihar , India
-                                    </li>
+                                </UnorderdList>
                             </SectionContent>
                         </Section>
-
                     </Sections>
                     <NavLink to="/privacy-policy">
                         <PageLink>Privacy Policy</PageLink>
