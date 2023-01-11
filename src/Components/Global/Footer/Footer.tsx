@@ -43,6 +43,10 @@ const linkSections = [
                 text: "terms & conditions",
                 to: "/terms-and-conditions",
             },
+            {
+                text: "privacy policy",
+                to: "/privacy-policy",
+            },
         ],
     },
     {

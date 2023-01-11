@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../Components/Global/Header/Header";
 import Footer from "../../Components/Global/Footer/Footer";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import {
     Wrapper,
     Container,
@@ -14,6 +15,7 @@ import {
     SectionHeading,
     SectionContent,
     UnorderdList,
+    PageLink,
 } from "./styles";
 
 const TermsAndConditions = () => {
@@ -423,6 +425,9 @@ const TermsAndConditions = () => {
                             </SectionContent>
                         </Section>
                     </Sections>
+                    <NavLink to="/privacy-policy">
+                        <PageLink>Privacy Policy</PageLink>
+                    </NavLink>
                 </Content>
             </Container>
         </Wrapper>

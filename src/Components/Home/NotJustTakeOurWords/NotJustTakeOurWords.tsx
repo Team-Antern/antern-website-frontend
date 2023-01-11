@@ -64,6 +64,7 @@ const notJustTakeOurWordsCards = [
         socials: [
             {
                 icon: <AiFillLinkedin style={{ opacity: 0 }} />,
+                link: "",
             },
         ],
     },
@@ -154,6 +155,7 @@ const notJustTakeOurWordsCards = [
         socials: [
             {
                 icon: <AiFillLinkedin style={{ opacity: 0 }} />,
+                link: "",
             },
         ],
     },
@@ -205,6 +207,7 @@ const notJustTakeOurWordsCards = [
         socials: [
             {
                 icon: <AiFillLinkedin style={{ opacity: 0 }} />,
+                link: "",
             },
         ],
     },
@@ -220,7 +223,6 @@ const NotJustTakeOurWords = React.forwardRef<HTMLDivElement>(({}, ref) => {
     const [slidesPerView, setSlidesPerView] = useState(3);
     useEffect(() => {
         const decideAndSetSlidesPerView = () => {
-            console.log(window.innerWidth);
             if (window.innerWidth > 1300) setSlidesPerView(3);
             else if (window.innerWidth <= 1300 && window.innerWidth > 760)
                 setSlidesPerView(2);

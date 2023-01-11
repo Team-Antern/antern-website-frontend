@@ -76,3 +76,19 @@ export const SectionContent = styled.div`
     flex-direction: column;
     gap: 20px;
 `;
+
+export const PageLink = styled.div`
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    color: #4df3a3;
+    margin: 20px 0px;
+    text-align: center;
+
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+`;
