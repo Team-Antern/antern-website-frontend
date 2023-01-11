@@ -12,6 +12,9 @@ const AboutUs = React.lazy(() => import("./Pages/About/About"));
 const TermsAndConditions = React.lazy(
     () => import("./Pages/TermsAndConditions/TermsAndConditions")
 );
+const PrivacyPolicy = React.lazy(
+    () => import("./Pages/PrivacyPolicy/PrivacyPolicy")
+);
 import "swiper/css";
 
 function App() {
@@ -58,6 +61,14 @@ function App() {
                     element={
                         <Suspense fallback={<Loading />}>
                             <AboutUs />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/privacy-policy"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <PrivacyPolicy />
                         </Suspense>
                     }
                 />
