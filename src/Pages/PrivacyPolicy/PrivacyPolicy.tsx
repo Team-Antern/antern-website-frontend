@@ -11,7 +11,9 @@ import {
     Sections,
     UnorderdList,
     Wrapper,
+    PageLink,
 } from "./styles";
+import { NavLink } from "react-router-dom";
 import Header from "../../Components/Global/Header/Header";
 
 const PrivacyPolicy = () => {
@@ -331,6 +333,9 @@ const PrivacyPolicy = () => {
                             </SectionContent>
                         </Section>
                     </Sections>
+                    <NavLink to="/cancelation-policy">
+                        <PageLink>Cancelation Policy</PageLink>
+                    </NavLink>
                 </Content>
             </Container>
         </Wrapper>
