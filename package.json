@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@lottiefiles/lottie-player": "^1.6.2",
+    "@typeform/embed-react": "^2.10.0",
     "@types/format-duration": "^1.0.1",
     "@types/react-collapse": "^5.0.1",
     "@types/react-expand-animated": "^1.0.0",

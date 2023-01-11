@@ -29,6 +29,10 @@ export const headerLinks = [
         to: "/about-us",
         text: "about us",
     },
+    {
+        to: "/contact-us",
+        text: "contact us",
+    },
 ];
 
 interface HeaderProps {
