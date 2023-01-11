@@ -435,7 +435,7 @@ const TermsAndConditions = () => {
                                     <li>Email ID:- team@antern.co</li>
                                     <li>Contact Number:- +91 7783878890</li>
                                     <li>
-                                        Address:- Indrapuri, Patna- 24, Bihar ,
+                                        Address:- Indrapuri,Patna-800024, Bihar ,
                                         India
                                     </li>
                                 </UnorderdList>
