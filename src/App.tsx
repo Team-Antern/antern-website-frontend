@@ -16,6 +16,7 @@ const PrivacyPolicy = React.lazy(
     () => import("./Pages/PrivacyPolicy/PrivacyPolicy")
 );
 import "swiper/css";
+import CancelationPolicy from "./Pages/CancelationPolicy/CancelationPolicy";
 
 function App() {
     const { pathname } = useLocation();
@@ -77,6 +78,14 @@ function App() {
                     element={
                         <Suspense fallback={<Loading />}>
                             <TermsAndConditions />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/cancelation-policy"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <CancelationPolicy />
                         </Suspense>
                     }
                 />

@@ -47,6 +47,10 @@ const linkSections = [
                 text: "privacy policy",
                 to: "/privacy-policy",
             },
+            {
+                text: "cancelation policy",
+                to: "/cancelation-policy",
+            },
         ],
     },
     {
