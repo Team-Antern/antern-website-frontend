@@ -1,140 +1,48 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    border-radius: 1.6rem;
-    position: relative;
-    user-select: none;
-    max-width: 44rem;
-    margin: auto;
-    background: #223644 url("/assets/robot.webp");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    min-height: 50rem;
-`;
-
-// export const Image = styled.div`
-//     background: url("/assets/robot.png");
-//     background-repeat: no-repeat;
-//     background-size: 100%;
-//     height: 34rem;
-//     width: 100%;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-// `;
-
-export const Tag = styled.img`
-    position: absolute;
-    top: 2.5rem;
-    left: 2.5rem;
-    padding: 1rem 2rem;
-    background: linear-gradient(
-        96.45deg,
-        rgba(255, 255, 255, 0.08) 2.81%,
-        rgba(211, 211, 211, 0) 110.49%
-    );
-    border: 0.1rem solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(4px);
-    border-radius: 0.4rem;
-    display: inline-block;
-    font-weight: 500;
-    font-size: 1.2rem;
-    line-height: 120%;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #fff;
-`;
-
-export const Content = styled.div`
-    position: relative;
-    z-index: 1;
-    padding: 30rem 3.2rem 2.5rem;
-    @media screen and (max-width: 530px) {
-        padding-top: 28rem;
-    }
-    @media screen and (max-width: 480px) {
-        padding-top: 27rem;
-    }
-    @media screen and (max-width: 450px) {
-        padding-top: 25rem;
-    }
-    @media screen and (max-width: 450px) {
-        padding-top: 25rem;
-    }
-    @media screen and (max-width: 420px) {
-        padding-top: 24rem;
-    }
-    @media screen and (max-width: 400px) {
-        padding-top: 22rem;
-    }
-    @media screen and (max-width: 380px) {
-        padding-top: 20rem;
-    }
-`;
-
-export const TitlePrice = styled.div`
+    max-width: 28rem;
+    width: 100%;
+    height: 38rem;
+    padding: 4rem;
+    border-radius: 2.2rem;
+    background: #223341;
     display: flex;
-    gap: 1rem 3.5rem;
-    @media screen and (max-width: 420px) {
-        flex-direction: column;
-    }
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
-export const Title = styled.div`
-    font-weight: 500;
-    font-size: 2rem;
+export const CardIcon = styled.div`
+    width: 8.2rem;
+    height: 8.2rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162633;
+`;
+
+export const CardContent = styled.div`
     line-height: 150%;
-    color: #fff;
-    text-transform: capitalize;
-    /* @media screen and (max-width: 420px) {
-        flex-direction: column;
-    } */
 `;
 
-export const Price = styled.div`
-    padding: 1rem 1.8rem;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 150%;
-    color: #101c26;
-    background: #4df3a3;
-    border-radius: 0.4rem;
-    display: inline-block;
-    flex-shrink: 0;
+export const CardTitle = styled.div`
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 108%;
+    letter-spacing: -0.04em;
+    color: #f2f2f2;
     text-transform: capitalize;
-    align-self: start;
 `;
 
-export const Desc = styled.div`
-    margin: 1.4rem 0 2rem;
+export const CardDesc = styled.div`
+    font-family: "Plus Jakarta Sans";
     font-weight: 400;
-    line-height: 150%;
-    color: #e9e9e9;
-    opacity: 0.8;
-`;
-
-export const Author = styled.div`
-    border: 0.1rem solid rgba(217, 217, 217, 0.4);
-    border-radius: 3rem 0.8rem 0.8rem 3rem;
-    padding: 1rem 2rem 1rem 6.2rem;
-    text-transform: capitalize;
-    font-weight: 400;
-    line-height: 150%;
-    color: #e9e9e9;
-    opacity: 0.8;
-    position: relative;
-    display: inline-block;
-`;
-
-export const AuthorProfilePic = styled.div`
-    width: 4.8rem;
-    height: 4.8rem;
-    background: url("https://media.licdn.com/dms/image/D4D03AQEC7NXN2_XGug/profile-displayphoto-shrink_800_800/0/1665493308669?e=1677110400&v=beta&t=C275PLXYsOKhisp_bAouPsQL6oCqqZqumiDC-EaQzRo");
-    border: 1px solid #4df3a3;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: -0.2rem;
-    left: -0.2rem;
+    font-size: 1.8rem;
+    line-height: 128.5%;
+    letter-spacing: -0.03em;
+    color: #dedede;
+    opacity: 0.7;
+    margin-top: 0.8rem;
 `;

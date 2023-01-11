@@ -1,14 +1,10 @@
 import React from "react";
 import {
-    Author,
-    AuthorProfilePic,
     Container,
-    Content,
-    Desc,
-    Price,
-    Tag,
-    Title,
-    TitlePrice,
+    CardIcon,
+    CardContent,
+    CardTitle,
+    CardDesc,
 } from "./styles";
 
 const PremiumBenefit: React.FC<{
@@ -18,15 +14,13 @@ const PremiumBenefit: React.FC<{
 }> = ({ title, body, icon }) => {
     return (
         <Container>
-            <Tag src={icon} />
-            <Content>
-                <Title>{title}</Title>
-                <Desc>{body}</Desc>
-                {/* <Author>
-          <AuthorProfilePic />
-          by ayush singh
-        </Author> */}
-            </Content>
+            <CardIcon>
+                <img src={icon} />
+            </CardIcon>
+            <CardContent>
+                <CardTitle>{title}</CardTitle>
+                <CardDesc>{body}</CardDesc>
+            </CardContent>
         </Container>
     );
 };

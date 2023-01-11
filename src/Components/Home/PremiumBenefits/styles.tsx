@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    min-height: calc(100vh - 11rem);
+    min-height: calc(100vh - 3rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,7 +9,7 @@ export const Container = styled.div`
     /* max-width: 130rem; */
     max-width: 118rem;
     margin: 0 auto 12rem;
-    padding: 5.4rem;
+    /* padding: 5.4rem; */
     @media screen and (max-width: 540px) {
         padding: 3.2rem;
     }
@@ -84,17 +84,26 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Content = styled.div`
-    /* display: flex;
-    align-items: center;
-    gap: 3.2rem; */
-    max-width: 100%;
-    margin: 0 7.2rem;
-    @media screen and (max-width: 750px) {
-        margin: 0;
+    /* max-width: 115rem; */
+    width: 100%;
+    /* margin: 5rem auto 0; */
+    border-radius: 2.4rem;
+    /* padding: 3rem 6.5rem; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    @media screen and (max-width: 1300px) {
+        padding: 0 20rem;
     }
-    /* background: #192a36;
-    border: 0.1rem solid rgba(255, 255, 255, 0.1);
-    border-radius: 2.8rem; */
+
+    @media screen and (max-width: 500px) {
+        padding: 0;
+    }
+
+    /* @media screen and (max-width: 600px) {
+        padding: 0rem;
+    } */
 `;
 
 export const SlideControls = styled.div`

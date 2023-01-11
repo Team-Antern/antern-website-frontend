@@ -9,18 +9,19 @@ import {
     Subtitle,
     SubtitleHeadingDesc,
 } from "./styles";
-import { SlideControl } from "../../../globalStyles";
-import { RxTriangleLeft, RxTriangleRight } from "react-icons/rx";
 import PremiumBenefit from "../PremiumBenefit/PremiumBenefit";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { default as sw } from "swiper";
 import AnimateOnVisible from "../../Global/AnimateOnVisible/AnimateOnVisible";
 import { motion } from "framer-motion";
 
 const benifits = [
     {
         icon: "/assets/money.webp",
-        title: "Monetize your skill",
+        title: (
+            <>
+                Monetize
+                <br /> your skill
+            </>
+        ),
         body: "Make money while you learn with Antern's opportunities to monetize your skills.",
     },
     {
@@ -41,32 +42,6 @@ const benifits = [
 ];
 
 const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
-    const [swiper, setSwiper] = useState({
-        isBeginning: true,
-        isEnd: false,
-        slidePrev: () => {},
-        slideNext: () => {},
-    });
-    const [slidesPerView, setSlidesPerView] = useState(3);
-    useEffect(() => {
-        const decideAndSetSlidesPerView = () => {
-            if (window.innerWidth > 1240) setSlidesPerView(2);
-            else setSlidesPerView(1);
-        };
-        decideAndSetSlidesPerView();
-        window.addEventListener("resize", decideAndSetSlidesPerView);
-        return () =>
-            window.removeEventListener("resize", decideAndSetSlidesPerView);
-    }, []);
-    const onSwiperAndIndexChange = (swiper: sw) => {
-        const { isBeginning, isEnd, slidePrev, slideNext } = swiper;
-        setSwiper({
-            isBeginning,
-            isEnd,
-            slidePrev: slidePrev.bind(swiper),
-            slideNext: slideNext.bind(swiper),
-        });
-    };
     return (
         <Container ref={ref}>
             <AnimateOnVisible as={motion.div}>
@@ -98,37 +73,15 @@ const PremiumBenefits = React.forwardRef<HTMLDivElement>(({}, ref) => {
                         },
                     }}
                 >
-                    <Swiper
-                        onSwiper={onSwiperAndIndexChange}
-                        onActiveIndexChange={onSwiperAndIndexChange}
-                        slidesPerView={slidesPerView}
-                        spaceBetween={30}
-                    >
-                        {benifits.map(({ icon, title, body }, index) => (
-                            <SwiperSlide>
-                                <PremiumBenefit
-                                    icon={icon}
-                                    title={title}
-                                    body={body}
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    {benifits.map(({ icon, title, body }, index) => (
+                        <PremiumBenefit
+                            key={index}
+                            icon={icon}
+                            title={title}
+                            body={body}
+                        />
+                    ))}
                 </Content>
-                <SlideControls>
-                    <SlideControl
-                        isDisabled={swiper.isBeginning}
-                        onClick={() => swiper.slidePrev()}
-                    >
-                        <RxTriangleLeft />
-                    </SlideControl>
-                    <SlideControl
-                        isDisabled={swiper.isEnd}
-                        onClick={() => swiper.slideNext()}
-                    >
-                        <RxTriangleRight />
-                    </SlideControl>
-                </SlideControls>
             </ContentWrapper>
         </Container>
     );
