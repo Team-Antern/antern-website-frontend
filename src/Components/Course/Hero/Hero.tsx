@@ -27,6 +27,7 @@ import {
     PlayNow,
     PlayNowIcon,
     PlayNowContent,
+    CouponText,
 } from "./styles";
 import { BsFillPlayFill, BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { AiFillLike } from "react-icons/ai";
@@ -108,7 +109,9 @@ const CourseHero = () => {
                         </CourseInstructor>
                         <EnrollNow>
                             <Button style={{ textAlign: "center" }}>
-                                <EnrollButton>
+                                <EnrollButton
+                                    href={courseDetails.joinCourseLink}
+                                >
                                     <span>
                                         Enroll Now For ₹{courseDetails.price}
                                     </span>
@@ -122,10 +125,20 @@ const CourseHero = () => {
                             )}
                         </EnrollNow>
                         <NumberOfPeopleEnrolled>
-                            <span>
-                                {numberWithCommas(courseDetails.totalEnrolled)}
-                            </span>{" "}
-                            already enrolled
+                            {typeof courseDetails.coupon === "string" ? (
+                                <CouponText>
+                                    USE COUPON "{courseDetails.coupon}"
+                                </CouponText>
+                            ) : (
+                                <>
+                                    <span>
+                                        {numberWithCommas(
+                                            courseDetails.totalEnrolled
+                                        )}
+                                    </span>{" "}
+                                    already enrolled
+                                </>
+                            )}
                         </NumberOfPeopleEnrolled>
                     </CourseDetails>
                     <PlayNow onClick={() => setShowVideoPlayer(true)}>

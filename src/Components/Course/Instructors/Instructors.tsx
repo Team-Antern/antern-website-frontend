@@ -61,7 +61,15 @@ const Instructors = () => {
                                         />
                                         <InstructorName>{name}</InstructorName>
                                     </InstructorProfilePicName>
-                                    <InstructorAbout>{about}</InstructorAbout>
+                                    <InstructorAbout>
+                                        {about.split("|").map((text) => (
+                                            <>
+                                                {text}
+                                                <br />
+                                                <br />
+                                            </>
+                                        ))}
+                                    </InstructorAbout>
                                 </Instructor>
                             </SwiperSlide>
                         )

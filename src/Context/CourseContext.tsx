@@ -66,6 +66,8 @@ interface CourseDetailsSchema {
     reviews: Review[];
     features: Feature[];
     lectureNotes: string;
+    joinCourseLink: string;
+    coupon?: string;
 }
 
 const CourseContextProvider = ({ children }: CourseContextProviderProps) => {

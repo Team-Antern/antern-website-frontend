@@ -138,7 +138,7 @@ export const EnrollNow = styled.div`
     flex-wrap: wrap;
 `;
 
-export const EnrollButton = styled.div`
+export const EnrollButton = styled.a`
     display: flex;
     flex-direction: column;
     & span:first-child {
@@ -246,4 +246,12 @@ export const PlayNowContent = styled.div`
     letter-spacing: -0.05em;
     color: #fff;
     text-transform: capitalize;
+`;
+
+export const CouponText = styled.span`
+    padding: 1rem;
+    text-transform: uppercase;
+    background: #c10f03;
+    border-radius: 4px;
+    font-weight: bolder;
 `;
