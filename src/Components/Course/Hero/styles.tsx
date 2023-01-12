@@ -152,6 +152,21 @@ export const EnrollButton = styled.a`
         line-height: 150%;
         color: #101c26;
     }
+
+    padding: 12px 24px;
+    font-weight: 500;
+    line-height: 150%;
+    cursor: pointer;
+    border: 1px solid #4df3a3;
+    border-radius: 8px;
+    text-align: center;
+    background: #4df3a3;
+    color: "#101c26";
+    transition: 0.2s all;
+    &:hover {
+        background: #4df3a3;
+        color: #101c26;
+    }
 `;
 
 export const FinancialAid = styled.div`

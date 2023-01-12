@@ -36,6 +36,7 @@ import { CourseContext } from "../../../Context/CourseContext";
 // @ts-ignore
 import numberWithCommas from "number-with-commas";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import { motion } from "framer-motion";
 
 const CourseHero = () => {
     const courseDetails = useContext(CourseContext);
@@ -108,16 +109,43 @@ const CourseHero = () => {
                             </CourseInstructorName>
                         </CourseInstructor>
                         <EnrollNow>
-                            <Button style={{ textAlign: "center" }}>
-                                <EnrollButton
-                                    href={courseDetails.joinCourseLink}
-                                >
-                                    <span>
-                                        Enroll Now For ₹{courseDetails.price}
-                                    </span>
-                                    <span>Starts {courseDetails.starts}</span>
-                                </EnrollButton>
-                            </Button>
+                            {/* <Button style={{ textAlign: "center" }}> */}
+                            <EnrollButton
+                                as={motion.a}
+                                href={courseDetails.joinCourseLink}
+                                target="_blank"
+                                {...{
+                                    initial: {
+                                        opacity: 0,
+                                        scale: 0.5,
+                                    },
+                                    whileHover: {
+                                        scale: 1.1,
+                                    },
+                                    whileTap: {
+                                        scale: 0.8,
+                                    },
+                                    animate: {
+                                        scale: 1,
+                                        opacity: 1,
+                                    },
+                                    transition: {
+                                        default: {
+                                            duration: 0.2,
+                                            delay: 0,
+                                        },
+                                        scale: {
+                                            delay: 0,
+                                        },
+                                    },
+                                }}
+                            >
+                                <span>
+                                    Enroll Now For ₹{courseDetails.price}
+                                </span>
+                                <span>Starts {courseDetails.starts}</span>
+                            </EnrollButton>
+                            {/* </Button> */}
                             {courseDetails.financialAidAvail && (
                                 <FinancialAid>
                                     Financial aid available

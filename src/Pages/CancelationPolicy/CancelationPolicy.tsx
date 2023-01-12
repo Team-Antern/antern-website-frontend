@@ -51,17 +51,28 @@ const CancelationPolicy = () => {
                             <SectionHeading>Refund Policy</SectionHeading>
                             <SectionContent>
                                 <p>
-                                    We do not offer refunds for any of our
-                                    courses under any circumstances, including
-                                    but not limited to, dissatisfaction with the
-                                    course, withdrawal from the course, or
-                                    absence from the course. All sales are final
-                                    and any fees paid are non-refundable.
+                                    At Antern, we understand that circumstances
+                                    may change and you may need to request a
+                                    refund for a course you have purchased. Our
+                                    refund policy is designed to be fair and
+                                    easy to understand.
                                 </p>
                                 <p>
-                                    Please note that by enrolling in one of our
-                                    courses, you are agreeing to this no-refund
-                                    policy.
+                                    We offer a 4-day money-back guarantee for
+                                    all of our courses. If for any reason you
+                                    are not satisfied with your purchase, you
+                                    may request a refund within 4 days of the
+                                    course date. Simply email us at
+                                    team@antern.co with your request and we will
+                                    process your refund promptly.
+                                </p>
+                                <p>
+                                    Please note that in order to be eligible for
+                                    a refund, you must have completed less than
+                                    50% of the course and have not received a
+                                    certificate of completion. Additionally, we
+                                    do not offer refunds for any course bundles
+                                    or special promotions.
                                 </p>
                             </SectionContent>
                         </Section>
@@ -69,10 +80,15 @@ const CancelationPolicy = () => {
                             <SectionHeading>Contact Us</SectionHeading>
                             <SectionContent>
                                 <p>
-                                    If you have any questions or concerns about
-                                    our cancellation and refund policy, please
-                                    contact us at team@antern.co
+                                    We value your satisfaction and strive to
+                                    provide high-quality courses. If you have
+                                    any issues or concerns, please do not
+                                    hesitate to reach out to our support team at
+                                    team@antern.co.
                                 </p>
+                                <br />
+                                Thank you for choosing Antern for your learning
+                                needs.
                             </SectionContent>
                         </Section>
                     </Sections>
