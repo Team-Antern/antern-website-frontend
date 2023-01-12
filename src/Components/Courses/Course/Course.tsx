@@ -18,6 +18,7 @@ import {
     CourseRatingStarIcon,
     CourseTitle,
     ViewMoreCourseLength,
+    CourseContent,
 } from "./styles";
 import { AiFillStar } from "react-icons/ai";
 import { IoIosTimer } from "react-icons/io";
@@ -39,23 +40,47 @@ const Course = ({
         <Container
             as={motion.div}
             initial="offscreen"
-            whileInView="onscreen"
+            whileInView="rest"
+            whileHover="hover"
+            animate="rest"
             viewport={{ once: true }}
             variants={{
                 offscreen: {
                     y: 300,
+                    scale: 0,
                 },
-                onscreen: {
+                rest: {
                     y: 50,
+                    scale: 1,
                     transition: {
                         type: "ease-in",
                     },
+                },
+                hover: {
+                    scale: 1.1,
                 },
             }}
         >
             <CourseImage src={courseBanner} />
             <CourseDetails>
                 <CourseTitle>{title}</CourseTitle>
+            </CourseDetails>
+            <CourseContent
+                variants={{
+                    rest: {
+                        bottom: 0,
+                        // opacity: 0,
+                        transition: {
+                            type: "ease-in",
+                            duration: 100,
+                        },
+                    },
+                    hover: {
+                        // opacity: 1,
+                        top: 0,
+                    },
+                }}
+            >
                 <CourseInstructorRating>
                     <CourseInstructor>
                         <CourseInstructorProfilePic
@@ -104,7 +129,7 @@ const Course = ({
                         <CourseFeatureContent>{duration}</CourseFeatureContent>
                     </CourseFeature>
                 </ViewMoreCourseLength>
-            </CourseDetails>
+            </CourseContent>
         </Container>
     );
 };
