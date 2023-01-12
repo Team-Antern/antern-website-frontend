@@ -51,6 +51,7 @@ const AboutCourse = () => {
                             If you're based out of India and payment is not
                             working, please pay for the course over here:-{" "}
                             <a
+                                target="_blank"
                                 style={{ color: "blue" }}
                                 href={courseDetails.razorpay}
                             >

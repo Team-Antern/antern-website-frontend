@@ -68,7 +68,7 @@ interface CourseDetailsSchema {
     lectureNotes: string;
     joinCourseLink: string;
     coupon?: string;
-    razorpay?: string
+    razorpay?: string;
 }
 
 const CourseContextProvider = ({ children }: CourseContextProviderProps) => {
@@ -79,7 +79,7 @@ const CourseContextProvider = ({ children }: CourseContextProviderProps) => {
     console.log(courseDetails);
     useEffect(() => {
         startApiCall && startApiCall();
-        fetch(`https://api.npoint.io/${id}`)
+        fetch(`https://api.antern.co/courses/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setCourseDetails(data);
