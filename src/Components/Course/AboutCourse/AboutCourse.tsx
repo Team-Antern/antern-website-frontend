@@ -46,6 +46,20 @@ const AboutCourse = () => {
                     {courseDetails.about.map((aboutPara, index) => (
                         <p key={index}>{aboutPara}</p>
                     ))}
+                    {typeof courseDetails.razorpay === "string" ? (
+                        <p>
+                            If you're based out of India and payment is not
+                            working, please pay for the course over here:-{" "}
+                            <a
+                                style={{ color: "blue" }}
+                                href={courseDetails.razorpay}
+                            >
+                                {courseDetails.razorpay}
+                            </a>
+                        </p>
+                    ) : (
+                        ""
+                    )}
                 </Desc>
                 <CourseFeatures>
                     {courseFeatures.map(({ icon, content }, index) => (

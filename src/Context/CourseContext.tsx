@@ -68,6 +68,7 @@ interface CourseDetailsSchema {
     lectureNotes: string;
     joinCourseLink: string;
     coupon?: string;
+    razorpay?: string
 }
 
 const CourseContextProvider = ({ children }: CourseContextProviderProps) => {
