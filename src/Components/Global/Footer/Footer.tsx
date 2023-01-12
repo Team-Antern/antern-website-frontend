@@ -57,12 +57,8 @@ const linkSections = [
         heading: "courses",
         links: [
             {
-                text: "CS001B03",
-                to: "/courses/cs001b03",
-            },
-            {
-                text: "CS001B03",
-                to: "/courses/cs001b03",
+                text: "CS001B04",
+                to: "/courses/1539ae1087b69ec1f2ed",
             },
         ],
     },
