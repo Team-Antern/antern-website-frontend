@@ -29,6 +29,8 @@ export const Desc = styled.div`
 export const Content = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
 `;
 
 export const TeamMember = styled.div`
