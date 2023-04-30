@@ -1,7 +1,7 @@
 import React from "react";
 import { BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import {
     AboutCompany,
@@ -84,17 +84,8 @@ const socialLinks = [
 ];
 
 const Footer = () => {
-    const { pathname } = useLocation();
     return (
-        <Container
-        // style={
-        //     pathname === "/"
-        //         ? {
-        //               maxWidth: "115rem",
-        //           }
-        //         : { borderRadius: "0px" }
-        // }
-        >
+        <Container>
             <Background />
             <Content>
                 <AboutCompanyLinkSections>
@@ -138,7 +129,9 @@ const Footer = () => {
                             </a>
                         ))}
                     </SocialLinks>
-                    <Copyright>&copy; Copyright Antern 2022</Copyright>
+                    <Copyright>
+                        &copy; Copyright Antern {new Date().getFullYear()}
+                    </Copyright>
                     <Buttons>
                         <a href="mailto:team@antern.co">
                             <Button transparentBg>Need help?</Button>

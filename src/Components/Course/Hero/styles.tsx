@@ -17,7 +17,7 @@ export const Content = styled.div`
 export const HeroMain = styled.div`
     display: flex;
     gap: 3rem;
-    padding: 8.5rem 5.4rem 17rem;
+    padding: 8.5rem 5.4rem 22rem;
     align-items: center;
     position: relative;
     @media screen and (max-width: 1000px) {

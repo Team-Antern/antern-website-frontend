@@ -37,10 +37,12 @@ import { CourseContext } from "../../../Context/CourseContext";
 import numberWithCommas from "number-with-commas";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import { motion } from "framer-motion";
+import Features from "../Features/Features";
 
 const CourseHero = () => {
     const courseDetails = useContext(CourseContext);
     const [showVideoPlayer, setShowVideoPlayer] = useState(false);
+    console.log(courseDetails);
     if (!courseDetails) return null;
     return (
         <Container>
@@ -49,6 +51,7 @@ const CourseHero = () => {
                     closeVideoPlayer={() => setShowVideoPlayer(false)}
                 />
             )}
+            <Features />
             <Content>
                 <Header />
                 <HeroMain>
@@ -102,10 +105,10 @@ const CourseHero = () => {
                         </CourseRating>
                         <CourseInstructor>
                             <CourseInstructorProfilePic
-                                src={courseDetails.instructors[0].profilePic}
+                                src={courseDetails.instructor.profilePic}
                             />
                             <CourseInstructorName>
-                                {courseDetails.instructors[0].name}
+                                {courseDetails.instructor.name}
                             </CourseInstructorName>
                         </CourseInstructor>
                         <EnrollNow>
@@ -141,7 +144,9 @@ const CourseHero = () => {
                                 }}
                             >
                                 <span>
-                                    Enroll Now For ₹{courseDetails.price}
+                                    Enroll Now For{" "}
+                                    {courseDetails.price.currency}
+                                    {courseDetails.price.originalPrice}
                                 </span>
                                 <span>Starts {courseDetails.starts}</span>
                             </EnrollButton>
@@ -153,9 +158,11 @@ const CourseHero = () => {
                             )}
                         </EnrollNow>
                         <NumberOfPeopleEnrolled>
-                            {typeof courseDetails.coupon === "string" ? (
+                            {typeof courseDetails.price.couponCode ===
+                            "string" ? (
                                 <CouponText>
-                                    USE COUPON "{courseDetails.coupon}"
+                                    USE COUPON "{courseDetails.price.couponCode}
+                                    "
                                 </CouponText>
                             ) : (
                                 <>

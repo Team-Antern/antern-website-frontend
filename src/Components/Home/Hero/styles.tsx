@@ -40,20 +40,26 @@ export const BestQualityCourses = styled.div`
 
 export const Heading = styled.div`
     font-family: "Plus Jakarta Sans";
-    font-style: normal;
     font-weight: 700;
     font-size: 7rem;
-    line-height: 115%;
+    line-height: 120%;
+    min-height: 16.8rem;
     text-align: center;
     text-transform: uppercase;
     color: #dee3ec;
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
+    align-items: center;
     @media screen and (max-width: 600px) {
         font-size: 5.6rem;
+        min-height: 13.44rem;
+    }
+    @media screen and (max-width: 520px) {
+        min-height: 20.16rem;
     }
     @media screen and (max-width: 480px) {
         font-size: 4rem;
+        min-height: 14.4rem;
     }
 `;
 

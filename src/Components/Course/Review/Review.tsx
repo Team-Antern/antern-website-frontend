@@ -1,42 +1,37 @@
-import React from "react";
-import { BsFillTriangleFill } from "react-icons/bs";
 import {
     Container,
     Content,
-    ReviewChevron,
     Reviewer,
     ReviewerName,
     ReviewerNamePosition,
     ReviewerPosition,
     ReviewerProfilePic,
-    ReviewQuotes,
     ReviewText,
+    ReviewTextLineLinearGradient,
 } from "./styles";
 import { Review as ReviewSchema } from "../../../Context/CourseContext";
 
 interface ReviewProps {
     review: ReviewSchema;
+    active: boolean;
 }
 
-const Review = ({ review }: ReviewProps) => {
+const Review = ({ review, active }: ReviewProps) => {
     return (
-        <Container>
-            <ReviewQuotes />
-            <Content>
-                <ReviewText>"{review.review}"</ReviewText>
-                <ReviewChevron>
-                    <BsFillTriangleFill />
-                </ReviewChevron>
-            </Content>
+        <Container active={active}>
             <Reviewer>
                 <ReviewerProfilePic src={review.author.profilePic} />
                 <ReviewerNamePosition>
-                    <ReviewerName>{review.author.name}</ReviewerName>
                     <ReviewerPosition>
                         {review.author.position}
                     </ReviewerPosition>
+                    <ReviewerName>{review.author.name}</ReviewerName>
                 </ReviewerNamePosition>
             </Reviewer>
+            <Content>
+                <ReviewTextLineLinearGradient />
+                <ReviewText>"{review.review}"</ReviewText>
+            </Content>
         </Container>
     );
 };
