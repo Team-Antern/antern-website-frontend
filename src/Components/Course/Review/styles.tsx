@@ -67,11 +67,11 @@ interface ReviewerProfilePicProps {
 export const ReviewerProfilePic = styled.div<ReviewerProfilePicProps>`
     width: 6.2rem;
     height: 6.2rem;
+    border: 2px solid rgba(194, 199, 208, 0.2);
     border-radius: 50%;
     background: url(${({ src }) => src});
     background-size: cover;
     background-position: center;
-    border: 2px solid rgba(194, 199, 208, 0.2);
 `;
 
 export const ReviewerNamePosition = styled.div`

@@ -28,7 +28,7 @@ interface WayToGetSuccessfull {
 
 export interface Review {
     author: {
-        profilePic: string;
+        profilePic?: string;
         name: string;
         position: string;
     };
