@@ -8,30 +8,27 @@ interface CourseContextProviderProps {
     children: React.ReactNode;
 }
 
-interface Instructors {
+interface Instructor {
     profilePic: string;
     name: string;
     about: string;
 }
 
-interface Lecture {
-    name: string;
-    totalLength?: number;
+interface Price {
+    originalPrice: number;
+    discountedPrice: number;
+    currency: string;
+    couponCode: string;
 }
 
-interface Section {
-    name: string;
-    lectures: Lecture[];
-}
-
-interface AboutCard {
-    title: string;
-    points: string[];
+interface WayToGetSuccessfull {
+    heading: string;
+    desc: string;
 }
 
 export interface Review {
     author: {
-        profilePic: string;
+        profilePic?: string;
         name: string;
         position: string;
     };
@@ -43,6 +40,16 @@ interface Feature {
     desc: string;
 }
 
+interface ThingCovered {
+    image: string;
+    pdfLink: string;
+}
+
+interface Faq {
+    question: string;
+    answer: string;
+}
+
 interface CourseDetailsSchema {
     title: string;
     coverImage: string;
@@ -51,24 +58,21 @@ interface CourseDetailsSchema {
         stars: number;
         total: number;
     };
-    instructors: Instructors[];
-    price: number;
+    joinCourseLink: string;
+    instructor: Instructor;
+    price: Price;
     starts: string;
     financialAidAvail: boolean;
     totalEnrolled: number;
-    about: string[];
-    aboutCards: AboutCard[];
     totalLength: string;
     language: string;
-    skillsYouWillGain: string[];
-    requirements: string[];
-    sections: Section[];
+    prerequisites: string[];
+    wayToGetSuccessfull: WayToGetSuccessfull[];
     reviews: Review[];
     features: Feature[];
-    lectureNotes: string;
-    joinCourseLink: string;
-    coupon?: string;
-    razorpay?: string;
+    lectureNotes: ThingCovered;
+    courseSyllabus: ThingCovered;
+    faqs: Faq[];
 }
 
 const CourseContextProvider = ({ children }: CourseContextProviderProps) => {

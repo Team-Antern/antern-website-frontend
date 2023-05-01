@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
     BestQualityCourses,
     Container,
@@ -21,6 +21,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import WavyText from "../WavyText/WavyText";
 import { Variants, motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import Typewriter from "typewriter-effect/dist/core";
 
 const peoples = [
     "https://media.licdn.com/dms/image/C4E03AQG5aubzbhBJyQ/profile-displayphoto-shrink_800_800/0/1611205900848?e=1677110400&v=beta&t=9Mkh-9lYSV2EvAASFglpCWIp9aRE4DrDTuH7ccnSXaw",
@@ -62,6 +64,33 @@ const child: Variants = {
 };
 
 const HomeHero = React.forwardRef<HTMLDivElement>(({}, ref) => {
+    const headingRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (headingRef.current) {
+            const typewriter = new Typewriter(headingRef.current, {
+                loop: true,
+                delay: 75,
+                cursor: "",
+            });
+
+            typewriter
+                .typeString(
+                    "Build your <span style='color: #4df3a3;'>future</span>"
+                )
+                .pauseFor(1000)
+                .deleteAll()
+                .typeString(
+                    "Get your first <span style='color: #4df3a3;'>paycheck</span>"
+                )
+                .pauseFor(1000)
+                .deleteAll()
+                .typeString(
+                    "Get your first <span style='color: #4df3a3;'>job</span>"
+                )
+                .pauseFor(1000)
+                .start();
+        }
+    }, []);
     return (
         <Container ref={ref}>
             <Content>
@@ -70,10 +99,31 @@ const HomeHero = React.forwardRef<HTMLDivElement>(({}, ref) => {
                     as={motion.div}
                     style={{ display: "flex", overflow: "hidden" }}
                     variants={container}
+                    ref={headingRef}
                     initial="hidden"
                     animate="visible"
                 >
-                    <span>
+                    {/* <TypeAnimation
+                        sequence={[
+                            "Build your future",
+                            1000,
+                            "Get your first pay check",
+                            1000,
+                            "Get your first job",
+                            1000,
+                        ]}
+                        cursor={true}
+                        repeat={Infinity}
+                        // style={{
+                        //     fontWeight: 400,
+                        //     fontSize: "1.8rem",
+                        //     lineHeight: "150%",
+                        //     color: "rgba(222, 227, 236, 0.5)",
+                        //     position: "absolute",
+                        //     width: "100%",
+                        // }}
+                    /> */}
+                    {/* <span>
                         {Array.from("build your ").map((letter, index) => (
                             <HeadingLetter
                                 as={motion.span}
@@ -96,7 +146,7 @@ const HomeHero = React.forwardRef<HTMLDivElement>(({}, ref) => {
                                 {letter === " " ? <>&nbsp;</> : letter}
                             </HeadingLetter>
                         ))}
-                    </span>
+                    </span> */}
                 </Heading>
                 <Desc
                     as={motion.div}

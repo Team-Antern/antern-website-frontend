@@ -38,14 +38,6 @@ export const sections = [
         title: "platform comparision",
         component: <PlatformComparision />,
     },
-    {
-        title: "faq",
-        component: <FAQ />,
-    },
-    {
-        title: "join our community",
-        component: <JoinOurCommunity />,
-    },
 ];
 
 const Home = () => {

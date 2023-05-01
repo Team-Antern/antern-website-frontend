@@ -6,11 +6,28 @@ export const Container = styled.div`
     width: calc(100% - 2.5rem);
     max-width: 120rem;
     margin: auto;
-    border-radius: 2rem;
-    position: relative;
-    top: -8rem;
+    position: absolute;
     z-index: 2;
     text-transform: capitalize;
+    border-radius: 15rem;
+    box-shadow: 0px 15px 60px rgba(128, 255, 0, 0.15);
+    padding: 6rem 7rem;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    @media screen and (max-width: 880px) {
+        border-radius: 10rem;
+        width: calc(100% - 16rem);
+        padding: 4rem 6rem;
+    }
+    @media screen and (max-width: 540px) {
+        width: calc(100% - 8rem);
+        border-radius: 8rem;
+        padding: 3rem 5rem;
+    }
+    @media screen and (max-width: 380px) {
+        border-radius: 10rem;
+    }
 `;
 
 export const Feature = styled.div`
@@ -22,16 +39,23 @@ export const FeatureHeading = styled.div`
     margin-bottom: 1.6rem;
     font-family: "Plus Jakarta Sans";
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 130%;
     color: #121e27;
     text-transform: capitalize;
+    @media screen and (max-width: 540px) {
+        font-size: 2.1rem;
+    }
 `;
 
 export const FeatureDesc = styled.div`
+    font-size: 1.4rem;
     font-weight: 400;
     line-height: 150%;
     color: #394a65;
+    @media screen and (max-width: 540px) {
+        font-size: 1.2rem;
+    }
 `;
 
 export const FeaturesSeperator = styled.div`
@@ -50,7 +74,6 @@ export const WithoutSwiper = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2.4rem;
-    padding: 6rem 4rem;
     @media screen and (max-width: 880px) {
         display: none;
     }
@@ -61,5 +84,4 @@ export const WithSwiper = styled.div`
     @media screen and (max-width: 880px) {
         display: block;
     }
-    padding: 4rem 2.5rem;
 `;

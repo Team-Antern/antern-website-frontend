@@ -14,7 +14,6 @@ import {
 import logo from "/assets/logo-white.svg";
 import { AiOutlineMenu } from "react-icons/ai";
 import HamMenu from "../HamMenu/HamMenu";
-import { motion } from "framer-motion";
 
 export const headerLinks = [
     {
