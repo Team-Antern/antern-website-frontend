@@ -13,7 +13,7 @@ const Prerequisites = () => {
     const courseDetails = useContext(CourseContext);
     if (!courseDetails) return null;
     return (
-        <Container>
+        <Container id="prerequisites">
             <Heading>prerequisites</Heading>
             <Content>
                 {courseDetails.prerequisites.map((prerequisite, index) => (

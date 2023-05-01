@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     Buttons,
     Container,
@@ -16,6 +16,7 @@ import {
 import Button from "../../Global/Button/Button";
 import { BsArrowRight } from "react-icons/bs";
 import { MdExplore } from "react-icons/md";
+import { CourseContext } from "../../../Context/CourseContext";
 
 const exclusiveBenefits = [
     {
@@ -46,6 +47,9 @@ const exclusiveBenefits = [
 ];
 
 const GetExclusiveBenefits = () => {
+    const courseDetails = useContext(CourseContext);
+    if (!courseDetails) return null;
+
     return (
         <Container>
             <GetExclusiveBenefitsBg1
@@ -70,6 +74,7 @@ const GetExclusiveBenefits = () => {
                         alignItems: "center",
                         gap: "1rem",
                     }}
+                    href={courseDetails.joinCourseLink}
                     animationProps={{}}
                 >
                     get started{" "}
@@ -93,6 +98,14 @@ const GetExclusiveBenefits = () => {
                         background: #fff!important;
                     `}
                     animationProps={{}}
+                    onClick={() => {
+                        const prerequisitesContainer =
+                            document.getElementById("prerequisites");
+                        if (prerequisitesContainer)
+                            prerequisitesContainer.scrollIntoView({
+                                behavior: "smooth",
+                            });
+                    }}
                 >
                     <MdExplore
                         style={{

@@ -88,13 +88,15 @@ export const Buttons = styled.div`
     gap: 1rem 0.5rem;
     padding: 7rem 0 9.2rem;
     text-transform: uppercase;
-    & > div {
+    & > div,
+    & > a > div {
         padding: 2rem 3rem;
         font-weight: 700;
     }
     @media screen and (max-width: 570px) {
         flex-direction: column;
-        & > div {
+        & > div,
+        & > a > div {
             width: 100%;
             justify-content: center;
             font-size: 1.6rem;
