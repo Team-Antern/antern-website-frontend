@@ -22,6 +22,7 @@ import { NavLink } from "react-router-dom";
 import WavyText from "../WavyText/WavyText";
 import { Variants, motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+// @ts-ignore
 import Typewriter from "typewriter-effect/dist/core";
 
 const peoples = [
