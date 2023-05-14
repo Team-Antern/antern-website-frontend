@@ -2,6 +2,32 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div``;
 
+export const Notification = styled.div`
+    padding: 1.5rem 2.5rem;
+    background: #b6ffdc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: "Plus Jakarta Sans";
+    line-height: 15px;
+`;
+
+export const NotificationText = styled.div`
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #313131;
+`;
+
+export const NotificationLink = styled.a`
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #0071e3;
+    text-transform: uppercase;
+`;
+
 export const Container = styled.div`
     display: flex;
     justify-content: space-between;
